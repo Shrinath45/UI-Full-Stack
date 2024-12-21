@@ -1,0 +1,182 @@
+Function Declaration
+Function Expression
+Function Signature
+Function Parameters
+Formal Parameters
+Actual Parameters
+
+
+                            Multiple Parameters
+            
+- A function can have multiple parameters.
+- Every parameter is a required parameter.
+- Parameters 
+
+EX:
+<script>
+    function details(id, name, price, stock){
+        if(price){
+            document.write(`Id = ${id}<br>Name=${name}<br>Price=${price}<br>Stock=${stock}`);
+        }else{
+            document.write(`Id = ${id}<br>Name=${name}<br>Stock=${stock}`);
+        }
+    }
+    details(1, "Shrinath",0, true);
+</script>
+
+
+Note: ECMA standards allow max 1024 parameters for a function. It is not recommended to use lot of parameters.
+
+
+
+                                    REST Parameters
+
+- JavaScript ES5+ version introduced REST parameters.
+- One REST parameter can allow multiple arguments.
+- REST parameter is an array type parameter.
+
+Syntax:
+        function Name(...param){
+
+        }
+        Name(10, "A", true);
+
+        param[0] = 10;
+        param[1] = "A";
+        param[2] = true;
+
+- Every function can have one REST parameter.
+- You can define other parameters along with rest parameters, but the REST parameter must be the last parameter in formal list.
+
+Syntax:
+        function Name(...param, title)
+        {
+            //Invalid rest parameter must be last parameter
+        }
+
+        function Name( title, ...param)
+        {
+            //valid
+        }
+
+EX:
+<script>
+    function details(title, ...product){
+        var [id, name, price, stock] = product;
+        document.write(`<h1>${title}</h1><br>Id = ${id}<br>Name=${name}<br>Price=${price}<br>Stock=${stock}`);
+
+    }
+    details("Product Details",1, "TV", 3455, true);
+</script>
+
+
+
+                            Spread Operator in Function
+
+- It allows to Spread values of one argument into multiple parameters.
+- You can Spread values using "...[]", where meta character defines multiple arguments.
+
+Syntax:
+        function Name(id, name, price)
+        {
+
+        }
+        var data = [1, "TV", 45000];
+        Name(data);     // id=[1, "TV", 45000] name=undefined price=undefined
+        Name(...data);     // id=1 name="TV" price=45000
+
+EX:
+<script>
+    function details(id, name, price, stock){
+        document.write(`Id = ${id}<br>Name=${name}<br>Price=${price}<br>Stock=${stock}`);
+
+    }
+    details(...[1, "TV", 3455, true]);
+</script>
+
+FAQ: What is difference between Spread and REST?
+ANs: "REST" is about single parameter handling multiple arguments.
+    "Spread" is about single argument that spreads into multiple parameters.
+
+
+
+                                    Function with Return
+
+- Every function have a scope defined using "{}".
+- Scope refers to start and end of memory allocated for function.
+- A "return" statement in function can keep the memory alive for function, so that it can store the values of function.
+
+Syntax:
+        function Name()
+        {
+            return value;
+        }
+
+        Name() = value;
+
+- A function can return any type of value. 
+
+EX:
+<script>
+    var x = 10; 
+    function f1(a, b){
+        return a + b;
+    }
+    document.write(f1(10, 20));
+</script>
+
+
+- A function can have multiple return statements defined to handle conditional rendering.
+
+Syntax:
+        function Name(param){
+            if(para){
+                return a;
+            }
+            else{
+                return b;
+            }
+        }
+
+
+
+
+
+
+                    Function Closure
+
+- Closure is a mechanism of function.
+- In Closure the members of outer functions are accessible to inner.
+- However the members of inner are not accessible to outer. 
+- You have to return and store the result of inner value in inner function.
+
+EX:
+<script>
+    function Outer(){
+        var x = 10;
+        function Inner(){
+            var y = 20;
+            return x + y;
+        }
+        document.write(`Addition= ${Inner()}`);
+    }
+    Outer();
+</script>
+
+
+
+                    Anonymous Function
+
+- An Anonymous function is defined without name.
+- You can't enclose in "()".
+- It is accessible by using IIFE pattern. [Immediately Invoke Function Expression].
+
+Syntax:
+        (
+            function Name(){
+
+            }
+        )();
+
+- Anonymous functions are mostly used in callbacks.
+- In callback a memory is configured for function hence function doesn't require a name.

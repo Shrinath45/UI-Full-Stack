@@ -1,0 +1,42 @@
+<!-- Write a logic to print toatl of all products price
+<script>
+    var products = [{Name: "TV", Price:45000}, {Name: "Watch", Price:2000}, {Name:"Mobile", Price:12000}]
+    var total = 0;
+    products.map(function(product){
+        total += product.Price;
+    })
+    document.write(total);
+</script>
+ -->
+
+
+<!-- Write a logic to print all product names with rating 4 above
+<script>
+    var products = [{Name: "TV", Price:45000, Rating:{rate:4.2}}, 
+    {Name: "Watch", Price:2000, Rating:{rate:2.2}}, 
+    {Name:"Mobile", Price:12000, Rating:{rate:4.1}}]
+    var total = 0;
+    products.filter(function(product){
+        return product.Rating.rate>4;
+    }).map(function(product){
+        document.write(product.Name + "<br>");
+    })
+</script> -->
+
+
+<!-- Write a logic to print all product names in ascending order of price
+<script>
+    var products = [
+    { Name: "TV", Price: 45000, Rating: { rate: 4.2 } },
+    { Name: "Watch", Price: 2000, Rating: { rate: 2.2 } },
+    { Name: "Mobile", Price: 12000, Rating: { rate: 4.1 } }
+];
+
+products.sort(function(a, b) {
+    return a.Price - b.Price;
+});
+
+console.write(products);
+
+    
+</script> -->

@@ -1,0 +1,119 @@
+8. slice():     It is used to extract the chars between specified index.
+
+        Syntax:
+                string.slice(startIndex, endIndex)
+
+                End index is a number, which must be greater than start index.
+
+
+9. substr():    It reads specified number of chars from given index.
+
+        Syntax:
+                string.substr(startIndex, number_of_chars)
+
+10. substring():    It reads the character between specified index.
+                    The end index can be bi-directional.
+
+                    Syntax:
+                            string.substring(startIndex, endIndex)
+
+FAQ: What is difference between slice, substr and substring?
+
+And:
+    - slice can read chars between specified index but uni-directional.
+    - substr reads the specified chars from given index, which must be greater than zero.
+    - substring reads the chars between specified index bi-directional.
+
+
+Syntax:
+    str.slice(7);   //7 to end
+    str.slice(7, 15);   // 7 to 15 index
+    str.slice(7, 0);    // Invalid
+
+    str.substring(7);   // 7 to end 
+    str.substring(7, 15);   // 7 to 15 index
+    str.substring(7, 0);    // 7 to 0 index towards start
+
+Ex:
+      var url = "https://www.youtube.com/videos?code=AB3456&quot;;
+
+      var code = url.slice(url.indexOf("=") + 1);
+
+      document.write(code);
+
+Ex:
+      var email = "rakesh_nit12@gmail.com"
+
+      var id=  email.substring(0, email.indexOf("@");
+      var domain = email.substring(email.indexOf("@")+1);
+
+
+<script>
+    var email = prompt("Enter your email address");
+    var id = email.substring(0, email.indexOf("@"));
+    var domain = email.substring(email.indexOf("@") + 1);
+
+    document.write(`Id=${id}<br>Domain=${domain}`);
+</script>
+
+
+11. Replace():      It can Replace char(s) with new char(s). It can Replace only the first occurence.
+
+12. replaceAll():       It can replace all occurrences of char(s) in a string.
+
+EX:
+<script>
+    var msg = "HTML is used for presentation. HTML is a presentation language.";
+    document.write(msg.replaceAll("HTML", "<b>HTML</b>"));
+    document.write(msg.replace("is", "<b>is</b>"));
+</script>
+
+
+
+13. trim():             It removes all leading spaces in a string.
+
+
+14. trimStart():        It removes the leading spaces at start position.
+
+
+15. trimEnd():      It removes the leading spaces at end position.
+
+    Syntax:
+            var str = "  Welcome";
+            document.write(str);        //"  Welcome"
+            document.write(str.trim());     // "Welcome"
+    
+    EX:
+
+    <script>
+    var otp = prompt("Enter OTP");
+
+    if(otp.trim()==4567){
+        document.write("Payment Success");
+    }else{
+        document.write("Invalid OTP");
+    }
+    </script>
+
+16. split():    It splits the string by identifying a delimeter.[separator]
+                It returns an array of string.
+
+            
+            Syntax:
+                 var str = "Welcome to javascript";
+                 var words = str.split('');
+                 words[0] = Welcome
+                 words[1] = to
+                 words[2] = javascript
+
+
+17. match():    It is a boolean method. It verifies the given string with regular expression and returns boolean true if the string is matching the expression.
+
+        Syntax:
+                var str = "+918459598907";
+                var regExp = /\+91\d{10}/;
+        
+        Note:   Regular expression comprises of meta characters and quantifiers enclosed in "/ /".
+
+            Syntax:
+                    var exp = / expression /;

@@ -1,0 +1,59 @@
+- JavaScript Object Type
+- Object Manipulations
+
+
+            JavaScript AJAX
+
+- Asynchronous JavaScript and XML.
+- Async uses "un-blocking" technique, where it can perform the given task without blocking the other tasks in process.
+- AJAX enables partial postback.
+- It allows to add new content into page without reloading the page.
+- It can submit only specific portion of page.
+- JavaScript provides the actions for AJAX.
+- XML is the language format for data in AJAX.
+- Browser uses "XMLHttpRequest" object for AJAX requests.
+- It is a "window" object use to AJAX calls.
+
+Step-1: Create XMLHttpRequest object for making Ajax calls
+
+    var http = new XMLHttpRequest();
+
+Step-2: Configure the request using http object
+
+    http.open("method", "url", async:boolean);
+
+    method  :       GET/POST/PUT/DELETE 
+    url: file path
+    async:  Asynchronous true of false
+
+Step-3:  Send the request to process
+
+    http.Send();
+
+Step-4: You have to execute the request in process by using the function "onreadystatechange".
+
+    http.onreadystatechange = function(){
+
+    }
+
+    Request in process have 4 states
+
+    1   Initial states
+    2   Complete
+    3   Success
+    4   Ready
+
+Step-5: Access the response on ready states
+
+    if(http.readyState === 4){
+        //Get http.responseText
+    }
+
+    EX:
+    1. Add new folder by name "data".
+
+    2. Add a new file into data folder "help.txt" with some sample text.
+
+    3. Create HTML page
+
+    

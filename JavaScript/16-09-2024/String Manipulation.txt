@@ -1,0 +1,52 @@
+                                    String Manipulation
+
+
+1. length:      It return the total count of chars in a string.
+
+    Syntax:
+            var str = "welcome";
+            str.length;             // 7
+
+2. chatAt():    It returns the characters at specified index.
+    
+    Syntax:      
+            var str = "welcome";
+            str.chatAt(0);      //w
+            str.chatAt(6);      //e
+
+3. charCodeAt():        It return the ASCII code of characters at specified index.
+                        A = 65....Z = 90 , a = 97, z = 122
+
+    Syntax:
+             var str = "Welcome";
+             str.charCodeAt(0);         //87
+             str.charCodeAt(6);         //101
+
+4. indesOf():       It returns the index number of specified character in a string.
+                    If character not found then it return "-1".
+                    It returns the first occurence index number. 
+    
+    Syntax:
+            var str = "Welcome";
+            str.indexOf("W");       //0
+            str.indexOf("e");       //1
+            str.indexOf("a");       //-1
+
+5. lastIndexOf():       It returns the last occurence of index number of a char in string.
+    
+    Syntax:
+            var str = "Welcome";
+            str.indexOf("e");           //1
+            str.lastIndexOf("e");       //6
+            str.lastIndexOf("a");       //-1
+
+6. startsWith():        It returns true if given string starts with specified char(s).
+
+7. endsWith():          It returns true if given string ends with specified char(s).
+
+        Syntax:
+                var str= "Welcome Shrinath";
+                str.startsWith("Javascript");    // false
+                str.startsWith("Welcome");    // true
+                str.endsWith("Welcome");    // false
+                str.endsWith("Shrinath");    // true

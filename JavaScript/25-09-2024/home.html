@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function UploadClick(){
+            var image = document.createElement("img");
+            image.src = "../public/Images/phone_black.jpg";
+            image.width = "200";
+            image.height = "200";
+
+            document.querySelector("figure").appendChild(image);
+        }
+        function bodyload(){
+            var h1 = document.createElement("h1");
+            h1.innerHTML = "Dynamic Elements";
+            document.querySelector("body").appendChild(h1);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <button onclick="UploadClick()">Upload</button>
+    <figure>
+
+    </figure>
+</body>
+</html>

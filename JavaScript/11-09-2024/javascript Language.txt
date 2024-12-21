@@ -1,0 +1,71 @@
+            JavaScript Language
+
+1. Variables
+2. Data Types
+3. Operators
+4. Statements
+5. Functions
+6. OOP Concepts
+
+
+1. Variables:
+
+    - Variables are storage locations in memory, where you can store a value and use it as a part of any expression.
+    - Variable configuration comprises 3 basic elements
+
+            a) Declaration  // var x;
+            b) Assignment   // x = 40;
+            c) Initialization   //  var x = 40; 
+
+    - Declaration comprises of Variables name and behaviour.
+    - Behaviour can be defined using the keywords "var, let and const".
+
+        Syntax:
+            var price;
+            let stock;
+            const rating;
+    
+    - Declaring variable is mandatory only when JavaScript is i strict mode.
+    - Declaring variable is optional when JavaScript is not in strict mode.
+    - After Declaring passing value into variable memory is called "Assignment".
+    - Passing Value into variable while declaring is known as "Initialization".
+
+         Syntax:
+                var x;  //Declaring
+                x = 50; // Assignment
+                var x = 50; //Initialization
+    
+    Var:
+        - It is used to configure a function scope for variable.
+        - Functio scope allows to declare in any block and access from any another block inside function.
+        - It allows declaring, Assignment and Initialization.
+        - It allows shadowing.
+        - Shadowing is the process of re-declaring or re-initializing same name identifier with in the scope.
+
+                {
+                    var x = 10; //Initialization
+                     x = 20;    // Assignment
+                     var x = 30;    // Shadowing
+                }
+            
+        - It allows hoisting.
+        - Hoisting is the process of declaring a variable in function scope without any order dependency.
+        - Hoisting allows to use and declare later.
+
+        EX:
+        <Script>
+        "use strict";
+        function f1(){
+            x = 10;
+            document.write("X = "+ x);
+            var x;
+        }
+        f1();
+        </Script>
+
+    
+    Let:
+        - It defines a block scope for variable.
+        - Block scope allows to access with in the defined block and its inner blocks.
+        - It allows declaring, assignment and Initialization.
+        - It will not allow shadowing and hoisting.

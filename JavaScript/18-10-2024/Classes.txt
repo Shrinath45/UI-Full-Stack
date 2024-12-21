@@ -1,0 +1,220 @@
+Class
+- Program Template
+- Model
+- Entity
+- Blue Print
+
+Configuring Class:
+- A class can be configured by using 2 techniques
+    a) Class Declaration
+    b) Class Expression
+
+Syntax: Declaration
+
+    class   Name
+    {
+
+    }
+
+Syntax: Expression
+
+    var   Name = class {
+
+     }
+
+- Class expression allows to change the class dynamically.
+- Class declaration configures memory which is the same across multiple requests.
+
+            Class Members
+- Class is used to keep all related data and logic together.
+- Class members can be
+    a) Property
+    b) Accessor
+    c) Method
+    d) Constructor
+   
+                      Property
+- A property is used to store data.
+- Property name is just a reference name that can handle any type of data
+    a) Primitive Type
+    b) Non Primitive Type
+
+Syntax:
+    class  Product
+    {
+         Property = value;
+    }
+
+- A property can manage data with mutable behaviour.
+- It can change according to state and situation.
+- You can access inside class by using "this" keyword.
+- You can access outside class by using instance of class.
+
+Syntax:
+    let  obj = new Product();
+    obj.Property
+
+EX:
+<script>
+    class Product
+    {
+        Name = "Samsung TV";
+        Price = 45000.44;
+        Stock = true;
+        Cities = ["Delhi", "Hyd"];
+        Rating = {Rate:4.5}
+    }
+    let tv = new Product;
+    document.write(`Name=${tv.Name}<br>Price=${tv.Price}<br>Stock=${tv.Stock}<br>Cities=${tv.Cities}<br>Rating=${tv.Rating.Rate}`);
+</script>
+
+FAQ: Can we define a variable in class?
+Ans:  Yes. But variable can't be a class member.
+
+FAQ: Why variable is not allowed as class member?
+Ans:  Variable are immutable and class member must be a mutable member.
+
+                  Accessors
+- Accessor provides fine grained control over the property.
+- Accessor controls read and write operations on a property.
+- Accessors are of 2 types
+    a) get()    Getter
+    b) set()    Setter
+- Getter is used to read and return value from property.
+- Setter is used to store a value into property.
+
+Syntax:
+    get  aliasName()
+    {
+        return   this.Property;
+    }
+
+    set  aliasName(newName)
+    {
+       this.Property = newName;
+    }
+
+Ex:
+<script>
+    var username = prompt("Enter User Name");
+    var role = prompt("Enter Your Role", "admin|customer");
+
+   class Product
+   {
+       _price;
+
+       get Price(){
+           return this._price;
+       }
+       set Price(newPrice){
+            if(role==="admin")
+            {
+                this._price = newPrice;
+            } else {
+                document.write(`Hello ! ${username} you are not authorized to set price`);
+            }
+       }
+   }
+   
+   let obj = new Product();
+   obj.Price = prompt("Enter Product Price");
+   if(obj.Price)
+   {
+      document.write(`Product Price is ${obj.Price}`);
+   }
+</script>
+
+FAQ: How to configure readonly properties?
+Ans:  If setter is not defined for any property then by default it is readonly.
+         By configuring only getter for property, you can make it readonly.
+
+Ex:
+<script>
+    class Product
+    {
+         Rating = {
+             Hyderabad : {
+                 Customer: {
+                    Rate: 4.7,
+                 },
+                 Vendor: {
+                    Rate: 4.8
+                 }
+             }
+         }
+
+         get HydVendorRating(){
+            return this.Rating.Hyderabad.Vendor.Rate;
+         }
+
+       
+    }
+    let obj = new Product();
+    obj.HydVendorRating = prompt("Enter New Rating for Hyd Vendor");  // readonly
+    document.write(`Hyd vendor rating ${obj.HydVendorRating}`);
+</script>
+
+
+Ex:
+<script>
+    class Product
+    {
+         Rating = {
+             Hyderabad : {
+                 Customer: {
+                    Rate: 4.7,
+                 },
+                 Vendor: {
+                    Rate: 4.8
+                 }
+             }
+         }
+
+         get HydVendorRating(){
+            return this.Rating.Hyderabad.Vendor.Rate;
+         }
+
+         set HydVendorRating(newRating){
+            this.Rating.Hyderabad.Vendor.Rate = newRating;
+         }
+    }
+    let obj = new Product();
+    obj.HydVendorRating = prompt("Enter New Rating for Hyd Vendor");  // read-write
+    document.write(`Hyd vendor rating ${obj.HydVendorRating}`);
+</script>
+
+                    Method
+- Method defines the action performed by an object.
+- Method is just like a function, with void or return.
+- Method is mutable.
+- Function is immutable. Hence it is not allowed as class member.
+
+Syntax:
+    class Name
+    {
+        method() {    // void
+        }
+
+        method() {    // with return
+           return value;
+        }
+    }
+
+Ex:
+<script>
+    class Product
+    {
+        Name = "Samsung TV";
+        Price = 56000.44;
+        Qty = 1;
+        Total() {
+            return this.Qty * this.Price;
+        }
+        Print(){
+            document.write(`Name=${this.Name}<br>Price=${this.Price}<br>Qty=${this.Qty}<br>Total=${this.Total()}`);
+        }
+    }
+    let obj = new Product();
+    obj.Qty = parseInt(prompt("Enter Quantity"));
+    obj.Print()
+</script>

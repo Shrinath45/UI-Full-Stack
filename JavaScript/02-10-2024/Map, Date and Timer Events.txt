@@ -1,0 +1,190 @@
+FAQ: What are the issues with object type?
+
+- Keys are only string type .
+- It requires explicit operators for manipulation.
+- It is slow in interactions.
+
+
+
+                Map Data Type 
+
+- It is a key-value collection similar to object.
+- Key can be any type.
+- It provides all implicit methods for manipulations.
+- It is faster than object.
+
+Syntax:
+        var data = new Map();
+
+        set()   to add a new key and value
+        get()   to read a value with reference of key
+        delete()    to remove specific value using key
+        clear()     to remove all Keys
+        has()       to verify Keys
+        size()      to get the count of Keys
+        keys()      returns all keys
+        values()    returns all values
+        entries()   returns both keys and values
+
+        data.set(key, value);
+        data.get(key);
+        etc...
+
+    - Data in "map" is schema less [structure less].
+
+
+
+                Date Type
+
+
+- JavaScript date and time values are stored in memory by using "Date()" constructor.
+- It allocates date type memory to handle date and time values.
+
+Syntax:
+        var today = new Date();     // loads current date and time into memory.
+        vae mfd = new Date("year-month-day hrs:min:sec.milliSec");      // for specific date & time
+
+- JavaScript Date and Time Methods:-
+
+    getHours()  0 to 23
+    getMinutes()    0 to 59
+    getSeconds()    0 to 59
+    getMilliSeconds()   0 to 99
+    getDate()       1 to 28, 29, 30, 31
+    getDay()    0 = Sunday
+    getMonth()      0 = January
+    getFullYear()   2024
+
+    setHours()
+    setMinutes()
+    setSeconds()
+    setMilliSeconds()
+    setDate()
+    setMonth()
+    setFullYear()
+
+    toLocaleDateString()
+    toDateString()
+    toLocaleTimeString()
+    toTimeString()
+
+    EX:
+    <script>
+    var mfd = new Date("2024-02-18 16:35:22");
+    document.write(mfd.toLocaleDateString());
+    </script>
+
+    EX:
+    <Script>
+    var mfd = new Date("2024-10-02 16:35:22");
+    var weekdays = ["sunday", "monday", "tuesday", "wednesday", "Thur", "Fri", "Saturday"];
+    var months = ["January", "feb", "march", "april", "may","june", "july", "august", "september", "octomber", "November", "December"];
+
+    document.write(`${weekdays[mfd.getDay()]} ${mfd.getDate()}- ${months[mfd.getMonth()]} ${mfd.getFullYear()}`);
+    </Script>
+
+
+EX:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function BodyLoad(){
+            var now = new Date();
+            now.setHours(20);
+            var hrs = now.getHours();
+            var lblTitle = document.getElementById("lblTitle");
+            var pic = document.getElementById("pic");
+            lblTitle.innerHTML = prompt("Enter Your Name");
+
+            if(hrs>=0 && hrs<=12){
+                pic.src = "../public/Images/morning.jpg";
+            }else if(hrs > 12 && hrs<=16){
+                pic.src = "../public/Images/afternoon.jpg";
+            }else{
+                pic.src = "../public/Images/evening.jpg";
+            }
+        }
+    </script>
+</head>
+<body onload="BodyLoad()">
+    <div align="center">
+        <h2 id="lblTitle">
+
+        </h2>
+        <img src=""  height="300" width="300" id="pic">
+    </div>
+    
+</body>
+</html>
+
+
+
+                            Timer Events
+
+- setTimeout()
+- clearTimeout()
+- setInterval()
+- clearInterval()
+
+
+setTimeout():
+- It is a timer event used to debounce.
+- Debounce is a mechanism of making the task inactive for specific duration of time.
+- Electronics devices use keyboard which can bounce the task triggred with specific event.
+- All tasks are released into process immediately.
+- Set Timeout can delay the execution.
+
+Syntax:
+        setTimeout(function(){}, interval);
+
+clearTimeout():
+- It is used to cancel any task from memory before released into process.
+- It requires a memory reference name for the function in memory.
+
+Syntax:
+        var thread = setTimeout(function(){}, interval);
+        clearTimeout(thread);
+
+EX:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function msg1(){
+            document.querySelector("h1").innerHTML = "Volume 10%";
+        }
+        function msg2(){
+            document.querySelector("h1").innerHTML = "Volume 50%";
+        }
+        function msg3(){
+            document.querySelector("h1").innerHTML = "Volume  100%";
+        }
+
+        var m2;
+        function IncreaseClick(){
+            setTimeout(msg1, 3000);
+            m2 = setTimeout(msg2, 8000);
+            setTimeout(msg3, 14000);
+        }
+        function CancelClick(){
+            clearTimeout(m2);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="IncreaseClick()">Increase Volume</button>
+    <button onclick="CancelClick()">Cancel 50%</button>
+    <h1 align="center"></h1>
+</body>
+</html>
+
+
+

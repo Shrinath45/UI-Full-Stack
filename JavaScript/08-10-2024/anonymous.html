@@ -1,0 +1,14 @@
+<script>
+    function ValidateUser(password, Success, failure){
+        if(password==="admin"){
+            document.write("Login Success");
+        }else{
+            document.write("Invalid Password");
+        }
+    }
+    ValidateUser(prompt("Enter Password"), function(){
+        document.write("Login Success");
+    },function(){
+        document.write("Invalid Password");
+    });
+</script>

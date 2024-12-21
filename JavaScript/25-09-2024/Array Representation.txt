@@ -1,0 +1,63 @@
+Array Methods
+- toString()
+- join()
+- map()
+- forEach()
+
+5. You can use for..of statement to read all values from Array
+
+    Syntax:
+            for(var value of collection){
+                // value contains Array elements
+            }
+        
+    EX:
+    <script>
+    var items = ["Home", "Electronics", "Mobiles", "Apple", "Phones", "iphone15"];
+
+    for(var value of items){
+        document.write(value+"<br>");
+    }
+    </script>
+
+6. You can use "for..in" statement for reading properties from collection.
+
+    Syntax:
+            for(var property in collection){
+                // property contains all property name "0", "1",...
+            }
+            collection[property];   // it returns value
+
+
+    EX:
+        var items = ["Home", "Electronics", "Mobiles", "Apple", "Phones", "iphone15"];
+        for(var property in items){
+        document.write(`[${property}] ${items[property]} <br>`);
+        }
+
+
+
+                        Creating and Adding elements into Page
+
+1. Create a new HTML element by using the document method "createElement()"
+
+        document.write("h1");
+        document.write("img");
+        document.write("table");
+
+2. Assign a memory location for newly created element.
+
+    var heading = document.write("h1");
+    var image = document.write("img");
+
+3. Set properties for element
+
+    heading.innerHTML = ""
+    pic.src = ""
+    pic.height = ""
+    pic.width = ""
+
+4. Add element to page by using "appendChild()" method. you can add into any parent.
+
+    document.querySelector("body").appendChild(heading);
+    document.querySelector("figure").appendChild(image);

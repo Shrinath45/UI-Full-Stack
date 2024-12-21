@@ -1,0 +1,104 @@
+Primitive Types:
+    - Number
+    - String
+    - Boolean                            
+               
+                            
+                            Undefined
+
+- It is type configured for variables if value is not defined at compile time.
+- JavaScript uses "undefined" as keyword.
+
+Syntax:
+        var price;
+        console.log(price);     // undefined
+
+- You can verify by using "undefined" keyword or a simple condition that returns true when value is defined.
+
+Syntax:
+        var price;
+        if(price){ }    // good
+        if(price===undefined){ }        // valid but not good
+
+
+FAQ: What is difference between not-defined and undefined?
+Ans: not-defined specifies that the reference you are using not found.
+    undefined specifies that the reference is present but there is no value defined.
+
+
+                NULL
+
+- It specifies that value is not defined into a reference at runtime of application.
+- User can input values at runtime using querystring, prompt, form elements etc.
+- If reference is not supplied with value then it returns "null" as type.
+- You can use "null" keyword to verify the null type.
+
+Syntax:
+        var x= prompt("Enter value");
+        console.log(x);         // returns null when prompt is cancelled
+    
+EX:
+        var x= prompt("Enter Number");
+        if(x==null){
+            document.write(`You cancelled`);
+        }else{
+            document.write(`x = ${x}<br>`);
+        }
+
+Summery:
+
+- Number
+- String
+- Boolean
+- null
+- Undefined
+- Symbol
+- bigit
+
+
+
+                        Non-Primitive Types
+                    
+
+- Non Primitive are mutable types.
+- They don't have a fixed structure.
+- It changes according to memory available.
+- They are stored in memory heap.
+- Heap allows to access in any order. 
+- JavaScript Non Primitive types are
+    a) Array
+    b) Object
+    c) Map
+
+
+
+                            Array
+                    
+- Arrays in programming are used to reduce overhead and complexity.
+- Arrays reduce overhead by storing multiple values in sequential oreder.
+- Arrays reduce complexity by storing multiple values under one reference name.
+- Array is a collection of values in sequential order.
+- You can store any type of value insequence, but few technologies can't allocate different memory types. Hence they restrict array to same type.
+- Array is a type of arrangement for values in memory. where they have a sequence but accessed in random.
+- JavaScript array can handle various type of data and can change the size dynamically.
+
+Declaring Array:
+- You can declare by using var, let or const.
+- But array declaration requires memory assignment for initialization.
+- You can initialize or assign memory for array by using 2 techniques.
+
+    a) Array()  constructor
+    b)[]    meta character
+
+    Syntax:
+            var values;
+            values = [];        meta character [assignment]
+
+            var values = [];        //initializing
+
+            (or)
+
+            var values = new Array();
+
+            var values;
+            values = new Array();

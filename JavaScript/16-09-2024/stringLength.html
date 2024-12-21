@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verifyName(){
+
+            var username = document.getElementById("username").value;
+            var name = document.getElementById("name");
+
+            if(username.length==0){
+                name.innerHTML = "Name Required".fontcolor('red');
+            }
+            else{
+                if(username.length<4){
+                    name.innerHTML = "Name too Short".fontcolor('gold');
+                }
+                else{
+                    name.innerHTML = "";
+                }
+            }
+        }
+        function verifyComment(){
+            var Comment = document.getElementById("txtComments").value;
+            var lblCommment = document.getElementById("lblComment");
+
+            lblCommment.innerHTML = `${100-Comment.length} chars remaining`;
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" onkeyup="verifyName()" id="username"></dd>
+        <dd id="name"></dd>
+        <dt>Your Comment</dt>
+        <dd>
+            <textarea id="txtComments" onkeyup="verifyComment()" rows="4" cols="40" maxlength="100"></textarea>
+        </dd>
+        <dd id="lblComment"></dd>
+    </dl>
+</body>
+</html>

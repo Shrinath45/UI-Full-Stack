@@ -1,0 +1,13 @@
+<!-- <script>
+    var mfd = new Date("2024-02-18 16:35:22");
+    document.write(mfd.toLocaleDateString());
+</script> -->
+
+
+<Script>
+    var mfd = new Date("2024-10-02 16:35:22");
+    var weekdays = ["sunday", "monday", "tuesday", "wednesday", "Thur", "Fri", "Saturday"];
+    var months = ["January", "feb", "march", "april", "may","june", "july", "august", "september", "octomber", "November", "December"];
+
+    document.write(`${weekdays[mfd.getDay()]} ${mfd.getDate()}- ${months[mfd.getMonth()]} ${mfd.getFullYear()}`);
+</Script>

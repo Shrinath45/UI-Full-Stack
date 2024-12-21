@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <style>
+        @keyframes Fade{
+            from{
+                opacity: 0.1;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function LoadClick(){
+            document.getElementById("btnContainer").style.display = "none";
+            document.getElementById("progressContainer").style.display ="block";
+            thread = setInterval(StartCount, 100)
+        }
+        var count = 1;
+        function StartCount(){
+            count++;
+            document.querySelector("progress").value = count;
+            document.getElementById("lblStatus").innerHTML = `${count}% Loading Completed`;
+            if(count ===100){
+                document.getElementById("progressContainer").style.display = "none";
+                document.getElementById("imageContainer").style.display = "block";
+                document.querySelector("img").style.animationName = "Fade";
+                document.querySelector("img").style.animationDuration = "5s";
+            }
+        }
+
+        function playClick(){
+            var thread = setInterval(StartCount, 100);
+            document.getElementById("lblStatus").innerHTML = `${count} % completed`;
+        }
+        function PauseClick(){
+            clearInterval(thread);
+            document.getElementById("lblStatus").innerHTML = `${count} % completed <br> [Loading Paused]`;
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="text-center">
+        <div id="btnContainer">
+            <button class="btn btn-primary" onclick="LoadClick()">Load Image</button>
+        </div>
+        <div id="progressContainer" style="display: none;">
+            <progress style="width: 400px; height: 30px;" min="1" max="100" value="1"></progress>
+            <div id="lblStatus"></div>
+            <div class="my-2">
+                <button onclick="PauseClick()" class="btn btn-warning bi bi-pause-fill me-2"></button>
+                <button onclick="playClick()" class="btn btn-success bi bi-play-fill"></button>
+            </div>
+
+        </div>
+        <div id="imageContainer" style="display: none;"> 
+            <img src="../public/Images/women.jpg" height="400px" width="400px" alt="">
+        </div>
+    </div>
+</body>
+</html>

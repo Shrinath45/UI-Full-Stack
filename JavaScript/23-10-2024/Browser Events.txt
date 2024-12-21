@@ -1,0 +1,323 @@
+Browser Events
+- All JavaScript events are browser events.
+- Browser provides a "window" object with all events.
+- You can use the window events with various elements.
+- Browser events include
+    1. Mouse Events
+    2. Keyboard Events
+    3. Button Events
+    4. Clipboard Events
+    5. Element State Events
+    6. Form Events
+    7. Timer Events
+    8. Touch Events etc..
+
+Mouse Events:
+    onmouseover
+    onmouseout
+    onmousedown
+    onmouseup
+    onmousemove
+
+Ex: Mouse Over
+1. data/mobile.json
+
+[
+    {
+        "img_src": "../public/images/m1.jpg"
+    },
+    {
+        "img_src": "../public/images/m2.jpg"
+    },
+    {
+        "img_src": "../public/images/m3.jpg"
+    },
+    {
+        "img_src": "../public/images/m4.jpg"
+    }
+]
+
+2. mouse-demo.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            fetch('../data/mobile.json')
+            .then(response=> response.json())
+            .then(mobiles=>{
+                mobiles.map(mobile=> {
+                     var pic = document.createElement("img");
+                     pic.src = mobile.img_src;
+                     pic.width="100";
+                     pic.className = "my-4 d-block";
+                     pic.addEventListener("mouseover",(e)=>{
+                         document.getElementById("imgPreview").src = e.target.src;
+                     })
+                     document.getElementById("thumbnail").appendChild(pic);
+                })
+            })
+        }
+    </script>
+    <style>
+        #thumbnail img:hover {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="row mt-4">
+        <div class="col-2">
+            <div id="thumbnail">
+               
+            </div>
+        </div>
+        <div class="col-10">
+            <img id="imgPreview" src="../public/images/m1.jpg" width="400" height="500">
+        </div>
+    </div>
+</body>
+</html>
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <marquee scrollamount="15" onmouseover="this.stop()" onmouseout="this.start()">
+        <img src="../public/images/m1.jpg" width="200" height="200">
+        <img src="../public/images/m2.jpg" width="200" height="200">
+        <img src="../public/images/m3.jpg" width="200" height="200">
+        <img src="../public/images/m4.jpg" width="200" height="200">
+    </marquee>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes Rotate
+        {
+            from {
+                transform: rotate(0deg) scale(1);
+            }
+            to {
+                transform: rotate(360deg) scale(2);
+            }
+        }
+        img {
+            animation-name: Rotate;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    </style>
+    <script>
+        function Fast(){
+            var img = document.querySelector("img");
+            img.style.animationName = "Rotate";
+            img.style.animationDuration = "2s";
+            img.style.animationTimingFunction = "linear";
+            img.style.animationIterationCount = "infinite";
+        }
+        function Slow(){
+            var img = document.querySelector("img");
+            img.style.animationName = "Rotate";
+            img.style.animationDuration = "10s";
+            img.style.animationTimingFunction = "linear";
+            img.style.animationIterationCount = "infinite";
+        }
+    </script>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <img onmouseover="Fast()" onmouseout="Slow()" src="../public/images/m4.jpg" width="300" height="300">
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes Rotate
+        {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        img {
+            animation-name: Rotate;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    </style>
+    <script>
+        function Fast(){
+            var img = document.querySelector("img");
+            img.style.animationName = "Rotate";
+            img.style.animationDuration = "2s";
+            img.style.animationTimingFunction = "linear";
+            img.style.animationIterationCount = "infinite";
+        }
+        function Slow(){
+            var img = document.querySelector("img");
+            img.style.animationName = "Rotate";
+            img.style.animationDuration = "10s";
+            img.style.animationTimingFunction = "linear";
+            img.style.animationIterationCount = "infinite";
+        }
+    </script>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <img onmousedown="Fast()" onmouseup="Slow()" src="../public/images/m4.jpg" width="300" height="300">
+</body>
+</html>
+
+Ex: Mouse Move
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SetPosition(e){
+             var flag = document.getElementById("flag");
+             flag.style.position = "fixed";
+             flag.style.left = e.clientX + "px";
+             flag.style.top = e.clientY  + "px";
+        }
+    </script>
+</head>
+<body onmousemove="SetPosition(event)">
+    <div style="height: 1000px;">Move mouse pointer to test.</div>
+    <img id="flag" src="../public/images/flag.gif" width="50" height="50">
+</body>
+</html>
+
+Keyboard Events:
+    onkeyup
+    onkeydown
+    onkeypress
+- Keyup and down are good while handling the characters that user input.
+- Keypress is good while handling the character ASCI code.
+    A = 65, Z = 90
+    a = 97, z = 122
+Ex:
+1. data/users.json
+
+[
+    {
+        "UserId": "john"
+    },
+    {
+        "UserId": "john12"
+    },
+    {
+        "UserId": "john_nit"
+    },
+    {
+        "UserId": "david"
+    }
+]
+
+2. keydemo.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyUser(e){
+            console.log(e.charCode);
+            var userid = document.getElementById("txtId").value;
+            var lblError = document.getElementById("lblError");
+            fetch("../data/users.json")
+            .then(response=>response.json())
+            .then(users=>{
+                 for(var user of users)
+                 {
+                    if(user.UserId===userid) {
+                        lblError.innerHTML = "User Id Taken - Try Another".fontcolor('red');
+                        break;
+                    }  else {
+                        lblError.innerHTML = "User Id Available".fontcolor('green');
+                    }
+                 }
+            })
+        }
+        function VerifyCaps(e) {
+            var passwordError = document.getElementById("passwordError");
+            if(e.which >=65 && e.which <=90) {
+                passwordError.style.display = "block";
+                passwordError.style.color = "gold";
+            } else {
+                passwordError.style.display = "none";
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <h3>Register User</h3>
+    <dl>
+        <dt>User Id</dt>
+        <dd><input type="text" onkeyup="VerifyUser(event)" id="txtId"></dd>
+        <dd id="lblError"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" onkeypress="VerifyCaps(event)" id="txtPwd"></dd>
+        <dd id="passwordError" style="display: none;">
+            <span class="bi bi-exclamation-triangle-fill"> Warning : Caps ON </span>
+        </dd>
+    </dl>
+</body>
+</html>
+
+Button Events:
+    onclick
+    ondblclick
+    oncontextmenu
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function OpenImage(){
+            window.open('../public/images/kids-fashion.jpg', 'Kids', 'width=400 height=500');
+        }
+    </script>
+</head>
+<body>
+    <img ondblclick="OpenImage()" src="../public/images/kids-fashion.jpg" width="100" height="100">
+    <p>double click to view large</p>
+</body>
+</html>

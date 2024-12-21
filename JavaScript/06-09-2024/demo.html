@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function LoadPage(){
+            // Number 1 Example
+            // window.document.images[0].src="./public/Images/women.jpg";
+            // window.document.forms[0].elements[1].value="Register";
+            // window.document.forms[1].elements[2].value="Login";
+
+            // Number 2 Example
+            // poster.src="./public/Images/men.jpg";
+            // frmRegister.btnRegister.value="Register";
+            // frmLogin.btnLogin.value="Login";
+
+            // Number 3 Example
+            // document.getElementById("poster").src="./public/Images/kids.jpg";
+            // document.getElementById("btnRegister").value="Register";
+            // document.getElementById("btnLogin").value="Login";
+
+            // Number 4 Example
+            document.querySelector("img").src="./public/Images/a1.png";
+            document.querySelector("#btnRegister").value="Register";
+            document.querySelector(".btn").value="Login";
+        }
+    </script>
+</head>
+<body onload="LoadPage()">
+    <div>
+        <img height="200px" width="200px" border="1px" name="poster" id="poster">
+    </div>
+    <div>
+        <form action="" name="frmRegister">
+            <h3>Register</h3>
+            <input type="text" placeholder="Your Mobile"> <input type="email" name="" id="" placeholder="Your Email"> <input type="button" value="" name="btnRegister" id="btnRegister">
+        </form>
+    </div>
+    <div>
+        <form action="" name="frmLogin">
+            <h3>Login</h3>
+            <input type="text" name="" id="" placeholder="User ID">
+            <input type="password" name="" id="" placeholder="Password">
+            <input type="button" value="" name="btnLogin" id="btnLogin" class="btn">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function create(){
+            folderName = document.getElementById("text").value;
+        if(folderName==""){
+            alert("Folder name is required");
+        }
+        else{
+            document.querySelector("p").innerHTML += "Folder Create: " +folderName+ "<br>";
+            document.getElementById("text").value = "";
+        }
+        }
+    </script>
+</head>
+<body>
+   <input type="text" id="text"> <button type="button" onclick="create()">Create Folder</button>
+   <p></p>
+</body>
+</html>

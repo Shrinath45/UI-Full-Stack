@@ -1,0 +1,93 @@
+                                JavaScript Fetch Promise
+        
+Issues with XML HttpRequest:
+
+- It is synchronus implicitly.
+- You have to configure explicit asynchronus.
+- It return response in text format.
+- Response in text is not safe, can be infected with virus.
+- Explicit conversions are required.
+
+
+Solution:
+
+- JavaScript ES5+ versions provides Promise function.
+- Promise is async implicitly.[internally it is asynchronus]
+- I treturns the data in binary format.
+- It is easy to transport data in network.
+- However it also requires explicit conversions.
+- It is better in error handling.
+
+Syntax:
+        fetch("path").then(function(response){}).catch(function(error){}).finally(function(){})
+
+- "fetch()" is a method of browser "window" object.
+- response is the data accessed from specified path.
+
+            then()      executes on success
+            catch()     executes on failure
+            finally()   executes always
+
+EX:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoadClick(){
+             fetch("../public/data/help.txt")
+             .then(function(response){
+                return response.text();
+             })
+             .then(function(data){
+                document.querySelector("pre").innerHTML = data;
+             })
+             .catch(function(error){
+                console.log(error);
+             })
+             .finally(function(){
+                console.log("Request Completed.")
+             })
+
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="LoadClick()">Load Ajax Help</button>
+    <br>
+    <div>
+        <pre>
+
+        </pre>
+    </div>
+</body>
+</html>
+
+
+
+                                        Fakestore API
+                                        ("https://fakestoreapi.com")
+
+- It provides data for ERP[Enterprise Resource Planning], which is online shopping business.
+
+Request Methods:
+
+GET         /products           returns all products data. [{}, {}]
+GET         /products/1         return specific product details. {}
+GET         /products/categories    returns all categories. [""]
+GET         /products/category/jewelery     returns specific category products. [{}, {}]
+
+EX:https://fakestoreapi.com/categories
+
+        {
+            id: 0,
+            title: '',
+            image: '',
+            price: '',
+            category: '',
+            rating: {rate:0, count:0},
+            description: ''
+        }

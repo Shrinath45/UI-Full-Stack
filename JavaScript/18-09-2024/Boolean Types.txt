@@ -1,0 +1,104 @@
+                                    Boolean Type
+
+- Boolean are used in decision making.
+- Javascript booleans are defined with "true or false".
+- Javascript boolean expression can be handle by using "0" or "1" as values
+        0 = false
+        1 = true
+
+    Syntax:
+            var x = true;
+
+            if(x==1){
+                            // not good
+            }
+            if(x==true){
+                            // good
+            }
+    EX:
+    <script>
+    var stock = true;
+    if(stock == 1){
+        document.write("Available");
+    }
+    else{
+        document.write("Not Available");
+    }
+    </script>
+
+- Boolean values control by using "decision making & logical operators".
+
+Decision Making Operators:
+         
+         ==         equal
+         ===        identical equal
+         !=         not equal
+         !==        not identical equal
+         >          Greater Than
+         <          Less Than
+         >=         Greater Than or Equal to
+         <=         Less Than or Equal to
+
+FAQ:    What is difference between "==" & "==="?
+Ans:    "==" can compare values of different data types.
+        "===" can compare values of only same data type.
+
+        Syntax:
+                10=="10"        //true
+                10==="10"       //false
+                10===10         //true
+                "10"==="10"     //true
+
+Logical Operators:
+
+            &&      AND
+            ||      OR
+            !       NOT
+
+            Syntax:
+                    (condition1) && (condition2)        // true if both conditions are true. otherwise false
+                    (condition1) || (condition2)        // true if any one condition is true.
+                    !true                               // false
+                    !false                              //true
+
+Ternary Operators:[? :]
+
+    (condition) ? true:false
+
+    Syntax:
+            your_condition ? statement_on_true : statement_on_false
+
+            if(condition){
+                statement on true;
+            }
+            else{
+                statement on false;
+            }
+
+- Decision making in programming requires boolean types and selection statements.
+- Selection Statement Keywords are:
+
+        "if, else, switch, case, default"
+
+The "IF" Statement:
+
+    - It is a decision making statement used to control the flow of execution in a program.
+    - It have several forms
+
+        a) Forward Jump
+        b) Simple Decision
+        c) Multi Level
+        d) Multiple
+
+    A) Forward Jump:
+        - It is the decision making approach where the statements are executed only when condition evaluates to true.
+        - It will not provide any alternative progress.
+
+        Syntax:
+                if(condition){
+                    statement on true;
+                }
+
+    
+
+   

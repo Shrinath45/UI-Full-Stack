@@ -1,0 +1,66 @@
+2. Simple Decision
+
+- It is a Decision making approach that provides one alternative when condition evaluates to false.
+- It is define by using "else" clause.
+
+    Syntax:
+            if(condition){
+                statement on true;
+            }
+            else
+            {
+                statement on false;
+            }
+
+3. Multi Level Decision Making:
+
+- It is a decision making approach where every condition is individually handled.
+- It allows to track the exact issue in functionality and report the issue.
+- It also implements a "Forward Jump" approach where it moves to next condition only when the previous evaluates to true.
+
+    Syntax:
+            if(condition-1){
+                if(condition-2){
+                    statement if all conditions evaluate to true;
+                }
+                else{
+                    statements if condition-2 false;
+                }
+            }
+            else{
+                statement on condition-1 false;
+            }
+    
+    EX:
+
+
+
+4. Multiple Choices:
+    
+- It is a programming approach of providing multiple alternatives for same task.
+- Every alternative have its own statements to handle.
+- 
+
+    Syntax:
+            if(condition-1){
+                statement on condition-1 true;
+            }
+            else if(condition-2){
+                statement on condition-2 true;
+            }
+            else{
+                statement on both conditions false;
+            }
+
+Note: Configuring multiple Choices is a load for compiler if there are many conditions to check.
+        Compiler checks all the conditions until the given is satisfied. It will delay the process and increases the compile time.
+
+To Debug:
+
+1. Right Click in browser.
+2. Select Inspect.
+3. Go to "Sources" category.
+4. Select HTML page from sources.
+5. Click at specific line number to set a "break-point".
+6. Reload the page to start compiling in debug mode.
+7. use "F10" function key [fn + f10] to move to next step.

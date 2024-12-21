@@ -1,0 +1,371 @@
+Mouse events
+Keyboard events
+Button events
+Clipboard events
+Form events
+Element state events
+        onfocus
+        onblur
+        onchange
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Focus(){
+            document.getElementById("msg").innerHTML = "Name in Block Letters Only".fontcolor('red');
+        }
+        function Blur(){
+            var username = document.getElementById("txtName").value;
+            document.getElementById("txtName").value = username.toUpperCase();
+            document.getElementById("msg").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" onblur="Blur()" onfocus="Focus()" id="txtName"></dd>
+        <dd id="msg"></dd>
+    </dl>
+</body>
+</html>
+
+Timer Events
+    setTimeout()
+    clearTimeout()
+    setInterval()
+    clearInterval()
+
+Touch Events
+    ontouchstart
+    ontouchend
+    ontoutchmove
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function GetDetails(msg) {
+            document.querySelector("h1").innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <img ontouchstart="GetDetails('30% OFF on Women Clothing')" src="../public/images/women-fashion.jpg" width="200" height="200">
+    <img ontouchstart="GetDetails('50% OFF on Men Fashion wear')" src="../public/images/men-fashion.jpg" width="200" height="200">
+    <img ontouchstart="GetDetails('Sales on Kids Fashion - 90% OFF')" src="../public/images/kids-fashion.jpg" width="200" height="200">
+    <h1></h1>
+</body>
+</html>
+
+                  State Management
+- Web application uses "http" as protocol.
+- Protocol define set of rules for communication in a network.
+- "Http" is a state less protocol.
+- It can't remember information between requests.
+- State less nature of "Http" is an advantage for server, as it can manage its memory by cleaning up the page memory after use.
+- State less nature is not good for user, as it can't remember and use the information of one page in another.
+- Hence every web application requires some state management techniques to store the data
+  and use across requests.
+- JavaScript based applications can manage state by using
+    a) Query String
+    b) Session Storage
+    c) Local Storage
+    d) Cookies
+- State can be managed
+    a) Server side
+    b) Client side
+- Server side state allocates memory on server, so that you can store data and access from any device.
+- Client side state allocates memory on client  devices, which is accessbile only on that device.
+- JavaScript uses client side state management techniques.
+
+Query String:
+- It appends data into URL and keeps in address bar.
+- You can access the data from any page by using "location.search".
+- It is appended into URL by using "?" and "&".
+
+    page.html?key=value&key=value
+
+- It is not safe.
+- It is easy to hack.
+- It is stored in browser logs.
+- It can be bookmarked.
+- It can't handle complex data, which is binary data.
+- It have limit max 2048 chars.
+- It is temporary.
+
+Ex:
+1. login.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./welcome.html">
+        <h2>Login</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" name="UserName"></dd>
+        </dl>
+        <button>Login</button>
+    </form>
+</body>
+</html>
+
+2. welcome.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+            var span = document.createElement("span");
+            span.innerHTML = location.search.slice(location.search.indexOf("=")+1);
+            document.querySelector("h2").appendChild(span);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2> Welcome </h2>
+</body>
+</html>
+
+Session Storage:
+- It allocates memory in browser.
+- You can access from any page in the browser.
+- But it is not accessbile from another tab.
+- It is removed when browser is closed.
+- It is temporary.
+
+Syntax:
+    sessionStorage.setItem(key, value);
+    sessionStorage.getItem(key)
+    sessionStorage.removeItem(key)
+    sessionStorage.clear()
+
+Ex:
+1. Login.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick(){
+            var userName = document.getElementById("txtName").value;
+            sessionStorage.setItem("username", userName);
+            location.href = "./welcome.html";
+        }
+    </script>
+</head>
+<body>
+   
+        <h2>Login</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" id="txtName"></dd>
+        </dl>
+        <button onclick="LoginClick()">Login</button>
+   
+</body>
+</html>
+
+2. welcome.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function SessionEnd(){
+            alert('Your session Timed out - Please relogin');
+            sessionStorage.removeItem("username");
+            location.href="./login.html";
+
+        }
+
+        function bodyload(){
+           
+            if(sessionStorage.getItem("username")===null) {
+                 location.href = "./login.html";
+            } else {
+                document.getElementById("user").innerHTML = sessionStorage.getItem("username");
+                setTimeout(SessionEnd, 10000);
+            }
+           
+        }
+        function SignoutClick(){
+            sessionStorage.removeItem("username");
+            location.href = "./login.html";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2> Welcome <span id="user"></span> <button onclick="SignoutClick()">Signout</button> </h2>
+</body>
+</html>
+
+
+Local Storage:
+- It is permanent storage.
+- It is accessible across tabs.
+- It is not deleted implicitly.
+- It is accessible from any page in browser.
+- It is kept in client device memory, which is available even after shutdown of device.
+
+Note: Any storage of browser is individual to that browser, you can't access across browsers.
+
+Syntax:
+    localStorage.setItem("key", value)
+    localStorage.getItem("key")
+    localStorage.removeItem("key")
+    localStorage.clear()
+
+Ex:
+1. login.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick(){
+            var userName = document.getElementById("txtName").value;
+            localStorage.setItem("username", userName);
+            location.href = "./welcome.html";
+        }
+    </script>
+</head>
+<body>
+   
+        <h2>Login</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" id="txtName"></dd>
+        </dl>
+        <button onclick="LoginClick()">Login</button>
+   
+</body>
+</html>
+
+2. welcome.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+       
+
+        function bodyload(){
+           
+            if(localStorage.getItem("username")===null) {
+                 location.href = "./login.html";
+            } else {
+                document.getElementById("user").innerHTML = localStorage.getItem("username");
+               
+            }
+           
+        }
+        function SignoutClick(){
+            localStorage.removeItem("username");
+            location.href = "./login.html";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2> Welcome <span id="user"></span> <button onclick="SignoutClick()">Signout</button> </h2>
+</body>
+</html>
+
+Cookies:
+- A cookie is a simple text document.
+- Client details can be stored in a cookie and appended into client memory.
+- Cookie can be temporary or permanent.
+- You can set expiry for cookie.
+- If expiry is not defined then it is temporary, deleted automantically when browser is closed.
+
+Syntax:
+    document.cookie = "cookiename=value;expires=date-time";
+
+Ex:
+1. login.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick(){
+            var userName = document.getElementById("txtName").value;
+            document.cookie = `username=${userName};expires=Thu Oct 26 2024 10:49:41 GMT+0530`;
+            location.href = "./welcome.html";
+        }
+    </script>
+</head>
+<body>
+   
+        <h2>Login</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" id="txtName"></dd>
+        </dl>
+        <button onclick="LoginClick()">Login</button>
+   
+</body>
+</html>
+
+2. welcome.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+       
+
+        function bodyload(){
+           
+          document.getElementById("user").innerHTML = document.cookie.slice(document.cookie.indexOf("=")+1);
+           
+        }
+        function SignoutClick(){
+            document.cookie = "";
+            location.href = "./login.html";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2> Welcome <span id="user"></span> <button onclick="SignoutClick()">Signout</button> </h2>
+</body>
+</html>

@@ -1,0 +1,128 @@
+1. Primitive Types
+
+- Primitive Types are immutable Types.
+- They have a fixed range for value.
+- Range can't change.
+- They are stored in memory stack.
+- Stack uses "Last-in-First-out"[LIFO] mechanism.
+- The value range will be same across devices and browsers.
+- The JavaScript primitive types are
+
+        a) number
+        b) string
+        c) boolean
+        d) null
+        e) undefined
+        f) symbol
+        g) bigint
+    
+    Number Type:
+        - A number in JavaScript can be any one of the following
+
+            Signed Integer              -25
+            Unsigned Integer            25
+            Floating point              34.00
+            Double                      357.546
+            Decimal                     3464.45     [29 Decimal places]
+            Exponent                    2e3         2 x 10^3 = 2000
+            Binary                      0b1010
+            Hexadecimal                 0x5922
+            Octa                        0o756
+            Bigint                      69999393034n
+
+        - Browser can't display numbers exactly as defined, hence to transform number into various formats you can use the methods
+                
+                a) toFixed()
+                b) toLocalString()
+            
+        -"toFixed()" is used to configure the number of fractions to display.
+
+                    var x = 500.00;
+                    document.write(x);      //500
+                    document.write(x.toFixed(2));       //500.00
+            
+        - "toLocalString()" can display the number in regional format. It comprises of number format according to given region, you can customize the region.
+
+                        var x = 500000.00;
+                        x.toLocalString();          // 5,00,000
+                        x.toLocalString('en-us');   //500,000
+                        x.toLocalString('en-in',{style:"currency", currency:"INR"}); 
+
+        - JavaScript reads number value from any input as a numeric string.
+        - You can't perform any numeric operations on numeric string.
+        - It requires converting of numeric string into number.  
+        - JavaScript Provides the methods
+
+                    a) parseInt()
+                    b) parseFloat()
+
+                    to convert a numeric string into number.
+            
+        - "parseInt()" can convert a numeric string into number, it removes the fractions.
+
+                var x = "22";
+                parseInt(x);
+            
+        -"parseFloat()" can convert a numeric string in Floating point.
+                
+                var x = "43.4";
+                parseFloat(x);
+            
+            EX:
+                <script>
+                'use strict';
+                var age = parseInt(prompt("Enter Your age: "));
+                document.write("Your Age is "+ age + "<br> Next year yoou will be "+ (age+1) );
+
+                </script>
+        
+            - JavaScript Provides "isNaN()" method to find if the given value is number or not.
+            - It is a boolean method that returns "true" if given value is not a number. 
+
+            EX:
+                <script>
+                'use strict';
+                var age = parseInt(prompt("Enter Your age: "));
+                if(isNaN(age)){
+                    document.write("Age must be Number");
+                }
+                else{
+                    document.write("Your Age is: " + age + " <br> Next year your age is: " + (age+1));
+                }
+                </script>
+
+        - JavaScript Provides "typeof" operator to know the data type of value stored in memory.
+        - It returns the data type name
+
+                Syntax:
+                    var x = 30;
+                    typeof x;       // number
+                    x = "30";
+                    typeof x;       // string
+            
+        - JavaScript Provides "Math" object to handle mathematical operations on number.
+        - JavaScript can use arithmatic operators on numbers, however they are not enough to handle all operations. Hence it requires to use Math object.
+
+
+     Arithmatic Operators:
+
+           +       Addition
+           -       Subtraction
+           *       Multiplication
+           /       Division
+           %       Modulus Division
+           **      Exponent
+           ++      Increment
+           --      Decrement
+            
+     Math Functions:
+
+         Math.PI
+         Math.sqrt()
+         Math.pow()
+         Math.sin()
+         Math.round()
+         Math.random()
+         Math.ciel()
+         Math.floor()
+         etc..

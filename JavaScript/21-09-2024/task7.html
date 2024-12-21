@@ -1,0 +1,37 @@
+<script>
+    /*Task-7: Write a function that prints the result by using specific operation on given values.
+
+    function Calculate(a, b, operator)
+    {
+    }
+
+    Calculate(10, 20, add)    // 30
+    Calculate(10, 5, sub)        // 5
+    Calculate(10, 2, mul)        // 20
+    Calculate(10,5, div)        // 2 */
+    
+    function Calculate(a, b, operator){
+        switch(operator){
+            case "add":
+                document.write(`${a} + ${b} = ${a+b} <br>`);
+            break;
+            case "sub":
+                document.write(`${a} - ${b} = ${a-b}<br>`);
+            break;
+            case "mul":
+                document.write(`${a} * ${b} = ${a*b}<br>`);
+            break;
+            case "div":
+                document.write(`${a} / ${b} = ${a/b}<br>`);
+            break;
+            default:
+                document.write("You Entered Wrong Operator");
+            break;
+            
+        }
+    }
+    Calculate(10, 20, "add");
+    Calculate(10, 20, "sub");
+    Calculate(10, 20, "mul");
+    Calculate(10, 20, "div");
+</script>

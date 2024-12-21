@@ -1,0 +1,104 @@
+                            String Type
+
+
+- String is a literal with group of characters enclosed in
+
+            a) Double Quote             " "
+            b) Single Quote             '  '
+            c) Backtick                 `  `
+
+- String characters include alpha numeric and special characters.
+- Double and Single quotes are used to switch between outer and inner string.
+
+    Syntax:
+            "outer 'inner string' string"
+            'outer "inner string" string'
+    
+    EX:
+    <script>
+    var link = "<a href = 'home.html'>Home</a><br>";
+    var link2 = '<a href = "home.html">Home</a><br>';
+    document.write(link);
+    document.write(link2);
+    </script>
+
+- Double and Single quote can bind any dynamic value using "+" operator.
+
+    Syntax:
+            "string" + dynamic + "string"
+    
+    EX:
+    <script>
+    var  username = prompt("Enter UserName");
+    var  age = parseInt(prompt("Enter Age"));
+
+    var msg = "Hello !"+ "&nbsp" + username + "&nbsp" + "Your Age is " +"&nbsp" + age + "&nbsp"+" You will be "+ "&nbsp"+ (age +1) + "&nbsp" + " next year"; 
+    document.write(msg);
+    </script>
+
+- JavaScript ES5+ version introduces backtick for string, which allows a data binding expression "${}" to bind dynamic values.
+
+        Syntax:
+                `string ${dynamic} string`
+
+        EX:
+        <script>
+        var  username = prompt("Enter UserName");
+        var  age = parseInt(prompt("Enter Age"));
+        var msg2 = `Hello ! ${username} your age is ${age}. You will be ${age+1} next year.`  
+        document.write(msg2);
+        </script>
+
+        EX;
+        <script>
+        var title = prompt("Enter Title");
+        var buttonText = prompt("Enter Button Text");
+        var  component = " <h2>" + title + "</h2> <button>" + buttonText + "</button>";
+        var component2 = `<h2>${title}</h2> <button>${buttonText}</button>`;
+        document.write(component);
+        document.write(component2);
+        </script>
+
+
+- String can handle various characters, however some characters defined in a string are not printable.
+- You can print non-printable characters by using "\". It is known escape sequence character.
+
+    Syntax:
+        var path = "D:\\Images\\pic.jpg";        => D:\Images\pic.jpg
+        var path = "D:\Images\pic.jpg";        => D:Imagespic.jpg
+
+- JavaScript Provides various methods to format and manipulate string.
+- String formatting methods are:
+
+        bold()
+        italics()
+        sup()
+        sub()
+        fontSize()
+        fontColor()
+        toUpperCase()
+        toLowerCase()
+        etc....
+
+    EX:
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function ChangeCase(){
+                var UserName = document.getElementById("txtName").value;
+                document.getElementById("txtName").value = UserName.toUpperCase();
+            }
+        </script>
+    </head>
+<   body>
+        <dl>
+            <dt>UserName</dt>
+            <dd><input type="text" onblur="ChangeCase()" id="txtName" placeholder="Name in Block Letters"></dd>
+        </dl>
+    </body>
+    </html>

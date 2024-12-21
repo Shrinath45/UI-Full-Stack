@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verifyCode(){
+            var code = document.getElementById("txtCode").value;
+            var error = document.getElementById("error");
+
+            if(code.charAt(0)=="S"){
+                error.innerHTML = " ";
+            }
+            else{
+                error.innerHTML = "Code Must start with S".fontcolor('red');
+            }
+        }
+        function verifyName(){
+            var username = document.getElementById("userName").value;
+            var firstCharCode = username.charCodeAt(0);
+            var name = document.getElementById("name");
+
+            console.log(username.charCodeAt(0));
+
+            if(firstCharCode >= 65 && firstCharCode <= 90){
+                name.innerHTML = "";
+            }
+            else{
+                name.innerHTML = "Name Must start with uppercase letter".fontcolor('red');
+            }
+        }
+        function verifyEmail(){
+            var email = document.getElementById("email").value;
+            var error_email = document.getElementById("error-email");
+            var atPos = email.indexOf("@");
+            var dotPos = email.indexOf(".");
+
+            if(atPos<3 || (dotPos-atPos)<3){
+                error_email.innerHTML = "Invalid Email".fontcolor('red');
+            }
+            else{
+                error_email.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" id="userName" onblur="verifyName()" placeholder="Start With UpperCase Letter."></dd>
+        <dd id="name"></dd>
+        <dt>IFSC Code</dt>
+        <dd><input type="text" id="txtCode" onblur="verifyCode()"></dd>
+        <dd id="error"></dd>
+        <dt>Email</dt>
+        <dd><input type="text" onblur="verifyEmail()" id="email"></dd>
+        <dd id="error-email"></dd>
+    </dl>
+</body>
+</html>

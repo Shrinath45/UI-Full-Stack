@@ -1,0 +1,137 @@
+Arrow Functions
+- It is a short hand technique of configuring functions.
+
+    function  hello()
+    {
+    }
+
+    var hello = () => {  }
+
+    function Add(a, b)
+    {
+      return  a + b;
+    }
+
+    var Add = (a,b) => a + b;
+
+    ()         function and its parameters
+    =>         function return
+    => { }         function definition
+
+    var hello = userName => `Hello ! ${userName}`;
+    var hello  = (userName) => `Hello ! ${userName}`;
+
+Ex:
+<script>
+     var hello = userName => `Hello ! ${userName}<br>`;
+     var addition = (a,b) => a + b;
+     document.write(hello("John"));
+     document.write(addition(10,40));
+</script>
+
+Ex:
+<script>
+    /*
+     fetch('https://fakestoreapi.com/products&#39;)
+     .then(function(response) {
+          return response.json();
+     })
+     .then(function(products){
+         products.map(function(product){
+             document.write(`<li>${product.title}</li>`);
+         })
+     })
+     */
+     fetch('https://fakestoreapi.com/products&#39;)
+     .then(response => response.json())
+     .then(products=> {
+          products.map(product=> {
+             document.write(`<li>${product.title}</li>`);
+          })
+     })
+</script>
+
+Ex:
+<script>
+     var products = [
+      {Name: "TV", Category:"Electronics"},
+      {Name: "Mobile", Category:"Electronics"},
+      {Name: "Nike Casuals", Category:"Footwear"},
+      {Name: "Jeans", Category:"Fashion"}
+     ]
+     /*
+     var electronics = products.filter(function(product){
+        return product.Category==="Electronics";
+     })
+     */
+    var electronics = products.filter(product=> product.Category==="Electronics");
+    console.log(electronics);
+</script>
+
+Summary
+- Declaration
+- Expression
+- Definition
+- Parameters
+- Rest Parameters
+- Spread Operator
+- Return
+- Anonymous
+- Closure
+- Generator
+- Callback
+- Promise
+- Arrow
+- Recursion
+
+                  JavaScript OOP
+
+- Real world project development uses various programming systems like
+    a) POPS
+    b) OBPS
+    c) OOPS
+
+POPS:
+- Process Oriented Programming System
+- Uses less memory
+- Faster in interactions
+- Can directly interact with hardware services.
+- It supports low level features
+
+Ex: C, Pascal
+
+- Not easy to reuse
+- Not easy to extend
+- Not secured
+- No dynamic memory
+
+OBPS:
+- Object Based Programming System
+- Supports reusability
+- Limited extensibility
+- Dynamic memory
+- Code separation
+
+Ex: JavaScript, Visual Basic
+
+- No dynamic ploymorphism
+- No code level security
+
+OOPS:
+- Object Oriented Programming System
+- Supports Reusability, Extensibility, Separation, Code Level Security.
+- Dynamic Polymorphism
+
+Ex:  C++, Java, C#
+
+- Can't directly interact with hardware services
+- Slow and requires more memory.
+- Complex in operations
+- It is tedious.
+
+Note: JavaScript is not an OOP language, It supports only few features of OOP's.
+
+a) Modules
+b) Classes
+c) Inheritance
+d) Polymorphism

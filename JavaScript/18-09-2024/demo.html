@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        function onsort(){
+            var sortButton = document.getElementById("btnSort");
+
+            sortButton.className = (sortButton.className==="bi bi-sort-alpha-down btn btn-primary")?"bi bi-sort-alpha-up btn btn-success":"bi bi-sort-alpha-down btn btn-primary";
+        }
+        function stockChange(){
+            var stock = document.getElementById("optStock");
+            var label = document.getElementById("lblstock");
+            if(stock===)
+
+        }
+        function question(){
+            var q1 = document.getElementById("q1");
+            var icon = document.getElementById("icon");
+            q1.style.display = (q1.style.display==="block")?"none":"block";
+            icpn.className = (icon.className==="bi bi-plus")?"bi bi-plus":"bi bi-dash";
+
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="mt-4">
+            <button class="btn btn-primary bi bi-sort-alpha-down" id="btnSort" onclick="onsort()"></button>
+        </div>
+
+        <div class="mt-3">
+            <input type="checkbox" onchange="stockChange()" id="optStock"><label id="lblstock">Out of stock</label>
+        </div>
+        
+
+        <div class="mt-4">
+            <button onclick="question()" class="btn btn-dark w-100 d-flex justify-content-between"><span>What is Netflix?</span> <span class="bi bi-plus" id="icon"></span></button>
+            <div class="q1 d-block">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptatem a quaerat placeat ad cupiditate, obcaecati cumque perferendis asperiores ipsum voluptates blanditiis corporis tenetur velit sequi dolorem nesciunt in ullam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptatem a quaerat placeat ad cupiditate, obcaecati cumque perferendis asperiores ipsum voluptates blanditiis corporis tenetur velit sequi dolorem nesciunt in ullam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptatem a quaerat placeat ad cupiditate, obcaecati cumque perferendis asperiores ipsum voluptates blanditiis corporis tenetur velit sequi dolorem nesciunt in ullam.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

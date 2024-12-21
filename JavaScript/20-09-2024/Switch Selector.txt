@@ -1,0 +1,144 @@
+                            Switch Selector
+
+- Switch is used to interrupt the flow of electrons in a circuit.
+- Switches are various typees
+
+        a) push button Switch
+        b) toggle switch
+        c) joy stick switch
+        d) Selector switch etc...
+
+- A Selector switch selects the block that matches the given condition, without interrupting the existing condition.
+
+    Syntax:
+            switch(value/expression){
+                case value / expression:
+                    statements;
+                 jump;
+                
+                default:
+                    statements;
+                jump;
+            }
+
+    EX:
+    <script>
+    var n = parseInt(prompt("Eenter a Number"));
+
+    switch(n)
+    {
+        case 1:
+            document.write("One");
+        break;   
+        case 2:
+            document.write("Two");
+        break;   
+        case 3:
+            document.write("Three");
+        break;   
+        case 4:
+            document.write("Four");
+        break;   
+        default:
+            document.write("Please Enter Value between 1 & 4");
+        break; 
+    }
+    </script>
+
+FAQ's:
+1. Can we define switch without default?
+A. Yes
+
+2. Can we define "default" between or above all cases?
+A. Yes
+
+3. Can we define case without jump statement?[break]
+A. Yes
+
+    EX:
+    <script>
+    var n = parseInt(prompt("Eenter a Number"));
+
+    switch(n)
+    {
+        case 1:
+            document.write("One");
+        break;   
+        case 2:
+            document.write("Two" + "Third is free<br>");
+        case 3:
+            document.write("Three");
+        break;   
+        case 4:
+            document.write("Four");
+        break;   
+        default:
+            document.write("Please Enter Value between 1 & 4");
+        break; 
+    }
+    </script>
+
+4. Can we "return" as jump statement?
+A. Yes
+
+5. What is difference between "break" & "return"?
+A. break-terminates the block but keeps the compiling process alive.
+   return-terminates the block and compiling. It requires a function to handle.
+
+6. What is the type handled by case?
+A. Case type can be 
+    a) Number
+    b) string
+    c) expression [Arithmatic, Logical]
+
+7. How a case handle multiple values for same set of statements?
+A. By using any expression or by configuring multiple values individually.
+
+    Syntax:
+            case 1:
+            case 2:
+            case 3:
+                statements;
+            break;
+    
+    EX:
+    <script>
+   
+    var choice = prompt("Enter a Expression");
+
+    switch(choice){
+        case "y":
+        case "Y":
+            document.write("Yes to Continue");
+        break;
+        case "n":
+        case "N":
+            document.write("No to Return");
+        break;
+        default:
+            document.write("Enter Y or N");
+        break;
+    }
+    </script>
+
+Task: 1 
+- Write a function  "findRange()" that finds if the given value within the specified range.
+        function findRange(value, min, max){
+            //print message
+        }
+         findRange(20, 10, 40);     // your value 20 is in range of 10 to 40.
+         findRange(20, 40, 80);     // your value 20 is not in range of 40 to 80.
+
+Ans: 
+        <script>
+        var value = prompt("Enter value");
+        function findRange(n, min, max){
+            if(value>=min && value<=max){
+                document.write(`Your value ${value} is in range of ${min} to ${max}.fontcolor('green')`);
+            }
+            else{
+                document.write(`Your value ${value} is not in range of ${min} to ${max}.fontcolor('red')`);
+            }
+        }
+        findRange(value, 40, 80);
+</script>

@@ -1,0 +1,19 @@
+<script>
+    function FetchAPI(url, success, failure){
+        if(url==="https:"){
+            function OK(){
+                document.write("Response OK <br>");
+            }
+            OK();
+            success("Response Data form Fakestore");
+        }else{
+            failure("Error: Unable to connect with API");
+        }
+
+    }
+    FetchAPI(prompt("Enter APIL url"), function(Response){
+        document.write(Response);
+    }, function(error){
+        document.write(error);
+    })
+</script>

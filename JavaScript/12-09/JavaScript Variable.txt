@@ -1,0 +1,161 @@
+Const:
+
+- It configures a block scope for variable.
+- It will not allow declaring and assignment.
+- It will allow only initialization.
+- Initialization is mandatory for const.
+- It will not allow shadowing and hoisting.
+
+
+Note:
+        Constant variable can't change its value through assignment, however it can change using re-initialization.
+
+        Syntax:
+            const x;        // invalid [missing initialization]
+            x = 20;         // invalid [assignment not allowed]
+
+            const x = 30;      // valid
+            x = 20;             // invalid
+
+
+
+Global Scope for variable:
+
+    - You can configure global  variable using var, let and const.
+    - Global variable is accessible from any function.
+    - Global scope is module scope.
+
+        demo.js                   
+
+
+        // module
+        function f1(){
+
+        }
+        function f2(){
+
+        }
+
+    - You can define a variable in function and make it global in access.
+    - It is possible using "window" object when javascript is running in browser.
+
+        Syntax:
+                function f1(){
+                    window.n = 35;
+                }
+                function f2(){
+                    document.write(n);
+                }
+
+    EX:
+    <script>
+    'use strict';
+
+    var x = 10;
+    let y = 20;
+    const z = 30;
+    function f1(){
+        window.n = 35;
+        document.write("function 1 => <br> a = " + x + "<br>b = " + y + " <br>c = "+ z + "<br>");
+    }
+    function f2(){       
+        document.write("function 2 => <br> a = " + x + "<br>b = " + y + " <br>c = "+ z + "<br>n =" +n);
+    }
+    f1();
+    f2();
+    </script>
+
+FAQ's:
+    1. What is the result of
+        var x, y, z =10;
+
+            x = undefined
+            y = undefined
+            z = 10
+    Note: If value is not defined into a variable at compile time then it is set to undefined.
+
+    2. What is the result of
+        var x=y=z=10;
+
+        A. If y and z are declared then it assigns 10 for all.
+            In strict mode if y and z are not declared then it is invalid.
+
+    3. What is variable de-structure?
+    A: It is a mechanism of configuring multiple values into multiple references.
+
+        Syntax:
+                var[x,y] = 10;                  //invalid 10 is not iterable
+                var[x,y] = [10];                // valid x = 10, y = undefined
+                var[x,y] = [10, 20];            // valid x = 10, y = 20
+                var[x,y] = [10, 20, 30];        // valid x = 10, y = 20
+
+    4. What is the result of 
+
+            var[x, y];
+            x = 20;
+            y = 30;
+    A: invalid, missing initializer in destructuring declaration;
+
+            var[x, y] = [];         // Valid x = 20, y = 30
+            x = 20;
+            y = 30;
+
+
+    5. What is "[]"?
+    A: it is a meta character used to initialize memory for multiple values.
+
+
+
+
+Variable Naming Rules:
+
+- Variable name must start with an alphabet.
+- You can start with "_" but not recommended to use special chars in variable.
+- It can be alpha numeric, but can't start with number.
+
+        var version1 = 1.1;     //valid
+        var 1version = 1.1;     //invalid
+
+- It is not recommended to use ".", and "special chars" in variable name.
+- It can't have blank spaces, you can use "_" as separator.
+        
+        var sales 2024;         //invalid
+        var sales_2024;         // valid
+        var sales.2024;         //invalid
+        var sales-2024;         //not good
+
+- It can't be a keyword.
+
+        var which;      //invalid
+        var for;        //invalid
+        var while;      //invalid
+
+- A variable name must speak what it is.
+
+        var firstName;
+        var userName;
+        var userAge;
+
+- Always use camel case for naming variables.
+
+
+
+
+                    Data Types
+
+- Data type define the complete data structure.
+- Data structure refers to type of data and behaviour of data in memory.
+- javascript is not strongly typed.
+- It is implicitly typed.
+- The data type of variable will be determined according to value assigned or initialized.
+
+    var x = 10;         // x is number type
+    x = "shri";         // x is transformed into string
+    x = true;           // x is transformed to boolean
+
+    var y;              // y is undefined
+
+- A variable memory can handle 2 types of data
+
+        1. Primitive Types
+        2. Non Primitive Types

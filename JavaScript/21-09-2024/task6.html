@@ -1,0 +1,21 @@
+<script>
+    //Task-6: Check if a triangle is equilateral, scalene, or isosceles
+    //findTriangleType(12,12,12) //"Equilateral triangle."
+    //findTriangleType(20,20,31) //"Isosceles triangle."
+    //findTriangleType(5,4,3) //"Scalene triangle."
+
+    function findTriangleType(a, b, c){
+        if(a===b && b===c){
+            document.write("This is Equilateral Triangle<br>");
+        }
+        else if(a===b && b!==c){
+            document.write("This is Isosceles Triangle<br>");
+        }
+        else{
+            document.write("This is Scalene Triangle<br>");
+        }
+    }
+    findTriangleType(10, 10, 10);
+    findTriangleType(10, 10, 15);
+    findTriangleType(10, 13, 12);
+</script>

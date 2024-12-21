@@ -1,0 +1,137 @@
+                        JavaScript Output Techniques
+
+- Output is the process of rendering content on screen.
+- JavaScript have various rendering methods.
+
+1. Alert():
+
+    - It is a browser window method.
+    - It pops up a message box in browser.
+    - You can display a message or result of any expression.
+    - It will not allow to perfor
+    m any another task until confirmed.
+
+    Syntax:
+        alert("message | expression");
+        alert("welcome");
+        alert(10+20)
+        alert("Addition="+(40+50))
+
+        - It is RC data type, will not allow any formats.
+
+        alert("<b>Hello</b>");     <b>Hello</b>
+
+        - If you want line breaks then you can define by using "\n"
+
+            alert("line-1\nline-2");
+        
+        - It will not allow to cancel, it provides only OK to confirm.
+
+
+2. Confirm():
+    - It is similar to alert, but have option to cancel.
+    - It is a boolean type method
+
+            Ok => is True
+            Cancel => is False
+
+        Syntax:
+            confirm("message | expression");
+
+3. document.write():
+
+    - It renders output on a new screen.
+    - It can render message, expression or markup.
+    - It allows formatted text.
+
+    Syntax:
+        document.write("message | markup | expression");
+
+        document.write("<b><a href='page.html'>Page</a></b>");
+        document.write("Addition=" + (30+40));
+
+4. InnerText & textContent
+
+    - These are the properties and methods that can render output into any HTML container that can display text.
+
+        <p><div><span></span></div></p>
+    
+    - They will not allow complex formats.
+    - They are RC data type.
+
+
+        Syntax:
+            document.querySelector("p").InnerText = "message | expression";
+            document.querySelector("div").textContent = "message | expression";
+
+5. InnerHTML
+
+    - It similar to textContent but allows formats for text.
+    - It can use markup, message and expression.
+
+    Syntax:
+        document.querySelector("p").InnerHTML = "message | expression";
+
+6. OuterHTML:
+
+    - InnerHTML is used to append the current content into target element.
+    - OuterHtml is used to replace the current content with specified new element.
+
+    Syntax:
+        document.querySelector("p").outerHTML = "<h1>Wlecome</h1>";
+
+        It removes the paragraph and replaces with h1
+
+7. Console Methods:
+    
+    - Console is a CLI(Command Line Interface) tool of browser.
+    - Developers can test their commands in console.
+    - Developers used console methods to show content for development environment.
+    - It is not for genaral users, it is only for "developers".
+    - Console methods are various contextual colors.
+
+        console.warn()
+        console.errors()
+        console.debug()
+        console.info()
+        
+        etc....
+
+    Syntax:
+        console.warn("Warning ! are you sure want to delete.)
+    
+    - It will support formats as it can display output in command line.
+    - You have to use "\n" for new line.
+
+
+
+
+                    JavaScript Input Techniques
+
+- A page can accept Input from user in order to process the request and generate a customized response.
+- JavaScript can take input from
+
+        a) Query String
+        b) Prompt()
+        c) Form Input Elements
+
+Query String:
+
+    - A Query String is append into the URL by using "?".
+    - It is a Key and Value collection.
+
+    Syntax:
+        page.html?key=Value
+
+    - You can have multiple keys and values
+
+        page.html ? key=value&kay=value
+    
+    - Key name can be any name and value is always a string.
+    - Query String is accessed by using "location.searcch" property.
+    -"location" is JavaScript object used to access client location details.
+
+    Syntax:
+        queryString = location.searcch;
+        equalPosition = queryString.indexOf("=");
+        value = queryString.slice(equalPosition + 1);

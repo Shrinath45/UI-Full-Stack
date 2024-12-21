@@ -1,0 +1,12 @@
+<script>
+    var n = prompt("Enter value");
+    function findRange(n, min, max){
+        if(n>=min && n<=max){
+            document.write(`Your value ${n} is in range of ${min} to ${max}`.fontcolor('red'));
+        }
+        else{
+            document.write(`Your value ${n} is not in range of ${min} to ${max}`.fontcolor('red'));
+        }
+    }
+    findRange(n, 40, 80);
+</script>

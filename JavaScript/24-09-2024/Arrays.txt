@@ -1,0 +1,136 @@
+Arrays:
+- Reduce Overhead
+- Reduce Complexity
+- JS Array can handle various types of data.
+- JS Array size can change dynamically.
+
+Configuring Array
+1. Declared
+2. Assigning or Initializing Memory
+
+
+Memory
+1. Array Constructor
+2. Array Meta Character
+
+FAQ: What is difference between array Constructor & array meta Character?
+    new Array()
+    []
+Ans: Array Constructor uses dynamic memory.
+    Array meta Character [] uses static memory.
+
+FAQ: What is difference between dynamic and static memory.
+ANs: Static memory is continous memory, it is allocated for first request and used across multiple requests.
+    Dynamic memory is discreet memory. It is newly allocated for every request.
+
+    Syntax:
+            var values = new Array();
+            var values = [];
+
+Storing Data into Array:
+
+- Array can handle multiple values.
+- Values are stored in memory with reference of property.
+- Property is a string type that maps to index number.
+
+Syntax:
+        var values = [];
+        values[0] = 10;
+        values["1"] = 20;
+        values["2"] = "A";
+        values[3] = true;
+
+- You can store any type of data into array memory
+    a) Primitive
+    b) Non Primitive
+    c) Function
+
+- If you are Configuring a Function in memory of array, then it must be anonymous.[without name]
+- Anonymous Function is accessed by using IIFE pattern. [Immediately Invoke Function Expression]
+
+        Syntax:
+                var value = [Function(){
+                    document.write("Welcome");
+                }];
+                values[0]();
+
+
+
+                Array Manipulations
+
+1. Length:  It returns the total count of elements in array.
+
+    Syntax:
+            var values = [10, 20, 30];
+            values.Length;      //3
+
+2. Array Destructure:       It allows to separate and store array elements into individual reference.
+
+    Syntax:
+            var values = [10, 20, 30];
+            var [a,, b, c] = values;
+        
+    Syntax: without Destructure;
+         
+         var a = values[0];
+         var b = values[1];
+         var c = values[2];
+
+
+3. Array Spread Operator:       It allows to Spread the values of array into another array.
+                                It is defined bu using "..."
+
+        Syntax:
+                var col1 = [10, 20, 30];
+                 var col2 = [col1];                     // col2 is having 1 elements
+                 var col2 = [...col1];                  // col2 is having 3 elements
+                 var col2 = [col1, 40];                 // col2 is having 2 elements
+                 var col2 = [..col1, 40];               // col2 is having 4 elements
+                 var col2 = [...col1, ...[40, 50]]      // col2 is having 5 elements  
+
+
+4. Reading prperties and values
+
+    toString():     It returns all array elements separated with "," delimeter
+    join():         It returns all elements with custom delimeter.
+
+    Syntax:
+            values.toString();
+            values.join(">");
+
+    
+    EX:
+        <script>
+        var items = ["Home", "Electronics", "Mobiles", "Apple Phones", "Iphone 15"];
+        document.write(items.join(">"));
+        </script>
+
+    map():          It is an iterator used to read and return all elements with index. It can read with reference of memory index hence it is faster.
+    forEach():      It is similar to map but reads the elements directly with index in sequential order.
+
+            Syntax:
+                    collection.map(function(value, index){
+
+                    })
+
+                    collection.forEach(function(value, index){
+                        
+                    })
+            EX: map()
+            <script>
+            var items = ["Home", "Electronics", "Mobiles", "Apple Phones", "iphone 15"];
+
+            items.map(function(items, index){
+                document.write(`<li>[${index}]: ${items}</li>`);
+             })
+            </script>
+
+            EX: forEach()
+            <script>
+            var items = ["Home", "Electronics", "Mobiles", "Apple Phones", "iphone 15"];
+
+            items.forEach(function(items, index){
+                document.write(`<li>[${index}]: ${items}</li>`);
+             })
+            </script>
+

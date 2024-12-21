@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var msg ="";
+        function continueClick(){
+            var userid = document.getElementById("txtId").value;
+            var error = document.getElementById("userError");
+            
+            if(userid==="shrinath45@gmail.com"){
+                msg = `Login Successful With ${userid}`;
+                document.getElementById("userIdContainer").style.display="none";
+                document.getElementById("pwdContainer").style.display="block";
+            }
+            else if(userid==="8459498907"){
+                msg = `Login Successful with ${userid}`;
+                document.getElementById("userIdContainer").style.display="none";
+                document.getElementById("pwdContainer").style.display="block";
+            }
+            else{
+                error.innerHTML = `${userid} doesn't Exist`;
+            }
+        }
+
+        function Login(){
+            var pwd = document.getElementById("txtPassword").value;
+            
+            if(pwd==="Shri45"){
+                document.write(`<h1>${msg}</h1>`);
+            }
+            else{
+                document.getElementById("pwdError").innerHTML = "Invalid Password".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div>
+        <h1>SignIn</h1>
+        <div id="userIdContainer">
+            <label class="form-label fw-bold">Email or Mobile Number</label>
+            <div>
+                <input type="text" id="txtId" class="form-control">
+                <label id="userError" class="text-danger"></label>
+            </div>
+            <div>
+                <button onclick="continueClick()" class="btn btn-warning w-100">Continue</button>
+            </div>
+        </div>
+
+        <div id="pwdContainer" style="display: none;">
+            <label class="form-label fw-bold">Password</label>
+            <div>
+                <input type="password" id="txtPassword" class="form-control">
+                <label id="pwdError" class="text-danger"></label>
+            </div>
+            <div>
+                <button onclick="Login()" class="btn btn-warning w-100">Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

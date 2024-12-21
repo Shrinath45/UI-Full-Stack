@@ -1,0 +1,86 @@
+5. Find and Filter Elements:
+
+    a) Find         : It returns the first occurence Element that matches given condition.
+    b) Filter       : It returns all Elements that matches given condition.
+    c) indexOf()    : It returns the index number of value in collection, if not found then it returns -1.
+
+    Syntax:
+            collection.find(funtion(value){
+                return value condition;
+            })
+
+            collection.filter(funtion(value){
+                return value condition;
+            })
+
+    EX:
+        <script>
+        var collection =  [40000, 20000, 65700, 74000];
+
+        var result = collection.find(function(value){
+            return value>65000;
+        });
+
+        document.write(result);
+        </script>
+
+        <script>
+        var collection =  [40000, 20000, 65700, 74000];
+
+        var result = collection.filter(function(value){
+            return value>65000;
+        });
+
+        document.write(result);
+        </script>
+
+
+6. Sorting Array Elements:
+
+        a) sort()       : It arranges array elements in ascending order.
+        b) reverse()    : It arranges array elements in reverse order.
+
+
+        Syntax:
+                var values = ["B", "D", "A", "C"];
+                values.reverse();       // C, A, D, B
+                values.sort();          // A, B,, C, D
+
+        EX:
+        var collection =  [40000, 20000, 65700, 74000];
+
+        document.write(collection.reverse() + "<br>");
+        document.write(collection.sort());
+
+7. Adding Elements into Array:
+
+    a) push()       : It adds new element(s) as last item(s).
+    b) unshift()    : It adds new element(s) as first item(s).
+    c) splice()     : It can add new item(s) at any specific location.
+
+    Syntax:
+            collection.push("item1", "item2",...);
+            collection.unshift("item1", "item2",...);
+            collection.splice(indexNumber, deleteCount, "item1", "item2",....);
+
+            Note:   deleteCount is always zero when you are Adding items.
+
+    EX:
+        var collection = ["shrinath", "shrikant"];
+    collection.push("Avinash");
+    collection.unshift("Dnyanu");
+    collection.splice(1, 0, "Ankita")
+    document.write(collection + "<br>");
+
+8. Removing & Returning array elements
+
+    a) pop()        : It removes and returns the last item.
+    b) shift()      : It removes and returns the first item.
+    c) splica()     : It removes and returns specific item(s);
+    d) slice()      : It returns the items between specified index.
+
+    Syntax:
+            collection.pop();
+            collection.shift();
+            collection.splie(indexNumber, deleteCount);
+            collection.slice(startIndex, endIndex);

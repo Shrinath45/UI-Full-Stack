@@ -1,0 +1,122 @@
+                Object Type
+
+- Object is used to keep all related data and logic together.
+- So that it is easy to reuse the data and logic.
+- "Alan Kay" introduced the concept of Object in early 1960's.
+- Object is a collection of keys and values.
+
+Syntax:
+        var obj = {
+            "key" : value;
+            "key" : value;
+        }
+
+    - Key is string type and value can be any type.
+    - The values are accessed and assigned with reference of key.
+
+    Syntax:
+            obj.key = newValue;
+            console.log(obj.key);
+
+    - If object comprises of only data then it is reffered as "JSON" [JavaScript Object Notation].
+    
+    EX:
+
+
+- Object can contain actions that are defined by using function.
+- JSON can't have actions it can have only data.
+- Actions are defined using key that have the reference of anonymous function.
+
+    {
+        "key": function(){}
+    }
+
+- The function of object can return a value or can be void type.
+- You can access keys in an object by using "this" keyword, which referes to current context.
+- A function is executed with reference of key.
+
+    Syntax:
+            obj.key();
+        
+    EX:
+
+
+
+
+                                Object Manipulations
+
+1. Hoe to access all keys from object?
+Ans: by using "for..in" statement or "Object.keys()" method.
+
+    Syntax:
+            for(var key in object){
+
+            }
+
+            Object.keys(objectname)[].map()
+
+    EX:
+
+
+
+2.How to remove a key?
+
+Ans: by using JS "delete" operator.
+
+Syntax:
+        delete object.key;
+
+
+3. How to verify a key in object?
+A. by using JS "in" operator.
+
+Syntax:
+        "key" in object;    // true/false
+
+
+4. How to know the data type of value in a key?
+A. byn using JS "typeof" operator
+
+Syntax:
+        typeof object[key];     // number, string, boolean
+
+        <script>
+            var product= {
+                ID: 1,
+                Name: "Samsung TV",
+                price: 400000,
+                Stock: true
+            }
+
+            Object.keys(product).map(function(key){
+                document.write(`${key} : ${product[key]} [${typeof product[key]}] <br>`);
+            })
+        </script>
+
+5. How to hide any key in object?
+A. By using "symbol" type.
+    Symbol is a primitive data type of JavaScript.
+    It hides a property over iterations but allows to use individually.
+
+    Syntax:
+            var [id] = Symbol();
+            {
+                [id]: value;
+            }
+
+        <script>
+            var Id = Symbol();
+
+            var product= {
+                [Id]: 1,
+                Name: "Samsung TV",
+                Price: 400000,
+                Stock: true,
+            }
+
+            Object.keys(product).map(function(key){
+                document.write(`${key}:${product[key]} <br>`);
+            })
+
+            document.write(`Product Id: ${product[Id]}`);
+        </script>

@@ -1,0 +1,150 @@
+Arithmetic Operators
+Comparison Operators
+Logical Operators
+Assignment Operators
+Bitwise Operators
+
+
+                    Special Operators
+
+1. Ternary Operator
+- It handle operations of 3 operands.
+- "?:" is the Ternary Operator.
+
+Syntax:
+        (condition)? true : false
+
+2. "delete" Operator
+- It is used to remove any key from object.
+
+Syntax:
+        delete object.key;
+
+3. "in" Operator
+- It verifies the availability of a key in object.
+- It returns true if key is available.
+
+Syntax:
+        "key" in object;        // true - false
+
+4. "new" Operator
+- It is dynamic memory allocating operator.
+- A dynamic memory resets everytime on request
+
+Syntax:
+        var collection = new Array();
+        var now = new Date();
+        var data = new Map();
+
+5. "typeof" Operator
+- It returns the data type of value stored in a reference.
+
+Syntax:
+        typeof referenceName;
+
+6. "instanceof" Operator
+- It returns true if given object is derived from specified class.
+
+Syntax:
+        class Employee{
+
+        }
+        var emp = new Employee();
+
+        "emp" instanceof Student;   // false
+        "emp" instanceof Employee;  / true
+
+
+7. "void" operator
+- It is used to define that the given component will not return any value.
+- "Void" means no return value.
+
+
+
+                            4 types of projects
+
+                            a End to End
+                            b Support
+                            c Rollout
+                            d Upgrade
+
+8. "yield" Operator
+- It is used to yield the result of value returned by an iterator function.
+- Iterator function is technically known as "Generator Function".
+
+
+
+                        JavaScript Statements
+
+- A statement is used to control the execution flow in a program.
+- The statements are classified into
+
+1. Selection Statements
+        if, else, switch, case, default
+
+2. Looping Statements
+        for, while, do while
+
+3. Iteration Statements
+        fir..in, for..of
+
+4. Jump Statements
+        break, continue, return
+
+5. Exception Handling Statements
+        try, catch, throw, finally
+
+
+
+Loop Control Statements:
+-Looping is the process of executing a set of statements repeatedly based on given condition.
+- Loop requires
+
+a) condition
+b) initialization
+c) counter
+
+
+The "for" Loop:
+- It is used by developer when it is sure about the number of iterations and iteration counter will not change dynamically.
+
+Syntax:
+        for(initialization; condition; counter){
+
+        }
+
+        initialization => configures the initial value to start with
+        condition => checks for the value used to continue or terminate the loop.
+        counter => specifies the step of loop. [forward, backward].
+
+
+        Syntax:
+        for(var i = 1; i <= 10; i++){
+                console.log(i);
+        } 
+
+        i++ move one next
+        i-- move one previous
+        i=+2 move two next
+
+EX:
+for values =[10, 30, 50, 40, "A", "B", "C", "D", 60, 70, 80];
+for(){
+        //read and print only alphabet in given collection.
+}
+
+
+EX:
+for(var i=4; i<=7; i++){
+        console.log(values[i]);
+}
+
+Note: You can configure initializer, condition, and counter outside the for parameters.
+
+Syntax:
+<script>
+        var i =5;
+        for(; i<=10; i++){
+                document.write(i + "<br>");
+        }
+</script>

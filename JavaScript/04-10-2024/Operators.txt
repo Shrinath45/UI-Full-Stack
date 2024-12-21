@@ -1,0 +1,182 @@
+Summery
+
+Variables:
+
+
+
+
+Data Types:
+
+Primitive:
+            number
+            string
+            boolean
+            null
+            undefined
+            bigint
+            symbol
+
+Non-Primitive:
+                array
+                object
+                map
+
+Date:
+Timer Events:
+Conditional Statements & COmparison Operators, Logical Operators
+
+
+                                    JavaScript Operators
+                                
+- Operator is an object that comprises of data and logic related to specific expression.
+- Operator stores data in operands and handles manipulation using entities.
+
+    x + y                                               string +  string => string
+                                                        string + number => string
+                                                        string + boolean => string
+
+                                                        string - string => NaN
+                                                        string * string => NaN
+                                                        true + true => number
+
+- Based on the number of operands an Operator can handle, the Operators are classified into
+
+    a) Unary
+    b) Binary
+    c) Ternary
+
+    - Unary Operator handles one operand
+
+        ++    increment
+        --    decrement
+
+        x++     x = x+ 1
+        x--     x= x - 1
+
+        a) Post Increment
+        - It increments the value after assignments.
+                var x = 10;
+                var y = x++;        // x = 11, y = 10
+
+        b) Pre Increment
+        - It assigns the value first and later assigns to reference.
+
+            var x = 10;
+            var y = ++x;        // x= 11, y=11
+
+        c) Post decrement
+
+            var x = 10;
+            var y = x--;        // x=9, y=10
+
+        d) Pre decrement
+
+            var x = 10;
+            var y = --x;        // x = 9, y = 9
+
+        
+    - Binary Operators handle two operands in an expression
+
+    1. Arithmetic Operators
+
+        +
+        -
+        *
+        /
+        %
+        **
+    
+    2. Assignment Operators:
+
+        +=
+        -=
+        *=
+        /=
+        %=
+
+        EX:
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <script>
+                var xPosition = 100;
+                function moveClick(){
+                    xPosition += 10;
+                    document.querySelector("img").style.marginLeft = xPosition + "px"; 
+                }
+            </script>
+        </head>
+        <body>
+            <button onclick="moveClick()">Move Right</button>
+            <br><br>
+            <img src="../public/Images/slide5.png" alt="" height="100" width="100">
+        </body>
+        </html>
+
+
+- Accessing multiple elements in UI is possible with following document mwthods
+
+        document.getElementsByTagName()
+        document.getElementsByName()
+        document.getElementsByClassName()
+
+
+EX:
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            
+            function ApplyCLick(){
+                var count = 0;
+                var courseName ="";
+                document.querySelector("p").innerHTML = "";
+                var courses = document.getElementsByName("course");
+                for(var course of courses){
+                    if(course.checked){
+                        courseName+=course.value + "<br>";
+                        count++;
+                    }
+                }
+                document.querySelector("p").innerHTML = "Selected Course: <br>" + courseName;
+            }
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li><input type="checkbox" name="course" value="Java"><label>Java</label></li>
+            <li><input type="checkbox" value="HTML"name="course"><label>HTML</label></li>
+            <li><input type="checkbox" value="Bootstrap" name="course"><label>Bootstrap</label></li>
+            <li><input type="checkbox" value="CSS" name="course"><label>CSS</label></li>
+            <li><input type="checkbox" value="JavaScript" name="course"><label>JavaScript</label></li>
+            <li><input type="checkbox" value="ReactJS" name="course"><label>ReactJS</label></li>
+        </ul>
+        <button onclick="ApplyCLick()">Apply</button>
+        <p></p>
+    </body>
+    </html>
+
+
+    3. Comparison Operators
+
+        ==
+        ===
+        !=
+        !==
+        >
+        >=
+        <
+        <=
+
+   
+
+
+        
+
+ 

@@ -1,0 +1,76 @@
+            Function Recursion
+
+- It is a technique of calling a Function within the context of same function.
+
+Syntax:
+        function f1(){
+            f1();
+        }
+
+- It is used to create an indefinite loop.
+- It is mostly used for batch operations.
+- Batch operations contains set of actions to perform repeatedly without a loop.
+
+
+
+
+                        Function Callback
+
+- Callback is a technique of configuring a set of functions for parent task.
+- It executes a function according to the state and situation.
+- Callback uses "Synchronous" techniques.
+- It is a blocking mechanism, where it will block all other function while executing the specified.
+- Callback functions are anonymous. [Without name]
+
+Syntax:
+        function Task(callback1, callback2)
+        {
+
+        }
+
+        Task(function(){}, function(){})
+
+    
+                    Function Promise
+
+- A Promise is just like real-world promise that you make to assure any specified task to perform.
+- It have 3 phases
+    a) Initial
+    b) Resolve
+    c) Reject
+
+- Promise is an alternative for callback in JavaScript.
+- Promise comprises of function that execute using "Asynchronous" technique.
+- Async is an unblocking technique the executes all tasks simultaneously at the same time.
+
+Syntax:
+        var task = new Promise(function(resolve, reject){
+            resolve(value);
+            reject(value);
+        })
+
+- Promises execute resolve function with "then()"
+- It executes reject function with "catch()"
+- It executes a function always by using "finally()"
+
+    task.then().then().then()..catch().finally()
+
+
+
+                    Function Generator 
+
+- Generator function is used to design iterators.
+- Iterators is a software design pattern used to access elements from collection in sequential order.
+- Generator implicitly uses various properties and methods to handle a collection.
+
+Syntax:
+        function* Name(){
+            yield value;
+            yield value;
+        }
+
+- Generator moves to next value by using "next()" method.
+- It returns value by using "value" property.
+- It stops when "done" return true.
+
+

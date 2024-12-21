@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function ApplyCLick(){
+            var count = 0;
+            var courseName ="";
+            var totalFee = 0;
+            document.querySelector("p").innerHTML = "";
+            var courses = document.getElementsByName("course");
+            for(var course of courses){
+                if(course.checked){
+                    courseName+=course.value + "<br>";
+                    count++;
+                    totalFee+= parseInt(course.id);
+                }
+            }
+            document.querySelector("p").innerHTML = "Selected Course: <br>" + courseName + "<br> Total Count: " +count + "<br>Total Fee: " + totalFee;
+            
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li><input type="checkbox" onchange="ApplyCLick()" name="course" value="Java" id="5000"> <label>Java</label> </li>
+        <li><input type="checkbox" onchange="ApplyCLick()" value="HTML" name="course" id="5000"> <label>HTML</label> </li>
+        <li><input type="checkbox" onchange="ApplyCLick()" value="Bootstrap" name="course" id="5000"> <label>Bootstrap</label> </li>
+        <li><input type="checkbox" onchange="ApplyCLick()" value="CSS" name="course" id="5000"> <label>CSS</label> </li>
+        <li><input type="checkbox" onchange="ApplyCLick()" value="JavaScript" name="course" id="5000"> <label>JavaScript</label> </li>
+        <li><input type="checkbox" onchange="ApplyCLick()" value="ReactJS" name="course" id="5000"> <label>ReactJS</label> </li>
+    </ul>
+    <button onclick="ApplyCLick()">Apply</button>
+    <p></p>
+</body>
+</html>

@@ -1,0 +1,215 @@
+Timer Events
+- setTimeout()
+- clearTimeout()
+
+setInterval():
+- It loads specified task into memory and releases a copy into process.
+- It repeats the task until removed from memory.
+
+Syntax:
+   setInterval(function(){} , interval);
+
+clearInterval()
+- It removes the task from memory, which is using the time interval.
+- It uses a memory reference name.
+
+Syntax:
+      var thread = setInterval(function(){ }, interval);
+      clearInterval(thread);
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Timer(){
+            var now = new Date();
+            document.querySelector("p").innerHTML = now.toLocaleTimeString();
+        }
+        function bodyload(){
+            setInterval(Timer,1000);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p align="center"></p>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes Fade
+        {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var thread;
+        function LoadClick(){
+            document.getElementById("btnContainer").style.display = "none";
+            document.getElementById("progressContainer").style.display = "block";
+            thread = setInterval(StartProgress,100);
+        }
+        var count = 1;
+        function StartProgress(){
+            count++;
+            document.querySelector("progress").value = count;
+            document.getElementById("lblStatus").innerHTML = `${count} % completed`;
+            if(count===100){
+                document.getElementById("progressContainer").style.display = "none";
+                document.getElementById("imageContainer").style.display = "block";
+                document.querySelector("img").style.animationName = "Fade";
+                document.querySelector("img").style.animationDuration = "5s";
+               
+            }
+        }
+        function PauseClick(){
+            clearInterval(thread);
+            document.getElementById("lblStatus").innerHTML = `${count} % completed <br> [Loading Paused]`;
+        }
+        function PlayClick(){
+            thread = setInterval(StartProgress,100);
+            document.getElementById("lblStatus").innerHTML = `${count} % completed`;
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex align-items-center justify-content-center" style="height:100vh">
+   <div class="text-center">
+        <div id="btnContainer">
+            <button onclick="LoadClick()" class="btn btn-primary">Load Image</button>
+        </div>
+        <div id="progressContainer" style="display: none;">
+            <progress min="1" max="100" value="1" style="width:400px; height:30px"></progress>
+            <div id="lblStatus"></div>
+            <div class="my-2">
+                <button onclick="PauseClick()" class="btn btn-warning bi bi-pause me-2"></button>
+                <button onclick="PlayClick()" class="btn btn-success bi bi-play"></button>
+            </div>
+        </div>
+        <div id="imageContainer" style="display: none;">
+            <img src="../public/images/women-fashion.jpg" width="400" height="400">
+        </div>
+   </div>
+</body>
+</html>
+
+Ex: Slide Show
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes Slide
+        {
+            from {
+                transform: translateX(120%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+
+        function LoadProductAuto(){
+            count++;
+            document.getElementById("seekBar").value = count;
+            fetch(`https://fakestoreapi.com/products/${count}`)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(product){
+                document.getElementById("lblTitle").innerHTML = product.title;
+                document.getElementById("imgProduct").src = product.image;
+            })
+        }
+
+        function LoadProduct(id){
+            fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(product){
+                document.getElementById("lblTitle").innerHTML = product.title;
+                document.getElementById("imgProduct").src = product.image;
+            })
+        }
+        var count = 1;
+        function NextClick(){
+            document.getElementById("imgProduct").style.animationName = "Slide";
+            document.getElementById("imgProduct").style.animationDuration = "2s";
+            count++;
+            document.getElementById("seekBar").value = count;
+            LoadProduct(count);
+        }
+        function PrevClick(){
+            count--;
+            document.getElementById("seekBar").value = count;
+            LoadProduct(count);
+        }
+        function SeekbarChange(){
+            var seekValue = document.getElementById("seekBar").value;
+            LoadProduct(seekValue);
+        }
+
+        var thread;
+        function PlayClick(){
+            thread = setInterval(LoadProductAuto,3000);
+            document.getElementById("lblStatus").innerHTML = "[Slide Show - Running]";
+        }
+        function PauseClick(){
+            clearInterval(thread);
+            document.getElementById("lblStatus").innerHTML = "[Slide Show - Paused]";
+        }
+    </script>
+</head>
+<body onload="LoadProduct(1)" class="container-fluid d-flex justify-content-center">
+    <div class="mt-4 card p-2 w-50">
+        <div class="card-header text-center" style="height: 80px;">
+            <div id="lblTitle"></div>
+            <div id="lblStatus"></div>
+        </div>
+        <div class="card-body overflow-hidden">
+            <div class="row">
+                <div class="col-1 d-flex flex-column justify-content-center align-items-center">
+                    <button onclick="PrevClick()" class="bi bi-chevron-left btn btn-dark"></button>
+                </div>
+                <div class="col-10 overflow-hidden">
+                    <img width="100%" id="imgProduct" height="400">
+                </div>
+                <div class="col-1 d-flex flex-column justify-content-center align-items-center">
+                    <button onclick="NextClick()" class="bi bi-chevron-right btn btn-dark"></button>
+                </div>
+            </div>
+            <div class="mt-2">
+                <input id="seekBar" onchange="SeekbarChange()" type="range" class="form-range w-100" min="1" max="20" value="1">
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button onclick="PlayClick()" class="btn btn-primary bi bi-play"></button>
+            <button onclick="PauseClick()" class="btn btn-warning ms-2 bi bi-pause"></button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- <script>
+    var password = prompt("Enter Password: ");
+
+    var result ;
+
+    if(password ==="admin"){
+        result = function(){
+            document.write("Login Success");
+        }
+    }else{
+        result = function(){
+            document.write("Invalid Password");
+        }
+    }
+    result();
+</script>-->
+
+
+<!-- <script>
+    function PrintCollection(collection){
+        collection.map(function(value, key){
+            document.write(`[${key}] [${value}]<br>` );
+        })
+
+        for(var key in collection){
+            document.write(`[${key}] [${value} ]<br>`);
+        }
+    }
+    PrintCollection(["A", "B", "C"]);
+</script> -->
+
+
+<!-- <script>
+    // Program to print the str in sentence case [first letter capital]
+    function SentenceCase(str){
+        document.write(`${str.charAt(0).toUpperCase()}${str.slice(1).toLowerCase()}`);
+    }
+    SentenceCase("welcome to javascript");
+</script> -->
+
+<script>
+    // Program to print the str every first letter capital
+    function TitleCase(str){
+        var words = str.split(' ');
+        words.map(function(word){
+            console.log(word.charAt(0).toUpperCase()+word.slice(1).toLowerCase());
+        })
+        words.join(function(word){
+            console.log(word);
+        })
+    }
+    TitleCase("welcome to javascript");
+</script>

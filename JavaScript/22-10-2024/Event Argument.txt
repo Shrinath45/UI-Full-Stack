@@ -1,0 +1,289 @@
+1. What is Event?
+2. What is Event Handler?
+3. What is Event Listener?
+
+FAQ: What are event arguments?
+Ans: Event arguments refers to "payload" of event.
+        Payload contains information about the element and event.
+        Event handler can have
+    a) Default Arguments
+    b) Custom Arguments
+
+FAQ: What are Default Arguments?
+Ans:  The default event arguments include
+    a) this
+    b) event
+          - "this" comprises of information about element, which includes details like id, name, class,
+             width, height, src, href, etc.
+          - "event" comprises of information about event, which includes details like clientX, clientY,
+              shiftKey, ctrlKey, altKey etc.
+
+Syntax:
+    <button onclick="InsertClick(this, event)">  
+
+    function  InsertClick(obj, e)
+    {
+       obj.id, obj.name, obj.value, ...
+       e.clientX, e.clientY, e.ctrlKey ..
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Database(obj, e){
+            document.write(`Button Id : ${obj.id}<br>Button Value: ${obj.value}<br>X Position:${e.clientX}<br>Ctrl Key: ${e.ctrlKey}`);
+        }
+    </script>
+</head>
+<body>
+    <button id="btnInsert" value="Insert" onclick="Database(this, event)">Insert</button>
+    <button id="btnUpdate" value="Update" onclick="Database(this, event)">Update</button>
+    <button id="btnDelete" value="Delete" onclick="Database(this, event)">Delete</button>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Database(val){
+            switch(val)
+            {
+                case "Insert":
+                document.write("Record Inserted");
+                break;
+                case "Update":
+                document.write("Record updated successfully..");
+                break;
+                case "Delete":
+                document.write("Record Deleted..");
+            }
+        }
+        function ImageClick(e){
+            if((e.clientX>=166 && e.clientX<=327) && (e.clientY>=40 && e.clientY<=80)){
+                document.getElementById("msg").innerHTML  = `Hat Price : 700/-`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <img onclick="ImageClick(event)" src="../public/images/women-fashion.jpg" width="500" height="400">
+    <p id="msg"></p>
+    <button id="btnInsert" value="Insert" onclick="Database(this.value)">Insert</button>
+    <button id="btnUpdate" value="Update" onclick="Database(this.value)">Update</button>
+    <button id="btnDelete" value="Delete" onclick="Database(this.value)">Delete</button>
+</body>
+</html>
+
+FAQ: How arguments are defined in Event Listener?
+Ans:  Event Listener function can use only one default argument that refers to "event".
+         However event in listener can access both element and event details.
+
+Syntax:
+       btn.addEventListener("click", function(e) {
+    e.clientX, e.clientY, e.ctrlKey, e.shiftKey ...
+    e.target.id, e.target.value, e.target.name, e.target.className ...
+      });
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+             var btn = document.createElement("button");
+             btn.innerHTML = "Insert";
+             btn.value = "Insert";
+             btn.className = "btn btn-primary";
+             btn.addEventListener("click",(e)=>{
+                 document.write(`X Position : ${e.clientX}<br>Button Value : ${e.target.value}`)
+             })
+             document.querySelector("body").appendChild(btn);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+   
+</body>
+</html>
+
+FAQ: What are custom arguments?
+Ans:  You can pass custom data into a function that is subscribed to specific element.
+          You can define any type of data
+    a) Primitive
+    b) Non Primitive
+          You can use custom arguments along with default arguments.
+          You can't define custom arguments in event listener.
+
+Syntax:
+    <button onclick="InsertClick(1, "TV", true, ['delhi', 'hyd'])">
+
+    function InsertClick(id, name, stock, cities)
+    {
+    }
+        (or)
+    function InsertClick(...details)
+    {
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function InsertClick(...details){
+            var [obj, e, id, name, price, stock, cities, rating] = details;
+            document.write(`button id : ${obj.id}<br>X Position: ${e.clientX}<br> Name : ${name}<br> Price : ${price}<br>Cities : ${cities}<br>Rating : ${rating.rate}`);
+        }
+    </script>
+</head>
+<body>
+    <button id="btnInsert" value="Insert" onclick="InsertClick(this, event, 101, 'Samsung TV', 56000.44, true, ['Delhi', 'Hyd'], {rate:4.3})">Insert</button>
+</body>
+</html>
+
+FAQ: What is Event Propagation? How to prevent propagation?
+Ans:  Propagation is a technique of executing the parent event when ever the child element
+         triggers its event. The chid event may propagate to the parent.
+         You can prevent propagation by using the event argument method "stopPropagation()".
+
+Syntax:
+    function childEvent(e)
+    {
+       e.stopPropagation();
+    }
+   
+    <button onclick="childEvent(event)">
+
+EX:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border:2px solid black;
+            background-color: black;
+            color:white;
+        }
+    </style>
+    <script>
+        function NavClick(){
+            alert('Navbar Clicked');
+        }
+        function SearchClick(e){
+         
+            alert('Search Clicked');
+        }
+    </script>
+</head>
+<body>
+    <nav onclick="NavClick()">
+        <span>Shopper</span>
+        <button onclick="SearchClick(event)">Search</button>
+    </nav>
+</body>
+</html>
+
+FAQ: What is Event Bubbling?
+Ans:  It is the same technical name for event propagation.
+         A bubble is created for parent and child elements.
+
+FAQ: What is default event and how to stop default?
+Ans: Default event is configured for generic elements in page.      
+        Generic elements have default functionality, which you can disable by using event method
+         "preventDefault()".
+
+Syntax:
+    <form onsubmit="SubmitClick(event)">  </form>
+
+    function SubmitClick(e)
+    {
+     e.preventDefault();
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(e){
+            e.preventDefault();
+            alert('Form Data Submitted to Server');
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="SubmitClick(event)">
+        User name :
+        <input type="text" name="UserName">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+FAQ: How to disable any event?
+Ans: You can disable any event with a function that returns "false" as value.
+
+    oncontextmenu        : rightclick
+    onselectstart        : selection
+    oncut, oncopy, onpaste    : clipboard events
+
+    <input type="text"  onpaste="return false">
+
+Syntax:
+    document.oncontextmenu = function(){
+        return false;
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.oncontextmenu = function(){
+            alert('Right Click Not Allowed');
+            return false;
+        }
+        document.onselectstart = function(){
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Account Number</dt>
+        <dd><input type="text" id="txtAccount"></dd>
+        <dt>Verify Account Number</dt>
+        <dd>
+            <input type="text" onpaste="return false" id="txtVerify">
+        </dd>
+    </dl>
+</body>
+</html>

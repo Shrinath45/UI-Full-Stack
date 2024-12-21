@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoadClick(){
+             fetch("../public/data/help.txt")
+             .then(function(response){
+                return response.text();
+             })
+             .then(function(data){
+                document.querySelector("pre").innerHTML = data;
+             })
+             .catch(function(error){
+                console.log(error);
+             })
+             .finally(function(){
+                console.log("Request Completed.")
+             })
+
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="LoadClick()">Load Ajax Help</button>
+    <br>
+    <div>
+        <pre>
+
+        </pre>
+    </div>
+</body>
+</html>

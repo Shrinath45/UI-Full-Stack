@@ -1,0 +1,307 @@
+Class Members
+- Property
+- Accessor
+- Method
+   
+                    Constructor
+
+- Constructor is a special type of subroutine. [method]
+- It is responsible for instantiation, creating object for class.
+- Every class have a constructor by default.
+- Constructor creates object for class and allows to access the class members with reference of object.
+- JavaScript constructor is configured by using "constructor" keyword.
+- It is anonymous type.
+- Constructor is called implicitly for every object.
+- It is just like other methods in functionality but executes automantically for every object.
+
+Syntax:
+    class  Name
+    {
+       constructor(){
+       }
+    }
+
+- Constructor can be parameter less or parameterized.
+- If constructor is parameterized then the parameters are passed while allocating memory for
+  constructor.
+
+Syntax:
+    class Name
+    {
+        constructor(params) {
+
+         }
+    }
+
+    let obj = new Name(values);
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Database {
+            constructor(dbName){
+                document.write(`Connected with ${dbName} Database<br>`);
+            }
+            Insert(){
+                document.write("Record Inserted");
+            }
+            Delete(){
+                document.write("Record Deleted");
+            }
+            Update(){
+                document.write("Record Updated");
+            }
+        }
+        function InsertClick(){
+            let obj = new Database(document.querySelector("select").value);
+            obj.Insert();
+        }
+        function DeleteClick(){
+            let obj = new Database(document.querySelector("select").value);
+            obj.Delete();
+        }
+        function UpdateClick(){
+            let obj = new Database(document.querySelector("select").value);
+            obj.Update();
+        }
+    </script>
+</head>
+<body>
+    <select>
+        <option>Select Database</option>
+        <option>MySQL</option>
+        <option>Oracle</option>
+        <option>MongoDB</option>
+    </select>
+    <button onclick="InsertClick()">Insert</button>
+    <button onclick="UpdateClick()">Update</button>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html>
+
+            Reusability & Extensibility
+- Reusability is the process of reusing the code without rewriting.
+- Extensibility is the process of extending existing code without disturbing the existing.
+- You can achive reusability & extensibility by using 2 techniques
+    a) Aggregation
+    b) Inheritance
+
+Aggregation:
+- It is the process of accessing members of one class in another class without configuring any relationship between classes.
+- It uses "Object-to-Object" communication.
+- It is often reffered as "Has-A-Relation".
+
+Syntax:
+ class  A
+ {
+     Print(){
+     }
+ }
+ class B
+ {
+     Print(){
+        let obj = new A();
+        obj.Print();
+    }
+}
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class HDFC_Bank_Version_1
+        {
+             Personal = "Personal Banking Services<br>";
+             Print(){
+                document.write(`${this.Personal}`);
+             }
+        }
+        class HDFC_Bank_Version_2
+        {
+             NRI = "NRI Banking Services<br>";
+             Print(){
+                let obj = new HDFC_Bank_Version_1();
+                obj.Print();
+                document.write(`${this.NRI}`);
+             }
+        }
+        class HDFC_Bank_Version_3
+        {
+            Loans = "Personal and Housing Loans<br>";
+            Print(){
+                let obj = new HDFC_Bank_Version_2();
+                obj.Print();
+                document.write(`${this.Loans}`);
+            }
+        }
+
+        function InstallClick(){
+            switch(document.querySelector("select").value)
+            {
+                case "ver1":
+                document.write("<h2>Version-1 Installed</h2>");
+                let obj1 = new HDFC_Bank_Version_1();
+                obj1.Print();
+                break;
+                case "ver2":
+                document.write("<h2>Version-2 Installed</h2>");
+                let obj2 = new HDFC_Bank_Version_2();
+                obj2.Print();
+                break;
+                case "ver3":
+                document.write("<h2>Version-3 Installed</h2>");
+                let obj3 = new HDFC_Bank_Version_3();
+                obj3.Print();
+                break;
+                default:
+                document.write("Please Select a Version");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <h3>Install HDFC Bank App</h3>
+        <dt>Select Version</dt>
+        <dd>
+           <select>
+             <option>Choose Version</option>
+             <option value="ver1">Version-1 [2022]</option>
+             <option value="ver2">Version-2 [2023]</option>
+             <option value="ver3">Version-3 [Latest]</option>
+           </select>
+           <button onclick="InstallClick()">Install</button>
+        </dd>
+    </dl>
+</body>
+</html>
+
+Inheritance:
+- It configures relationship between classess. So that you can access the members of one class in another.
+- A class can extend existing class to access its features.
+- Existing class is known as "Super" class.
+- Newly created class is known as "Derived" class.
+
+Syntax:
+    class A
+    {
+    }
+    class B extends A
+    {
+    }
+
+- Derived class can access super class members by using "super" keyword.
+- The communication is reffered as "Is-A-Relation".
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class HDFC_Bank_Version_1
+        {
+             Personal = "Personal Banking Services<br>";
+             Print(){
+                document.write(`${this.Personal}`);
+             }
+        }
+        class HDFC_Bank_Version_2  extends HDFC_Bank_Version_1
+        {
+             NRI = "NRI Banking Services<br>";
+             Print(){
+                super.Print();
+                document.write(`${this.NRI}`);
+             }
+        }
+        class HDFC_Bank_Version_3 extends HDFC_Bank_Version_2
+        {
+            Loans = "Personal and Housing Loans<br>";
+            Print(){
+                super.Print();
+                document.write(`${this.Loans}`);
+            }
+        }
+
+        function InstallClick(){
+            switch(document.querySelector("select").value)
+            {
+                case "ver1":
+                document.write("<h2>Version-1 Installed</h2>");
+                let obj1 = new HDFC_Bank_Version_1();
+                obj1.Print();
+                break;
+                case "ver2":
+                document.write("<h2>Version-2 Installed</h2>");
+                let obj2 = new HDFC_Bank_Version_2();
+                obj2.Print();
+                break;
+                case "ver3":
+                document.write("<h2>Version-3 Installed</h2>");
+                let obj3 = new HDFC_Bank_Version_3();
+                obj3.Print();
+                break;
+                default:
+                document.write("Please Select a Version");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <h3>Install HDFC Bank App</h3>
+        <dt>Select Version</dt>
+        <dd>
+           <select>
+             <option>Choose Version</option>
+             <option value="ver1">Version-1 [2022]</option>
+             <option value="ver2">Version-2 [2023]</option>
+             <option value="ver3">Version-3 [Latest]</option>
+           </select>
+           <button onclick="InstallClick()">Install</button>
+        </dd>
+    </dl>
+</body>
+</html>
+
+Note: Inheritance rule is to call the super class constructor in derived class.
+          If super constructor is not called in dervied, then inheritance fails. [super()]
+
+Syntax:
+    class Derived extends Super
+    {
+           constructor() {
+               super();
+            }
+    }
+
+EX:
+<script>
+    class Super
+    {
+        constructor(){
+            document.write("Super class constructor <br>");
+        }
+    }
+    class Derived extends Super
+    {
+        constructor(){
+            super();
+            document.write("Derived class constructor");
+        }
+    }
+    let obj = new Derived();
+</script>

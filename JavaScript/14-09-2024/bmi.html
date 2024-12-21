@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function CalculateClick(){
+            var A = parseInt(document.getElementById("txtAge").value);
+            var W = parseInt(document.getElementById("txtWeight").value);
+            var H = parseFloat(document.getElementById("txtHeight").value)/100;
+            var BMI = W / (Math.pow(H, 2));
+            if(BMI > 17 && BMI <= 18.5){
+                document.getElementById("lblBmi").innerHTML = "Your BMI Score is " + BMI.toFixed(1) + " Which is Mild Thinness.";
+            }
+            else if(BMI > 18.5  && BMI <= 25){
+                document.getElementById("lblBmi").innerHTML = "Your BMI Score is " + BMI.toFixed(1) + " Which is Normal.";
+            }
+            else if(BMI > 25  && BMI <= 30){
+                document.getElementById("lblBmi").innerHTML = "Your BMI Score is " + BMI.toFixed(1) + " Which is Overweight.";
+            }
+            else{
+                document.getElementById("lblBmi").innerHTML = "Your BMI Score is " + BMI.toFixed(1) + " Which is Obese Class II.";
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid bg-secondary">
+    <div class="bg-light p-3 m-4 ">
+        <div class="h4 text-center">BMI Calculator</div>
+        <div class="row my-3 mt-5">
+            <div class="col">
+                Age (1 year or above)* <input type="text" size="16" id="txtAge">
+            </div>
+            <div class="col text-center">Height*<input type="text" size="3" id="txtHeight"> cm</div>
+            <div class="col text-center">
+                Weight* <input type="text" size="3" id="txtWeight"> kg
+            </div>
+            
+        </div>
+
+        <div class="row my-4">
+            <div class="col text-start">
+                <button class="btn btn-secondary bg-whitesmoke text-black font-bold" onclick="CalculateClick()">Calculate</button>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col text-center">
+                <div id="lblBmi" class="fs-2"> </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>

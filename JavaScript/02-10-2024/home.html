@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function BodyLoad(){
+            var now = new Date();
+            now.setHours(20);
+            var hrs = now.getHours();
+            var lblTitle = document.getElementById("lblTitle");
+            var pic = document.getElementById("pic");
+            lblTitle.innerHTML = prompt("Enter Your Name");
+
+            if(hrs>=0 && hrs<=12){
+                pic.src = "../public/Images/morning.jpg";
+            }else if(hrs > 12 && hrs<=16){
+                pic.src = "../public/Images/afternoon.jpg";
+            }else{
+                pic.src = "../public/Images/evening.jpg";
+            }
+        }
+    </script>
+</head>
+<body onload="BodyLoad()">
+    <div align="center">
+        <h2 id="lblTitle">
+
+        </h2>
+        <img src=""  height="300" width="300" id="pic">
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,190 @@
+Task-2: Write a function  "findEven()"  to check if the given value is even or odd.
+
+Syntax:
+    function findEven(number)
+    {
+        // condition to print even or odd
+    }
+
+    findEven(4);    // 4 is even number
+    findEven(3)    // 3 is not even number
+
+Ex:
+<script>
+    function findEven(number){
+          if(number%2===0) {
+              document.write(`${number} is Even`);
+          } else {
+            document.write(`${number} is not Even`);
+          }
+    }
+    findEven(5);
+</script>
+
+
+Task-3: Write a function  findGreatest()  to find the largest among given 2 numbers.
+
+    findGreatest(a, b)
+    {    
+        // print the greater number
+    }
+
+
+    findGreatest(10, 2);    //  a=10 is greater than b=2
+    findGreatest(10, 30);    //  b=30 is greater thatn a=10
+
+Ex:
+<script>
+    function findGreatest(a, b)
+    {
+          if(a>b) {
+              document.write(`a=${a} is greater than b=${b}`);
+          } else {
+            document.write(`b=${b} is greater than a=${a}`);
+          }
+    }
+    findGreatest(40, 21);
+</script>
+
+
+Task-4 :  write a function to find greatest among 3 number a , b, c.
+
+    function  findGreatest(a,b,c)
+    {
+    }
+
+    findGreatest(30, 1, 50);    // c=50 is greater than a=30 & b=1
+    findGreatest(30, 23, 10);    // a=30 is greater than b=23 & c=10
+
+Ex:
+<script>
+    function findGreatest(a, b, c)
+    {
+         if(a>b && a>c) {
+
+            document.write(`a=${a} is greater than b=${b} & c=${c}`);
+
+         } else if(b>c){
+            document.write(`b=${b} is greater than a=${a} & c=${c}`);
+         } else {
+            document.write(`c=${c} is greater that a=${a} & b=${b}`);
+         }
+
+    }
+    findGreatest(140, 221, 150);
+</script>
+
+   
+Task-5:  write a function to print grade based on marks
+
+    function printGrade(mark) {
+
+    }
+
+    marks    100 - 200        C
+    marks     201 - 300        B
+    marks    301 >         A
+
+    printGrade(410);        Your grade is A
+    printGrade(150);        Your grade is C
+    printGrade(246);        Your grade is B
+
+Task-6:
+Check if a triangle is equilateral, scalene, or isosceles
+
+    function findTriangleType(side1, side2, side3)
+    {
+
+    }
+
+findTriangleType(12,12,12) //"Equilateral triangle."
+findTriangleType(20,20,31) //"Isosceles triangle."
+findTriangleType(5,4,3) //"Scalene triangle."
+
+
+Task-7: Write a function that prints the result by using specific operation on given values.
+
+    function Calculate(a, b, operator)
+    {
+    }
+
+    Calculate(10, 20, add)    // 30
+    Calculate(10, 5, sub)        // 5
+    Calculate(10, 2, mul)        // 20
+    Calculate(10,5, div)        // 2
+
+Ex:
+<script>
+    function Calculate(a, b, operator) {
+        switch(operator)
+        {
+           case "add":
+           document.write(`a=${a} + b=${b} = ${a+b}`);
+           break;
+           case "sub":
+           document.write(`a - b = ${a-b}`);
+           break;
+           case "mul":
+           document.write(`a * b = ${a*b}`);
+           break;
+           case "div":
+           document.write(`a / b = ${a/b}`);
+           break;
+           
+        }
+    }
+    Calculate(10, 4, prompt("Enter Operator"));
+</script>
+
+
+Task-8: write a function to find if the given char is between "E to M" [uppercase].
+
+    findChar(char)
+    {
+
+    }
+
+    findChar("e");    // "e" is not a char between "E to M"
+    findChar("G");    // "G" is in range of "E to M"
+
+    a) one solution with pattern
+    b) another without pattern
+
+Ex:
+<script>
+      function findChar(char){
+          if(char.charCodeAt(0)>=69 && char.charCodeAt(0)<=77) {
+              document.write(`Your char ${char} is in range of E to M`);
+          } else {
+            document.write(`Your char ${char} is not in range of E to M`);
+          }
+      }  
+      findChar("H");
+</script>
+
+
+Ex:
+<script>
+      function findChar(char){
+            var regExp = /[E-M]/;
+            if(char.match(regExp)) {
+               document.write(`Your char ${char} is in range of E to M`);
+            } else {
+               document.write(`Your char ${char} is not in range of E to M`);
+            }
+      }  
+      findChar("J");
+</script>
+
+
+Task-9:  Write a function to find if the given char is an vowel?
+
+    function findVowel(char)
+    {
+
+    }
+    findVowel(e);        // e is an vowel
+    findVowel(a);        // a is an vowel
+    findVowel(d);        // d is not an vowel
+
+    a, e, i, o , u

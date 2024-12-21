@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function ApplyClick(){
+            var size = document.getElementById("txtSize").value;
+            var color = document.getElementById("txtColor").value;
+            var fontStyle = document.getElementById("lstStyle").value;
+
+            var msg = document.getElementById("msg");
+
+            msg.innerHTML = "Smaple Text".fontsize(size).fontcolor(color);
+
+            if(fontStyle=="Bold"){
+                msg.innerHTML = "Smaple Text".fontsize(size).fontcolor(color).bold();
+            }
+            else{
+                msg.innerHTML = "Smaple Text".fontsize(size).fontcolor(color).italics();
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Font size</dt>
+        <dd><input type="number" id="txtSize" min="1" max="10" value="1"></dd>
+
+        <dt>Font Color</dt>
+        <dd><input type="color" id="txtColor"></dd>
+
+        <dt>Font Style</dt>
+        <dd>
+            <select id="lstStyle">
+                <option value="">Select Type</option>
+                <option value="Bold">Bold</option>
+                <option value="Italic">Italic</option>
+            </select>
+        </dd>
+    </dl>
+
+    <button onclick="ApplyClick()">Apply</button>
+    <br><br>
+
+    <div id="msg">Smaple Text</div>
+
+</body>
+</html>

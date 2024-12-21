@@ -1,0 +1,179 @@
+Looping Control Statements
+for(initialization, condition, counter)
+{
+
+}
+
+EX:
+<script>
+    var str = "Welcome to JavaScript";
+    var count = 0;
+    for(var i=0; i<str.length; i++)
+    {
+       if(str[i]==="S"){
+           count++;
+       }
+    }
+    document.write("S occurred " + count  + " times");
+</script>
+
+Task: Write a program to find total count of vowels in the given string
+
+<script>
+    var str = "welcome to javascript";
+    var count = 0;
+    for(var i = 0; i<str.length; i++){
+        if(str[i]==="a" || str[i]==="e" || str[i]==="i" || str[i]==="o" || str[i]==="u"){
+            count++;
+        }
+    }
+    document.write(`Total count of vowels: ${count}`);
+</script>
+
+Task: write a program to find if the given word is palindrome
+
+<script>
+    // write a program to find if the given word is palindrome
+
+    function findPalindrome(word){
+        word = word.toLowerCase();
+        // Reverse the word and compare it with the original
+        var  reversedWord = word.split('').reverse().join('');
+
+        if(word === reversedWord){
+            document.write("The Given word is Palindrome");
+        }
+        else{
+            document.write("The Given word is Palindrome");
+        }
+        
+    }
+    findPalindrome("mom");
+
+</script>
+
+
+Nested Loops:
+EX:
+<script>
+    var values = [[10, 20, 30], [40, 50, 60]];
+    for(var i = 0; i<values.length; i++){
+        for(var j = 0; j<values[i].length; j++){
+            document.write(values[i][j] + "<br>");
+        }
+        document.write("<br><br>");
+    }
+</script>
+
+EX: write a program to print triangle of stars.
+
+*
+* *
+* * *
+* * * *
+* * * * *
+
+<script>
+    function PrintTriangle(count){
+
+        for(var i=1; i<=count; i++)
+        {
+            for(var j=1; j<=i; j++) {
+                document.write(`<div align="center">* &nbsp; &nbsp;</div`);
+            }
+            document.write("<br>");
+
+        }
+
+    }
+    PrintTriangle(10);
+</script>
+
+
+Task: Write a program to find factorial
+
+<script>
+    // program to find factorial
+
+    function findFactorial(n){
+        var result = 1
+        for(var i = 1; i <= n; i++){
+            result *= i;
+        }
+        return result;
+    }
+    document.write(findFactorial(5));
+</script>
+
+
+
+Note: You can use the jump statements to break and continue the loop.
+    a) break      : It terminates the block
+    b) continue : It skips the counter.
+
+Ex:
+<script>
+   for(var i=1; i<=10; i++) {
+      if(i==5 || i==8){
+         continue;
+      }
+      document.write(i + "<br>");
+   }
+</script>
+
+Ex: Continue
+
+<script>
+    fetch(`https://fakestoreapi.com/products`)
+    .then(function(response){
+       return response.json();
+    })
+    .then(function(products){
+         for(var i=0; i<products.length; i++){
+              if(products[i].category==="jewelery" || products[i].category==="electronics"){
+                 continue;
+              }
+              document.write(`${products[i].title} [<b>${products[i].category}</b>]<br>`);
+         }
+    })
+</script>
+
+The "while" loop:
+- It is a looping control used when developer is not sure about the number of iterations and the counter may change dynamically.
+- It executes the statements only when condition evaluates to true.
+
+Syntax:
+  while(condition)
+  {
+      statements;
+      counter;
+  }
+
+The "do loop"
+- It is a similar to while, but ensures that the statements are executed even when the condition evaluates to false.
+- It ensures that the statements are executed at least once.
+
+Syntax:
+  do {
+      statements;
+      counter;
+  } while(condition);
+
+Ex:
+<script>
+     var i = 1;
+     do {
+        document.write(i + "<br>");
+        i++;
+     } while(i<=10);
+</script>
+
+Task: write a pin verification program
+
+    var pin = prompt("Enter your PIN");
+
+    // write a condition to print card blocked if 3 times pin is wrong.
+    // if any one time out of 3 it is correct the say success.
+   
+    // Your PIN is wrong - 2 more attempts left
+    // Your PIN is wrong - 1 more attempt  left

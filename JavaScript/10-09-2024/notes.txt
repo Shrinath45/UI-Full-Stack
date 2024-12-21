@@ -1,0 +1,57 @@
+Prompt():
+
+- It is a wwindow method of JavaScript.
+- It pops up a input box that allows user to input a value.
+
+Syntax:
+    Prompt("Message", "Default_Value");
+
+- Prompt returns following
+
+    null    :when cancel clicked
+    ""      :when value is null
+    "value" :when value is provided
+
+
+
+Form Input Elements:
+
+- Form input elements include textbox, password, checkbox, radio, dropdown, etc.
+- JavaScript can use DOM methods to access value from form elements.
+
+1. Create a form elements with references ID
+
+    <input type="text" id="text">
+    <select id="1stCities">
+    
+2. Access the value from elements
+
+    document.getElementById("text").value
+    document.getElementById("1stCities").value
+
+EX:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function create(){
+            folderName = document.getElementById("text").value;
+        if(folderName==""){
+            alert("Folder name is required");
+        }
+        else{
+            document.querySelector("p").innerHTML += "Folder Create: " +folderName+ "<br>";
+            document.getElementById("text").value = "";
+        }
+        }
+    </script>
+</head>
+<body>
+   <input type="text" id="text"> <button type="button" onclick="create()">Create Folder</button>
+   <p></p>
+</body>
+</html>

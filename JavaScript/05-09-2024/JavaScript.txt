@@ -1,0 +1,119 @@
+Evollution of JavaScript:
+
+- CERN [Council for European Research and Nuclear] lab built a script called "ECMA" for a browser "Mosaic".
+- Netscape Communications introduced a browser called Netscape Navigator.
+- Netscape appointed "Brendan Eich" to design a client side script for their browser.
+- Brendan Eich named the script as "Mocha", which later renamed as "LiveScript".
+- Netscape given the responsibility of "LiveScript" to "SUn Micro Systems".
+- Sun Micro Systems named LiveScript as "JavaScript".
+- In early 2000 Netscape stopped it's services and given the responsibility of JavaScript to a community known as "ECMA".
+- JavaScript versions are ECMA versions
+
+        ECMA Script 2015    ES5
+        ECMA Script 2016    ES6
+        ECMA Script 2022
+        ...........         
+        
+        ESNext   :   latest version of JavaScript
+
+- Script is used to define actions to be performed by a web page.
+- Technically a webpage function according to script.
+
+
+Issues with JavaScript:
+- It is not a strongly typed language.
+- It is not strictly typed. [It is explicitly strictly typed]
+- It is not an OOP language, it supports only few features of OOP.
+- Extensibility Issues.
+- Code level security issues.
+
+
+Solution:
+- TypeScript [belongs to Microsoft]
+     
+    process:
+
+    Developer => TypeScript => Trans compiled => JavaScript => Browser
+
+
+
+Integrating JavaScript into Web Page:
+
+1. Inline
+2. Embedded
+3. External File
+
+Inline JavaScript:
+- Inline technique allows to configure JavaScript for any HTML element with in the context of its start token.
+
+    <button onlclick="window.print()">Print</button>
+
+- It is faster in interactions, but not good for reusability.
+
+Embedded JavaScript:
+- JavaScript functions are written in <script> container and embedded into page.
+- So that you can reuse the function across various elements in page.
+    
+    Syntax:
+        <script>
+            function printpage(){
+                window.print();
+            }
+        </script>
+
+        <button onclick="printpage()">Print</button>
+
+- Script have a MIME type as "text/javascript", "text/babel", "module" etc
+
+    Syntax:
+        <script type="text/javascript"></script>
+        <script language="javascript></script>  [obsolete: means no-longer in use]
+
+
+
+External File JavaScript:
+- You can write JavaScript function in a separate script file with extension ".js".
+
+    ticket.js
+    function printpage(){
+        window.print();
+    }
+
+- Link the script file to web page.
+
+    <script src="./ticket.js"> </script>
+
+- Using an external file will increase the number of request and also page load time.
+
+Note:- Production uses minified JavaScript File, which is a compressed file format.
+
+    Syntax:
+    <script src="./ticket.min.js"> </script>
+
+Ex:
+1. Go to src/scripts folder and add a file "ticket.js" with following code
+
+    function printpage(){
+        window.print();
+    }
+2. 
+
+FAQ: How to turn on strict mode for JavaScript?
+Ans: By using "use strict", as the first statement in script or external file.
+
+    Syntax:
+        <script type="text/javascript>
+            "use strict"
+
+            ...Your Code...
+
+        </script>
+
+FAQ: How to target your JS code to legacy browsers?
+Ans: By enclosing in HTML comments.
+
+        <!--
+            function Name(){
+
+            }
+        -->

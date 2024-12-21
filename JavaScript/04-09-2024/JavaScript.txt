@@ -1,0 +1,55 @@
+                                               JavaScript
+
+
+
+- JavaScript is light weight interpreted and JIT compiled programming language.
+
+    - Light weight refers to less memory. It needs very less memory to operate.
+    - "Interpreted" ia a translating technique, where program is translated line-by-line.
+    - "Compiled" is also a translating technique, where all lines in program are translated simultaneously at the same time.
+    - There are 2 types of Compiling techniques:
+        a) JIT
+        b) AOT
+    -JIT is "Just-in-Time", it translates only when it is requested.
+    -AOT is "Ahead-of-Time", which translates before it is requested. 
+    -Inside browser JS is translated by "JavaScript Interpreter".
+    -Outside browser JS  is translated by JavaScript compilers like
+        a) Babel
+        b) V8
+        c) Node
+        etc..
+
+- JavaScript is language that supports various programming paradigms like
+    a) Structural
+    b) Functional
+    c) Imperative
+    d) Object Oriented
+    etc..
+
+-JavaScript is a language used in various application areas
+    a) Client side
+    b) Server side
+    c) Database
+    d) Animations
+
+JavaScript Client Side:
+ 
+- Client Side Script is required to reduce burden on server.
+- It can save lot of server side interactions, which are heavy and slow for application.
+- A client side script can manage various interactions, which include
+
+    a) DOM manipulations
+        -Adding elements
+        -Removing elements
+        -Updating data into elements
+        -Handling styles dynamically[CSSOM]
+
+    b) BOM interactions
+        -History
+        -Navigator
+        -Location
+        -Document
+    
+    c) Validations
+        -It ensures that contradictory and unauthorized data is not get stored into database.
+        

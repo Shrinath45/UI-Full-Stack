@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonClick(){
+            var name = document.getElementById("txtName").value;
+            document.getElementById("lblName").innerHTML = name;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txtName" placeholder="Enter Name">
+    <button onclick="buttonClick()">Submit</button>
+    <p id="lblName"></p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<script>
+    /*
+    Task-8: write a function to find if the given char is between "E to M" [uppercase].
+
+    findChar(char)
+    {
+
+    }
+
+    findChar("e");    // "e" is not a char between "E to M"
+    findChar("G");    // "G" is in range of "E to M"
+
+    a) one solution with pattern
+    b) another without pattern
+    */
+
+   
+    function findChar(char){
+          if(char.charCodeAt(0)>=69 && char.charCodeAt(0)<=77) {
+              document.write(`Your char ${char} is in range of E to M`);
+          } else {
+            document.write(`Your char ${char} is not in range of E to M`);
+          }
+      }  
+      findChar("H");
+</script>
+<script>
+    function findChar(char){
+          var regExp = /[E-M]/;
+          if(char.match(regExp)) {
+             document.write(`Your char ${char} is in range of E to M`);
+          } else {
+             document.write(`Your char ${char} is not in range of E to M`);
+          }
+    }  
+    findChar("J");
+</script>

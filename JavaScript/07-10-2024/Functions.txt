@@ -1,0 +1,211 @@
+Exception Handling Statements
+
+- Developers have to track 2 types of errors in programming
+    1. Compile Time Errors
+    2. Runtime Errors
+
+- Compile Time Errors are syntactical errors, due to which a program fails to compile and run.
+- Run Time Errors occur while using the application, a compile is unable to understand the instructions given to application.
+- If any runtime error occurs then it leads to "Abnormal Termination".
+- You can avoid abnormal termination by using exception handling.
+-Exception handling is defined using
+
+    1. try:     It is monitoring block, contains that Statements to execute.
+    2. catch:   It is handler block, which identifies the issues in any Statement.
+    3. throw:   It throws the exception explicitly.
+    4. finally: It executes always
+
+    Syntax:
+    try{
+        Statements;
+    }
+    catch(error){
+
+    }
+    finally{
+
+    }
+
+    - You can throw explicit errors and catch.
+
+    Syntax:
+    try{
+        Statements;
+        if(condition){
+            throw "Error Message";
+        }
+    }
+    catch(error){
+        // display error
+    }
+
+    EX:
+    <script>
+        try{
+            var a = parseInt(prompt("Enter number-1"));
+            var b = parseInt(prompt("Enter number-2"));
+            if(b==0){
+                throw "Can't divide by zero <br>";
+            }
+            if(b>a){
+                throw "Can't divide by larger number<br>";
+            }
+            var c = a / b;
+            document.write(`Division = ${c}<br>`);
+            
+        }
+        catch(error){
+            document.write(error);
+        }
+        finally{
+            document.write("Program End");
+        }
+    </script>
+
+
+FAQ: Why we need exception handling?
+Ans: To avoid "Abnormal Termination" of application.
+
+
+
+Summery
+- Variables
+- Data types
+- Operators
+- Statements
+
+
+
+
+                Javascript Functions
+
+- Functions are used to "Refactor" the code.
+- Refactor is the process of extracting a set of Statements into a global function, so that you can reuse from any location.
+- A function can be configured in 2 ways
+
+    a) Function Declaration
+    b) Function Expression
+
+    Syntax: Declaration
+
+        function Name(){
+
+        }
+
+
+Syntax: Expression
+
+    var Name = function(){
+
+    }
+
+
+- A function declaration have the same functionality to perform everytime.
+- A new memory is allocated for every request.
+- A function expression allows to handle various functionalities under the reference of specific
+    name. It can change the functionality according to state and situation.
+- Expression uses "Anonymous" function, which is accessed by using IIFE pattern.
+
+EX:
+<script>
+    var password = prompt("Enter Password: ");
+
+    var result ;
+
+    if(password ==="admin"){
+        result = function(){
+            document.write("Login Success");
+        }
+    }else{
+        result = function(){
+            document.write("Invalid Password");
+        }
+    }
+    result();
+</script>
+
+
+Function Configuration:
+
+- A function Configuration comprises of various parts 
+
+
+    Declaration:
+    (function Print(parameters))
+
+    //Signature(
+    {
+         (Definition)   
+    })
+
+    Syntax:
+            function Print(parameters)      =>      Declaration
+            Print(parameters)               =>      Signature
+            {}                              =>      Definition
+
+- You can access a function by using its "Signature".
+- You can define a functionality by using "Definition".
+- You can create and allocate memory by using "Declaration".
+
+
+Function Parameters:
+
+- A function can be parameter less or parameterized.
+- Parameters are used to modify a function.
+- The parameters defined in declaration are known as "Formal Parameters".
+- The parameter defined in the Signature, while calling the function are known as "Actual Parameters".
+
+        Formal Parameters = Actual Parameters;
+
+        Syntax:
+                function Print(x){
+
+                }
+                Print(10);          // x = 10
+
+- A parameter can handle any type of value 
+        
+        a) Primitive
+        b) Non-Primitive
+
+EX:
+<script>
+    function PrintNumbers(howMany){
+        for(var i =1; i<=howMany; i++){
+            document.write(i +"<br>");
+        }
+    }
+    PrintNumbers(4);
+</script>
+
+
+
+<script>
+    function PrintCollection(collection){
+        collection.map(function(value, key){
+            document.write(`[${key}] [${value}]<br>` );
+        })
+
+        for(var key in collection){
+            document.write(`[${key}] [${value} ]<br>`);
+        }
+    }
+    PrintCollection(["A", "B", "C"]);
+</script>
+
+
+
+<script>
+    // Program to print the str every first letter capital
+    function TitleCase(str){
+        var words = str.split(' ');
+        words.map(function(word){
+            console.log(word.charAt(0).toUpperCase()+word.slice(1).toLowerCase());
+        })
+        words.join(function(word){
+            console.log(word);
+        })
+    }
+    TitleCase("welcome to javascript");
+</script>
+

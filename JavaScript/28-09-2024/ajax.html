@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoadClick(){
+             var now = new Date();
+             console.log(now.toLocaleTimeString());
+             var http = new XMLHttpRequest();
+             http.open("get", "../public/data/help.txt", true);
+             http.send();
+
+             http.onreadystatechange = function(){
+
+                   if(http.readyState===4){
+                       document.querySelector("pre").innerHTML = http.responseText;
+                   }
+
+             }
+
+        }
+        function bodyload(){
+            var now = new Date();
+            console.log(now.toLocaleTimeString());
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <button onclick="LoadClick()">Load Ajax Help</button>
+    <br>
+    <div>
+        <pre>
+
+        </pre>
+    </div>
+</body>
+</html>

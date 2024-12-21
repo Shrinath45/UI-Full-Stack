@@ -1,0 +1,12 @@
+<script>
+    function* ReadCollection(){
+        yield 10,
+        yield ["delhi", "hyd"],
+        yield {Rate:4.2};
+    }
+    var collection = ReadCollection();
+    console.log(collection.next());
+    console.log(collection.next());
+    console.log(collection.next());
+    console.log(collection.next());
+</script>

@@ -1,0 +1,135 @@
+JavaScript OOP
+- POPS
+- OBPS
+- OOPS
+
+                JavaScript Modules                    
+- Module refers to a portion of component.
+- Application can have multiple modules.
+- Every module is a set of functions, values, classes etc.
+- Modular approach enables features like
+    a) Reusability
+    b) Extensibility
+    c) Loosely Coupled
+    d) Testability
+    e) Mantainability
+- To use module system in application, you have to configure specific module type.
+    a) Common JS
+    b) UMD [Universal Module Distribution]
+    c) AMD [Asynchronous Module Distribution]
+    d) ESModule
+
+- Every JavaScript file is configured as a "module".
+- Module can contain variables, function and classes.
+- If you want to use the members outisde module, then you have to mark them as "export".
+
+Syntax:
+    export  function Name()
+    {
+    }
+
+- You can import the function into any HTML page
+
+    <script type="module">
+           import  { functionName }  from   "../project.js";
+    </script>
+
+- In a module any one member can be marked as "default" to export.
+- "Default" uses eager loading mechanism, where the component loads into memory before it is used by application.
+
+Syntax:
+    export default  function  Name()
+    {
+    }
+
+    import    functionName  from   "moduleName";
+   
+Ex:
+1. Go to  Src folder and add  "project.js"
+
+        export  function Admin()
+        {
+    return  "Admin Module";
+        }
+       
+        export default function Users()
+        {
+    return "Users Module";
+        }
+
+2. Go to your HTML page
+
+      <head>
+           <script type="module">
+                  import  Users, { Admin } from  "../src/scripts/project.js";
+     
+     document.querySelector("p").innerHTML = Users() + "<br>" + Admin();
+            </script>
+      </head>
+
+
+Ex:
+project.js
+
+
+export function Users(){
+    return "Users Module";
+}
+
+export default function Admin(){
+    return "Admin Module";
+}
+
+export function Vendor(){
+    return "Vendor Module";
+}
+
+calculator.js
+
+
+export function Addition(a, b)
+{
+     return a + b;
+}
+
+export function Multiplication(a, b)
+{
+    return a * b;
+}
+
+home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import Admin, { Vendor, Users } from "../src/scripts/project.js";
+        import { Addition } from "../src/scripts/calculator.js";
+
+        document.querySelector("p").innerHTML  = Vendor() + "<br>" + Users() + "<br>" + Admin() + "<br>" + "Addition=" + Addition(40, 45);
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+
+                     Class in OOP
+- Class is a program template.
+- It comprises of pre-defined data and logic, which you can customize and implement according to the requirements.
+- If a class is mapping to data requirements and data related logic then it is reffered as "Model".
+- If a class is mapping to business requirements then it is reffered as "Entity".
+- Class keeps all related data and logic together, you can reuse the data and logic using various instances of classes.
+- Hence it is also reffered as "Blue Print" for objects.
+
+Evolution:
+- Johan Olay, Kristian Nygaard developed the OOP in early 1967 with a language called "SIMULA".
+- Code reusability and Code Separation are the major concerns.
+- Code Separation developed by "Trygve" in 1970's. He designed a framework called "MVC".
+  [Model-View-Controller].
+- In early 1975  C++ evolved
+- In early 1990's Java
+- In early 2003  C#

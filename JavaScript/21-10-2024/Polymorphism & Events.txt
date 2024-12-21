@@ -1,0 +1,139 @@
+Polymorphism
+- Poly means "Many"
+- Morphos means "Forms"
+- Ploymorphism is a behaviour that can configure multiple states and functionalities for one component.
+- Technically if a single base class object can use the memory of multiple derived classes then it can exhibit polymorphism.
+
+Syntax:
+       let obj = new Array(new Class1(), new Class2(), new Class3());
+
+Ex:
+<script>
+   class Employee
+   {
+      FirstName;
+      LastName;
+      Designation;
+      Print(){
+        document.write(`${this.FirstName} ${this.LastName} - ${this.Designation}<br>`);
+      }
+   }
+   class Developer extends Employee
+   {
+        FirstName = "Raj";
+        LastName = "Kumar";
+        Designation = "Developer";
+        Role = "Developer Role : Build, Debug, Test, Deploy";
+        Print(){
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+   }
+
+   class Admin extends Employee
+   {
+        FirstName = "Kiran";
+        LastName = "Kumar";
+        Designation = "Admin";
+        Role = "Admin Role : Authorization, Authentication";
+        Print(){
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+   }
+
+   class Manager extends Employee
+   {
+        FirstName = "Tom";
+        LastName = "Hanks";
+        Designation = "Manager";
+        Role = "Manager Role : Approvals";
+        Print(){
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+   }
+
+
+   let employees = new Array(new Developer(), new Admin(), new Manager());
+
+   let designation = prompt("Enter Designation");
+
+   for(var employee of employees)
+   {
+       if(employee.Designation===designation) {
+            employee.Print();
+       }
+   }
+
+</script>
+
+                JavaScript Events
+
+1. What is Event?
+A. Event is a message sent by sender to its subscriber inorder to notify change.
+    Event uses delegate mechanism, which is function pointer mechanism.
+    Event follows a software design pattern called "Observer".
+
+Syntax:
+    function InsertClick()         => Subscriber
+    {
+    }
+
+    <button onclick="InsertClick()">        => Sender
+
+    - Subscriber defines the actions to perform.
+    - Sender notifies the changes. It is a trigger for actions.
+
+2. What is design pattern?
+A.  Design patterns are solutions for software design problems that you encounter in realworld
+     application development.
+     There are 23 design patterns known as "Gang-of-Four" patterns. [GOF]
+     They are categorized into
+    a) Creational
+    b) Structural
+    c) Behavioural
+
+3. Which software design pattern event follows?
+A. "Observer", which is a behavioural pattern.
+
+4. What is "Event Handler"?
+A. It is a function pointer, which uses delegate mechanism.
+
+          onclick="InsertClick()"    => Event Handler
+    onclick            => Event
+
+5. What is Event Listener?
+A. It is a function configured for elements to perform any specificed funcitonality.
+    If any element is added to page dynamically, then it can't have event handler.
+    You have to configure an "Event Listener".
+
+Syntax:
+    element.addEventListener("event", function(){
+
+    })
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+            var btn = document.createElement("button");
+            btn.innerHTML = "Insert";
+            btn.addEventListener("click",()=>{
+                document.write("Record Insereted..");
+            })
+            document.getElementById("container").appendChild(btn);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div id="container">
+
+    </div>
+</body>
+</html>

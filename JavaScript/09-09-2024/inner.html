@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function delete1(){
+            // alert("Your Content Deleted Successfully!... \n You can rewrite the content...");
+            result = confirm("Do you want to delete your content?");
+            if(result == true){
+                // document.querySelector("p").textContent="Deleted Successfully!";
+                // document.querySelector("p").innerText="Deleted Successfully!";
+                document.querySelector("p").innerHTML="<b>Deleted Successfully!</b>";
+            }
+            else{
+                document.write("<a href='inner.html'>Back</a>");
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <button type="button" onclick="delete1()">Delete</button>
+    <p></p>
+</body>
+</html>
