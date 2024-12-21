@@ -1,0 +1,382 @@
+- Various Image Types for Web
+- When to use different image types
+- Embed image into page
+    <figure>
+    <figcaption>
+    <img>
+- Fluid Images
+- Image Attributes
+
+                        Advanced Attributes for Image
+
+1. crossorign    
+ - CORS is "Cross Origin Resource Sharing"
+ - It is the process of accessing resources for external servers.
+ - Cross origin resources can be restricted with access by using "crossorigin" attribute.
+ - It have 2 values
+        a) Anonymous
+        b) Use-Credentials
+
+Syntax:
+    <img  src="www.server.com/pic.jpg&quot;  crossorign="use-credentials">
+
+2. decoding
+- It is used to control loading of image along with other contents in page.
+- It can uses the values
+    a) sync
+    b) async
+    c) auto
+- Sync is a blocking technique that blocks all other contents in page while loading image.
+- Async is unblocking technique that loads image along with other contents in page.
+- Auto is according to state and situation.
+
+Syntax:
+    <img src="some_path"  decoding="async | sync | auto">
+
+3. importance
+- It is used to set priority for loading image.
+- It can use the values low, high and auto.
+
+
+Syntax:
+    <img src="path"  importance="low | high | auto">
+
+4. srcset
+- It is a collection of images to display in image container.
+- It requires styles and script to rotate images dynamically at specific source.
+
+Syntax:
+    <img srcset="collection">
+
+
+Ex: Image Alignment - Landkit template
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landkit</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header {
+            font-size: 20px;
+            font-family: Segoe UI;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .brand-title {
+            font-weight: bold;
+            font-size: 24px;
+            color:blue;
+        }
+        nav span {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .btn-buy {
+            background-color: blue;
+            color:white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+        main {
+            font-family: Arial;
+            padding-left: 110px;
+        }
+        .main-title {
+            font-size: 50px;
+            color:blue;
+            padding-top: 100px;
+        }
+        .main-subtitle {
+           font-size: 25px;
+           padding-top: 10px;  
+        }
+        .main-text {
+            padding-top: 20px;
+            width: 450px;
+            font-size: 20px;
+            line-height: 30px;
+            color:grey;
+            padding-bottom: 50px;
+        }
+        .btn-pages {
+            display: inline-block;
+            padding: 20px;
+            font-size: 18px;
+            background-color: blue;
+            color: white;
+        }
+        .btn-docs {
+            display: inline-block;
+            padding: 20px;
+            font-size: 18px;
+            background-color: azure;
+            margin-left: 10px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span class="brand-title">Landkit.</span>
+        </div>
+        <div>
+            <nav>
+                <span>Landings</span>
+                <span>Pages</span>
+                <span>Account</span>
+                <span>Documentation</span>
+            </nav>
+        </div>
+        <div>
+            <span class="btn-buy">Buy now   </span>
+        </div>
+    </header>
+    <section>
+        <main>
+            <img src="./images/ladkit-banner.jpg" class="banner-image" align="right" width="50%">
+            <div>
+                <div class="main-title">Welcome to Landkit.</div>
+                <div class="main-subtitle">Develop anything.</div>
+                <div class="main-text">Build a beautiful, modern website with flexible Bootstrap components built from scratch.</div>
+                <div>
+                    <span class="btn-pages"> View all pages <span class="bi bi-arrow-right"></span> </span>
+                    <span class="btn-docs"> Documentation <span class="bi bi-arrow-right"></span> </span>
+                </div>
+            </div>
+        </main>
+    </section>
+</body>
+</html>
+
+Ex: Cards
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .card {
+            width: 250px;
+            box-shadow: 2px 2px 2px gray;
+            border-radius: 10px;
+            font-family: Arial;
+            margin: 20px;
+        }
+        .card-img-top {
+            width: 100%;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        .card-header {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid gray;
+        }
+        .card-title {
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+        .bi-star-fill, .bi-star-half {
+            color:goldenrod;
+        }
+        .card-body {
+            padding: 10px;
+        }
+        dl {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+        }
+        dt, dd {
+            padding-top: 12px;
+        }
+        .card-footer {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            padding: 10px;
+            text-align: center;
+            background-color: blue;
+            color:white;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        main {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="card">
+            <img src="./images/python.png" class="card-img-top">
+            <div class="card-header">
+                <div class="card-title">Fullstack Python</div>
+                <div>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-half"></span>
+                    <span>4.5</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl>
+                    <dt class="bi bi-calendar"> Start Date </dt>
+                    <dd> 22 Jul 2024 </dd>
+                    <dt class="bi bi-person"> By </dt>
+                    <dd> Faculty </dd>
+                    <dt class="bi bi-clock"></dt>
+                    <dd> 6 months</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <div class="btn-enroll">Enroll</div>
+                <div class="btn-share"> <span class="bi bi-share"></span> Share</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./images/web.png" class="card-img-top">
+            <div class="card-header">
+                <div class="card-title">Web FullStack</div>
+                <div>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl>
+                    <dt class="bi bi-calendar"> Start Date </dt>
+                    <dd> 22 Jul 2024 </dd>
+                    <dt class="bi bi-person"> By </dt>
+                    <dd> Faculty </dd>
+                    <dt class="bi bi-clock"></dt>
+                    <dd> 6 months</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <div class="btn-enroll">Enroll</div>
+                <div class="btn-share"> <span class="bi bi-share"></span> Share</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./images/asp.png" class="card-img-top">
+            <div class="card-header">
+                <div class="card-title">ASP.NET</div>
+                <div>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl>
+                    <dt class="bi bi-calendar"> Start Date </dt>
+                    <dd> 22 Jul 2024 </dd>
+                    <dt class="bi bi-person"> By </dt>
+                    <dd> Faculty </dd>
+                    <dt class="bi bi-clock"></dt>
+                    <dd> 6 months</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <div class="btn-enroll">Enroll</div>
+                <div class="btn-share"> <span class="bi bi-share"></span> Share</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./images/sales.png" class="card-img-top">
+            <div class="card-header">
+                <div class="card-title">Sales Force</div>
+                <div>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl>
+                    <dt class="bi bi-calendar"> Start Date </dt>
+                    <dd> 22 Jul 2024 </dd>
+                    <dt class="bi bi-person"> By </dt>
+                    <dd> Faculty </dd>
+                    <dt class="bi bi-clock"></dt>
+                    <dd> 6 months</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <div class="btn-enroll">Enroll</div>
+                <div class="btn-share"> <span class="bi bi-share"></span> Share</div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .women {
+            border:1px solid black;
+            border-radius: 50%;
+        }
+        .pic2 {
+            border-top-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+        .pic1 {
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+        .pic3 {
+            border-bottom-right-radius: 100px;
+            border-top-left-radius: 100px;
+        }
+        .pic4 {
+            border-bottom-left-radius: 100px;
+            border-top-right-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img class="women" src="./images/women-fashion.jpg" width="200" height="200">
+   <div>
+    <img class="pic1" src="./images/kids-fashion.jpg" width="200" height="200">
+    <img class="pic2" src="./images/kids-fashion.jpg" width="200" height="200">
+   </div>
+   <div>
+    <img class="pic3" src="./images/kids-fashion.jpg" width="200" height="200">
+    <img class="pic4" src="./images/kids-fashion.jpg" width="200" height="200">
+   </div>
+</body>
+</html>

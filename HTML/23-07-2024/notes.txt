@@ -1,0 +1,405 @@
+CSS Colors
+1. Color Name
+2. Shade Name
+3. Hexadecimal Code [ #RGB,  #RRGGBB ]    R,G,B = 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+4. rgb()
+
+	rgb(redValue,  greenValue, blueValue)		=> Color value can be 0 to 255
+	rgb(255, 0, 0);			
+
+5. rgba()
+
+	rgba(red, green, blue, alpha)				=> alpha is transparent 0 to 1
+	rgba(0,0,0,0.5)
+
+6. hsl()
+
+	hsl(hue, saturation, lightness)			=> hue  contains value defined in deg.
+										     0    to 120 deg  	: red
+										    121 to 240 deg	: green
+										    241 to 360 deg	: blue
+								
+										=> sat contains gray shade 0 to 100%
+										=> light contains value 0 to 100%
+	hsl(20deg, 50%, 50%)
+	hsl(150deg, 0%, 50%)	=> Gray Shade is more when % is less.
+
+
+7. hsla()
+
+	hsla(hue, sat, light, alpha)
+	hsla(20deg, 60%, 50%, 0.6)
+
+
+8.  Linear Gradient & Radial Gradient 
+
+     - You can set gradient only by using "background-image" of CSS 
+     - Gradient allows multiple colors.
+     - Linear and Radial are orientations
+
+Syntax:
+	body {
+	   background-image: linear-gradient( 60deg, red, green, yellow);
+	}
+
+	Orientation	: in deg or "to left, to top left, to top right, to bottom left..."
+
+	body {
+	   background-image: radial-gradient( red, green, yellow);
+	}
+
+Ex: Netflix.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-size: cover;
+        }
+        .shade {
+            height: 100vh;
+            background-color: rgba(0,0,0,0.4);
+            margin-top: -10px;
+            margin-left: -10px;
+            width: 101.4%;
+        }
+        header {
+            padding: 30px;
+            font-family: Arial;
+            display: flex;
+            justify-content: space-between;
+        }
+        .brand-title {
+            color:rgb(215, 4, 4);
+            text-shadow: 1px 1px 2px white;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: Arial;
+        }
+        .language {
+            border:1px solid white;
+            color:white;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .btn-signin {
+            background-color: red;
+            color:white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        main {
+            color:white;
+            text-align: center;
+            padding-top: 150px;
+            font-family: Arial;
+        }
+        .main-title {
+            font-size: 50px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+        .main-subtitle {
+            font-size: 25px;
+            
+        }
+        .form {
+            margin-top: 20px;
+        }
+        .form-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .email {
+            display: inline-block;
+            width: 300px;
+            padding: 15px;
+            border:1px solid gray;
+            text-align: left;
+            background-color: rgba(0,0,0,0.5);
+            margin-right: 1px;
+        }
+        .btn-start {
+            width: 200px;
+            padding: 15px;
+            background-color: red;
+            color:white;
+            font-family: Arial;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body background="./images/netflix-background.jpg">
+    <div class="shade">
+        <header>
+            <div>
+                <span class="brand-title">NETFLIX</span>
+            </div>
+            <div>
+                <span class="language">
+                    <span class="bi bi-translate"></span>
+                    <span> English </span>
+                    <span class="bi bi-chevron-down"> </span>
+                </span>
+                <span class="btn-signin">
+                    Sign In
+                </span>
+            </div>
+        </header>
+        <section>
+            <main>
+                <div class="main-title">Unlimited movies, TV shows and more</div>
+                <div class="main-subtitle">Watch anywhere. Cancel anytime.</div>
+                <div class="form">
+                    <div class="form-title">Ready to watch? Enter your email to create or restart your membership.</div>
+                    <div>
+                        <span class="email"> Email Address </span>
+                        <span class="btn-start">
+                            <span>Get Started </span>
+                            <span class="bi bi-chevron-right"></span>
+                        </span>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </div>
+</body>
+</html>
+
+						       Footer
+- It is a semantic used to display content at bottom margin of page.
+- Typically footer comprises of 
+	a) Services
+	b) Quick Links
+	c) Social Bar
+	d) Address 
+	e) Copyright etc.. 
+	
+						    Address
+- It is a semantic to store contact details.
+- SEO uses address to find the website contact.
+
+Syntax:
+	<address>
+		.. email …
+		.. phone …
+		.. skype … 
+		etc...
+	</address>
+	
+						 Aside
+- It defines the content that navigates user to any another URL from current page.
+- It navigates aside the current context. 
+- It is mostly used for social networking links, advertisements etc.
+
+
+
+Ex: Footer
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-size: cover;
+        }
+        .shade {
+            background-color: rgba(0,0,0,0.4);
+            margin-top: -10px;
+            margin-left: -10px;
+            width: 101.4%;
+        }
+        header {
+            padding: 30px;
+            font-family: Arial;
+            display: flex;
+            justify-content: space-between;
+        }
+        .brand-title {
+            color:rgb(215, 4, 4);
+            text-shadow: 1px 1px 2px white;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: Arial;
+        }
+        .language {
+            border:1px solid white;
+            color:white;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .btn-signin {
+            background-color: red;
+            color:white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        main {
+            color:white;
+            text-align: center;
+            padding-top: 150px;
+            font-family: Arial;
+        }
+        .main-title {
+            font-size: 50px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+        .main-subtitle {
+            font-size: 25px;
+            
+        }
+        .form {
+            margin-top: 20px;
+        }
+        .form-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .email {
+            display: inline-block;
+            width: 300px;
+            padding: 15px;
+            border:1px solid gray;
+            text-align: left;
+            background-color: rgba(0,0,0,0.5);
+            margin-right: 1px;
+        }
+        .btn-start {
+            width: 200px;
+            padding: 15px;
+            background-color: red;
+            color:white;
+            font-family: Arial;
+            display: inline-block;
+        }
+        .content {
+            height: 400px;
+        }
+        footer {
+            background-color: black;
+            color:white;
+            padding: 30px;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .row-1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .row-3 {
+            margin-top: 20px;
+        }
+        .netflix {
+            margin-top: 20px;
+        }
+        .row-2 {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+        }
+        .col span {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body background="./images/netflix-background.jpg">
+    <div class="shade">
+        <header>
+            <div>
+                <span class="brand-title">NETFLIX</span>
+            </div>
+            <div>
+                <span class="language">
+                    <span class="bi bi-translate"></span>
+                    <span> English </span>
+                    <span class="bi bi-chevron-down"> </span>
+                </span>
+                <span class="btn-signin">
+                    Sign In
+                </span>
+            </div>
+        </header>
+        <section>
+            <main>
+                <div class="main-title">Unlimited movies, TV shows and more</div>
+                <div class="main-subtitle">Watch anywhere. Cancel anytime.</div>
+                <div class="form">
+                    <div class="form-title">Ready to watch? Enter your email to create or restart your membership.</div>
+                    <div>
+                        <span class="email"> Email Address </span>
+                        <span class="btn-start">
+                            <span>Get Started </span>
+                            <span class="bi bi-chevron-right"></span>
+                        </span>
+                    </div>
+                </div>
+            </main>
+            <div class="content">
+
+            </div>
+        </section>
+        <footer>
+            <div class="row-1">
+                <address>
+                    <span> Questions? Call 000-800-919-1694 </span>
+                </address>
+            </div>  
+            <div class="row-2">
+                <div class="col">
+                    <span>FAQ</span>
+                    <span>Investor Relations</span>
+                    <span>Privacy</span>
+                    <span>Speed Test</span>
+                </div>
+                <div class="col">
+                    <span>Help Center</span>
+                    <span>Jobs</span>
+                    <span>Cookie Preferences</span>
+                    <span>Legal Notices</span>
+                </div>
+                <div class="col">
+                    <span>Account</span>
+                    <span>Ways to Watch</span>
+                    <span>Corporate Information</span>
+                    <span>Only on Netflix</span>
+                </div>
+                <div class="col">
+                    <span>Media Center</span>
+                    <span>Terms of Use</span>
+                    <span>Contact Us</span>
+                </div>
+            </div>
+            <div class="row-3">
+                <div>
+                    <span class="language">
+                        <span class="bi bi-translate"></span>
+                        <span> English </span>
+                        <span class="bi bi-chevron-down"> </span>
+                    </span>
+                </div>
+                <div class="netflix">
+                    Neflix India
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

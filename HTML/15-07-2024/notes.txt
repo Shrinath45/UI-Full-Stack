@@ -1,0 +1,68 @@
+Setup Environment for Web Development
+1. Node JS
+2. Visual Studio Code
+3. Add Plugins [Extensions for VS Code]
+4. Create a Project
+
+						     Web Page
+
+- Web Page is a hyper text document that provides an UI [User Interface] for interacting with website or application.
+
+- Hyper refers to the word "Beyond".
+
+- Hyper Text refers to the text that takes you beyond the content that you see in a page.
+
+- Web pages are classified into 2 types
+
+		a) Static Page
+		b) Dynamic Page
+
+- Static pages have same content to display across multiple requests. They have extension ".html  or  .htm"
+
+				index.html
+				contact.htm
+
+- Dynamic pages customize the response according to client request. The have extension  ".jsp,  .php, .asp,  .aspx, … "
+
+				ticket.asp
+				movies.jsp
+
+- Static and Dynamic pages are designed by using "HTML".
+
+Note: Every website or application starts with a page called "index.html".
+
+		http://127.0.0.1:5500
+				(or)
+		http://localhost:5500
+
+
+						        HTML 
+- Hyper Text Markup Language.
+- Hyper Text refers to the text that navigates beyond the content.
+- Markup is term used for presentation. We markup our content to presents exactly as required.
+- HTML is a markup language, which is a presentation language.
+
+Evolution of HTML:
+- GML [Generic Markup Language] & SGML [Standard Generic Markup Language] are the language used for designing web page in early web development.
+- CERN labs introduced GML & SGML.  [Council for European Research & Nuclear].
+- "Tim Berners Lee" introduced HTML in early 1990's.
+- HTML is super set to GML & SGML.
+- IETF [Internet Engineering Task Force] developed HTML up to 3.1 version
+- WHATWG [Web Hyper Text Application Technology Workgroup] took the responsibility of HTML from 2004 with version HTML 4. 
+- WHATWG is evolving and maintaining HTML since 2004. 
+- The latest version of HTML is "HTML 5".
+	https://whatwg.org/
+
+	
+		Web		=> W3C 			=>  Web 3
+		HTML	=> WHATWG		=>  HTML 5
+		
+- HTML is used to create presentation for web browser. 
+- Web Browser is a software tool used to access and view web pages.
+- Various browsers
+			Edge
+			FireFox
+			Chrome
+			Safari etc... 
+
+Browser Architecture:

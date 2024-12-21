@@ -1,0 +1,71 @@
+Forms in HTML
+
+- Form provides an UI to interact with the data.
+- It enables various interactions, which include
+   
+        C        Create
+        R        Read
+        U        Update
+        D        Delete
+
+Form:
+- It is a generic container.
+- Generic refers to a component with pre-defined functionality.
+- Form comprises various elements like textbox, checkbox, radio, listbox, dropdown, button etc.
+
+Syntax:
+    <form>
+
+    </form>
+
+Attributes:
+1. id            : It defines a unique reference ID to access form in script & styles.
+2. name        : It defines a reference name to access in script.
+3. class        : It defines a class name used in styling.
+4. method    : It defines the action to be performed by form.
+              Form have 2 basic methods
+                a) GET
+                b) POST
+
+FAQ's:
+1. What is the role of GET and POST?
+A. GET is a method defined for form if it is designed for fetching the data from server.
+     POST is a method defined for form, if it is designed for saving the data on server.
+
+
+2. What is default method?
+A. GET
+
+        <form method="GET | POST">
+        </form>
+
+3. Can we submit and save data on GET request?
+A. Yes. But not recommended.
+
+4. Why it is not recommended to save data on GET request?
+A.
+    - Data is submitted as "Query String".
+    - Query String is appended into the address bar of browser with URL
+    - Everyone can view your data.
+    - It is not safe.
+    - It is easy to hack your data.
+    - It is stored in browser logs.
+    - It can be bookmarked.
+    - It will not allows to submit complex data, which  is binary type data.
+    - It have limit for data, which is max 2048 chars.
+   
+5. What is the advantage of submitting data on GET?
+A. It can cache the data, so that it can save round trips.
+
+6. What is the role of POST? What are its features?
+A. POST is a request method used to submit and save data on server.
+
+    - It submits data as "Form Body".
+    - It is not visible to general users.
+    - It is safe and secured when compared to GET.
+    - It is not stored in browser logs [history].
+    - It can't be bookmarked.
+    - It can submit any complex data.
+    - There is no limit for data.
+    - It is hard to hack your data.
+    - It can't cache the data.

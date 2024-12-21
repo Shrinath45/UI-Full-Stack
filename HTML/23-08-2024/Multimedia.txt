@@ -1,0 +1,110 @@
+Multimedia in HTML
+- Multimedia refers to audio, video and animations.
+- HTML provides various elements for multimedia
+    a) <marquee>
+    b) <audio>
+    c) <video>
+    d) <embed>
+
+Marquee:
+- It sets scrolling and sliding content in page.
+- You can control the behaviour and animation with attributes.
+
+Syntax:
+    <marquee>
+        … your content …
+    </marquee>
+
+Attributes:
+    1. scrollamount        : It sets speed for marquee from 1 to 100.
+    2. direction            : It sets scrolling direction left, right, up and down.
+    3. behavior             :It sets behavior as alternate to change from scroll to slide.
+    4. loop                : It specifies the number of times to display after load.
+    5. bgcolor            : It sets background color.
+    6. width & height        : It sets width and height for marquee area.
+   
+Syntax:
+    <marquee scrollamount="15" loop="3" direction="right" bgcolor="yellow">
+    </marquee>
+
+    <marquee behavior="alternate" scrollamount="20"> </marquee>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <marquee>
+                <img src="../public/images/a1.jpg" width="100" height="100">
+                <img src="../public/images/a2.jpg" width="100" height="100">
+                <img src="../public/images/a3.jpg" width="100" height="100">
+                <img src="../public/images/a4.jpg" width="100" height="100">
+            </marquee>
+        </div>
+        <div>
+           <marquee direction="right">
+            <img src="../public/images/a4.jpg" width="100" height="100">
+            <img src="../public/images/a3.jpg" width="100" height="100">
+            <img src="../public/images/a2.jpg" width="100" height="100">
+            <img src="../public/images/a1.jpg" width="100" height="100">
+           </marquee>
+        </div>
+    </main>
+</body>
+</html>
+
+Video & Audio:
+- Web support videos of type:  mp4, avi, mkv, mov, ogg etc.
+- Web support audio of type : mp3, midi, wav etc.
+- HTML provides elements
+
+    a) <video>
+    b) <audio>
+
+Syntax:
+    <video src=""  controls   poster="picture.jpg" width="" height="" autoplay>
+    </video>
+
+
+Summary
+- HTML
+- Bootstrap
+- CSS
+
+                                Styles
+- Styles will provide attributes that make HTML more interactive and responsive.
+- Styling in web requires an object model known as "CSSOM".
+    [Cascading Style Sheet Object Model]
+- Object is used to keep all related data and logic together.
+- Object comprises of Key and value references.
+- Keys are attributes for HTML elements.
+
+            {
+              Key: value;
+            }
+- Styles in a web page can be configured in 3 ways.
+
+    1. Inline styles
+    2. Embedded styles
+    3. External Style Sheets
+
+Inline Styles:
+- Styles are defined for every element individually by using "Style" attribute.
+- It is faster in rendering but not good for reusability and extensibility.
+
+Syntax:
+    <h2  style="attribute:value; attribute:value">   </h2>
+
+
+Embedded Styles:

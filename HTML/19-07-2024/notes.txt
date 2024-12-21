@@ -1,0 +1,166 @@
+Attributes:
+1. bgcolor
+2. text
+3. background		: It sets a background image for page.
+
+Syntax:
+	  <body  background="image_path">
+
+Note: Never use physical path of any resource in webpage. Always use the virtual path.
+
+	  <body  background="D:\Images\pic.jpg">         // Not recommended 
+
+	  <body background="public/images/pic.jpg">    // recommended 
+
+		"\"		back slash used for physical path
+		"/"		forward slash used for virtual path
+
+
+		https://www.freepik.com/
+
+CSS Background Attributes:
+
+		background-size
+		background-position
+		background-repeat
+		background-attachment
+		
+1. Create a <style> container in <head> section.
+2. Define style attributes for element.
+
+		element
+		{
+		   attribute: value;
+		   attribute: value;
+		}
+
+Syntax:
+	background-size : cover, contain, width & height;           		// width&height : px
+	background-repeat: repeat, no-repeat, repeat-x, repeat-y;
+	background-position: top, center, right, bottom, left, x-axis, y-axis pixels.
+	background-attachment: fixed, scroll;
+
+Ex:
+	<style>
+	   body {
+		 background-size: 400px  300px;
+		 background-repeat: no-repeat;
+		 background-position: center  center;
+		 background-attachment: fixed;
+	         height: 100vh;
+		}
+	</style>
+
+		100 => 100%
+		 vh  =>  View Port height 
+		 vw  => View Port width
+		
+4. align	: It aligns the body content left, center, right or justify.
+
+Syntax:
+		<body align="center | right | left | justify">
+
+		</body>
+
+5. leftmargin		]
+6. rightmargin		]  sets space between the browser and content in page.
+7. topmargin		]  you have to defined margin in pixels. 
+8. bottommargin	]
+
+Syntax:
+  <body  leftmargin="100"  rightmargin="100"  topmargin="50" bottommargin="50">
+
+  </body>
+
+9. alink			: It sets color for active links in page.
+
+10. vlink			: It sets color for visited links in page.
+
+Syntax:
+	<body  vlink="gray"  alink="red">
+
+		<a href="http://www.amazon.in"> Amazon </a>
+		
+		<a href="http://msdn.com"> Microsoft </a>
+
+	</body>
+
+Summary
+- bgcolor
+- text
+- background
+- margins [left, right, top, bottom]
+- align
+- alink
+- vlink
+
+						Body Layout Design
+
+- HTML 4 version uses "table" element to design body layout.
+- Tables lead to a situation called "Kiss of Death".
+- Tables data is not SEO friendly. 
+- HTML 5 introduced some new semantic and non-semantic elements to design the body layout.
+- These new semantics for layout will make the page more SEO friendly and user friendly.
+- The popular semantic elements for layout design are
+
+		<header>
+		<footer>
+		<section>
+		<main>
+		<aside>
+		<article>
+		<dialog>
+		<figure>
+		<figcaption>
+		<nav>
+
+- The popular non-semantic elements 
+		<div>
+		<span>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+       div {
+          border: 3px double black;
+          padding: 20px;
+          margin: 10px;
+       }
+       span {
+          color:red;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <span>Web Technologies</span>
+        <div>
+            Front End
+            <div>
+                HTML 
+                <p>It is a <span>markup</span> language.</p>
+            </div>
+            <div>
+                CSS
+                <p>It defines styles.</p>
+            </div>
+        </div>
+        <div>
+            Back End
+            <div>
+                Node JS 
+                <p>It is server side programming</p>
+            </div>
+            <div>
+                MongoDB
+                <p>It is database.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

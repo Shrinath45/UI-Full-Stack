@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:read-only {
+            cursor: not-allowed;
+            background-color: lightgray;
+            border:none;
+        }
+        button:disabled {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" class="UserName" value="John" ></dd>
+            <dt>Age</dt>
+            <dd><input type="number" value="22" readonly></dd>
+        </dl>
+        <button disabled>Submit</button>
+    </form>
+</body>
+</html>

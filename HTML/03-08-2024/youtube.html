@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bi-justify{
+            font-size: 24px;
+        }
+        .search-bar{
+            display: inline-flex;
+            width: 400px;
+            border: 1px solid gray;
+            border-radius: 20px;
+            padding: 10px;
+            justify-content: space-between;
+        }
+        .bi-mic-fill{
+            margin-left: 30px;
+            background-color: rgb(236, 234, 234);
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .btn-signin{
+            border: 1px solid blue;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .bi-three-dots-vertical{
+            font-size: 20px;
+        }
+        section{
+            display: grid;
+            grid-template-columns: 1fr 11fr;
+            margin-top: 10px;
+
+        }
+        nav{
+            margin-left: -40px;
+            font-size: 18px;
+            text-align: center;
+
+        }
+        .nav-item{
+            
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .nav-title{
+            font-size: 12px;
+           
+        }
+        article{
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+            font-family: Arial;
+        }
+        .btn-sub{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            width: 100px;
+        }
+        main{
+            height: 500px;
+            overflow: auto;
+
+        }
+        .menu{
+            display: flex;
+            margin-left: 50px;
+            list-style: none;
+            font-family: Arial;
+            color: gray;
+            font-size: 20px;
+            padding-bottom: 20px;
+            border-bottom: 0.5px solid gray;
+        }
+        .menu li{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .menu li:first-child{
+            font-weight: bold;
+            color: black;
+            text-decoration: underline;
+        }
+        .about-us{
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+            grid-gap: 20px;
+            width: 80%;
+            font-family: Arial;
+        }
+
+        iframe{
+            border: none;
+            width: 100%;
+            height: 250px;
+        }
+        .about-us div{
+            margin-bottom: 20px;
+        }
+        .playlist{
+            display: grid;
+            grid-template-columns: 2.3fr 2.3fr 2.3fr 2.3fr 2.3fr;
+            grid-gap: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .playlist iframe{
+            border: 1px solid gray;
+            height: 150px;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <span class="bi bi-justify"></span>
+        <img src="./Images/youtube.png" alt="" width="50%" />
+      </div>
+
+      <div>
+        <span class="search-bar">
+          <span>Search</span>
+          <span class="bi bi-search"></span>
+        </span>
+        <span class="bi bi-mic-fill"></span>
+      </div>
+
+      <div>
+        <span class="bi bi-three-dots-vertical"></span>
+        <span class="btn-signin">
+            <span class="bi bi-person"></span>
+            <span>SignIn</span>
+        </span>
+      </div>
+    </header>
+
+    <section>
+        <nav>
+            <div class="nav-item">
+                <span class="bi bi-house-door"></span>
+                <div class="nav-title">Home</div>
+            </div>
+
+            <div class="nav-item">
+                <span class="bi bi-film"></span>
+                <div class="nav-title">Shorts</div>
+            </div>
+
+            <div class="nav-item">
+                <span class="bi bi-camera-video"></span>
+                <div class="nav-title">Live</div>
+            </div>
+
+            <div class="nav-item">
+                <span class="bi bi-gear"></span>
+
+                <div class="nav-title">Setting</div>
+            </div>
+        </nav>
+
+        <main>
+            <img src="./public/Images/banner.png" alt="" width="100%">
+            <article>
+                <div>
+                    <img src="./public/Images/profile.png" alt="">
+                </div>
+
+                <div>
+                    <p>Naresh I Technologies</p>
+                    <p> @NareshIT</p>
+                    <p>1.27M Subscribers</p>
+                    <p>3.1k Videos</p>
+                    <p>We are one of the Software training organization with a library of 200+ courses</p>
+                    <p><a href="http://www.instagram.com/nareshitech">instagram.com/nareshitech</a> and 7 more links</p>
+                    <div class="btn-sub"><span class="bi bi-bell-fill"> Subscribe</span></div>
+                </div>
+            </article>
+
+            <ul class="menu">
+                <li>Home</li>
+                <li>Videos</li>
+                <li>Live</li>
+                <li>Shorts</li>
+                <li>Playlist</li>
+                <li>Community</li>
+                <li class="bi bi-search"></li>
+            </ul>
+            
+            <div class="about-us">
+                <div>
+                    <iframe src="https://youtube.com/embed/yBw-6rr5hbA" frameborder="0"></iframe>
+                </div>
+                <div>
+                    <div><b>Best Software Training Institute with Placements - Naresh i Technologies </b></div>
+                    <div>223,182 views 4 years ago</div>
+                    <div>Register for free Demo On New Batches:- </div>
+                    <div>
+                        Placement Assistance Program On Java Developer & .Net <br>
+                        @ 11:00 AM :- <a href="https://bit.ly/PAP11J">https://bit.ly/PAP11J</a> <br>
+                        Free Workshop on career Transformation from <br>
+                        Non-tech to Data Science AI & Generative AI <br>
+                        @ 9:30 AM :- <a href="https://bit.ly/3WB7z3z">https://bit.ly/3WB7z3z</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playlist">
+            
+                    <iframe width="560" src="https://www.youtube.com/embed/zxJsIgidKWA?si=zG12841lNwCWkGy7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+
+            
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OdX0FRMnUIs?si=sylUqI7HpmlZYF1y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+
+            
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MKdjjRW0Vho?si=N2-KzNZZrm8W985W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+
+            
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bAlFcXNMQbQ?si=3Yukc1S1XgrNITab" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                
+
+            
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/E8QcEHMvl7c?si=PRhc_rnJDFW5pZ-K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+
+            <div class="playlist">
+        
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kPOExTEau7w?si=Sl1x-PVagpQ5orNv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+
+        
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/uyAt1EVPIAk?si=B4uEMRmQLW4tq52u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+
+        
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CyAxYMjVmis?si=MjefUaP9Weozo-gS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+
+        
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7pp2nzFpTWg?si=zc_nkxG0iNUG-fEN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+
+        
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fLv9grM6NDc?si=WrMSL3BpDD7bYdLx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+        
+
+        </main>
+    </section>
+  </body>
+</html>

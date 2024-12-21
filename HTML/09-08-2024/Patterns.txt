@@ -1,0 +1,124 @@
+14. pattern        : It is used to verify the format of input value and set validation for
+                  input value.
+                  It uses a regular expression to verify the format of input value.
+                  Regular Expression is built by using
+                    a) Meta Characters
+                    b) Quantifiers
+
+Meta Character         Description
+---------------------------------------------------------------------------------------------------------
+ ?                    It refers to zero or once occurrence of a character.
+
+                    Ex:
+                    pattern="colou?r"    => color, colour
+
+
+*                    It refers to zero or more occurrences of character.
+
+                    Ex:
+                    pattern="colou*r"    => color, colour, colour, colouuur
+
++                    It refers to one or more occurrences of character.
+
+                    Ex:
+                    pattern="colou+r"    => colour, colouur, colouuur
+
+.  (dot)                It refers to any single character.
+
+                    Ex:
+                    pattern=".at"        => cat, bat, mat, 2at, $at
+                    pattern=".o."        => cow, dos, boy, 2o4, $o#, #oE
+
+| (Pipe)                It defines logical "OR", used to combine multiple expressions
+                    or chars. Any one of all defined expressions or chars can                             match.
+
+                    Ex:
+                    pattern="red|green|blue"
+                    pattern="R|G|B"
+
+\                    It is an escape sequence character. It can transform a meta
+                    character into normal character and vice versa.
+
+                    Ex:
+                    pattern="gmail\.com"
+                    pattern="\+91"
+
+$                    Ends with
+
+\^                    Starts with
+
+[ ]                    Range and Sequence of chars.
+
+                    Ex:
+                    pattern="[a,d,s]"
+                    pattern="[a, A, d, D, s, S, 4, 6]"
+                    pattern="[a, d, 4, 6, $, #]"
+                    pattern="[a-d, 4-9]"
+                    pattern="[a-z, A-Z]"
+
+( )                    It sets the priority in expression.
+
+
+\d                    It refers to any numeric value [0-9]
+
+                    Ex:
+                    pattern="\d\d"        => 02, 22, 34, 91
+                    pattern="\d\d?"
+                    pattern="\d?\d"
+
+\D                    It refers to non-numeric characters, all other than numeric.
+
+                    Ex:
+                    pattern="\D\d"        => A3, $2, a5
+
+[^ ]                    It excludes the specified range or sequence.
+
+                    Ex:
+                    pattern="[^a,d,s]"
+                    pattern="[^a-z]"
+
+\w                    It refers to word characters  [a-z, A-Z, 0-9, _ ]
+
+                    Ex:
+                    pattern="\d\w"     => 23, 2A, 3a, 5_
+
+\W                    It refers to non-word chars.  [ ! @ # $ % ^ & ]
+
+                    Ex:
+                    pattern="\d\W\d"    => 2@3,  4#4
+
+\s                    It refers to blank space.
+
+                    Ex:
+                    pattern="\d\s\D"    => 2  A,  2 $
+
+\i                    It ignore the capitalization of chars.
+
+                    Ex:
+                    pattern="color\i"
+
+Quantifier            Description
+-----------------------------------------------------------------
+{n}                    It refers to exact number of chars.
+   
+                    Ex:
+                    pattern="\d{10}"
+                    pattern="[a-z]{4}"
+
+{n,m}                It refers to minimum n, maximum m.
+
+                    Ex:
+                    pattern="\d{2,10}"
+                    pattern="\w{4,15}"
+
+{n, }                    It refers to minimum n, and maximum any
+
+                    Ex:
+                    pattern="\d{4, }"
+
+Query: Write a pattern to validate mobile number starting with "+91 and have exactly
+         10 digits number after +91.
+
+Ans:
+        pattern="\+91\d{10}"
+        pattern="\+91[2-9]{10}"

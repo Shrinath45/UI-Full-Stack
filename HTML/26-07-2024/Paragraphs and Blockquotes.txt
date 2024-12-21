@@ -1,0 +1,209 @@
+Paragraph & Blockquote
+
+    <p>                for paragraph
+    <blockquote>        for blockquote, which summarizes the data.
+
+Syntax:
+    <blockquote  align="justify">   </blockquote>
+    <p align="justify"> </p>
+
+FAQ's:
+1. How to define first line indent in paragraph & blockquote?
+A. by using CSS  "text-indent" attribute.
+
+Syntax:
+    p {
+        text-indent : 150px;
+    }
+
+2. How to define a "drop cap" in paragraph & blockquote?
+A.
+    a) You have to access first letter of paragraph by using "::first-letter" class of CSS
+   
+                p::first-letter {
+
+                }
+
+    b) You have to change the letter size and apply CSS "float" as "left".
+
+                p::first-letter {
+                     font-size: 50px;
+                     float: left;
+                }
+   
+    c) You have to set line height for first-letter.
+
+                p::first-letter {
+                      font-size: 50px;
+                      font-family: Algerian;
+                      float: left;
+                      line-height: 35px;
+                }
+
+3. How to control space between words, chars and lines?
+A. By using CSS attributes
+   
+        a) letter-spacing
+        b) word-spacing
+        c) line-height
+
+Syntax:
+        p {
+             letter-spacing: 5px;
+             word-spacing: 10px;
+             line-height: 30px;
+        }
+
+4. How to justify the paragraph content without using justify alignment?
+A. By using CSS "word-break".
+
+Syntax:
+      p {
+            word-break: break-all;
+       }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        blockquote {
+            padding-left: 300px;
+            padding-right: 300px;
+            font-style: italic;
+            text-indent: 150px;
+            letter-spacing: 3px;
+        }
+        .first-para::first-letter {
+            font-size: 60px;
+            float: left;
+            font-family: Algerian;
+            line-height: 35px;
+        }
+        p {
+            word-break: break-all;
+        }
+       
+    </style>
+</head>
+<body>
+    <div>
+        <blockquote align="justify"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet tenetur natus ratione praesentium laboriosam magni distinctio molestiae animi veniam aliquid obcaecati, quibusdam neque facilis libero ullam porro fugit vel voluptate? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut illo quia porro commodi voluptatem, deleniti possimus facilis natus sequi officia quam ipsum expedita incidunt recusandae, sint repellat molestiae voluptatum magni. </blockquote>
+        <p class="first-para"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quae aperiam. Sapiente, rem corrupti dolor consectetur cumque nobis labore itaque quia repellendus iste doloremque deleniti obcaecati expedita provident, eveniet sit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, cum? Culpa, cum assumenda? At tenetur itaque maiores accusamus repellat soluta velit aliquid, necessitatibus laborum cum! Error aliquam sapiente labore nihil! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam rerum fuga, expedita praesentium non at dolorum ex. Quia fugiat error libero est voluptates mollitia, veniam maxime iure, sequi, repellendus eos? </p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. </p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. </p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. </p>
+    </div>
+</body>
+</html>
+
+5. How to create scrollable paragraph content?
+A. By using CSS "overflow" set to "scroll or auto".
+
+Syntax:
+        .terms {
+            height: 300px;
+            width: 500px;
+            border: 1px solid gray;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        <div class="terms">
+            … your content …
+        </div>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .terms {
+         width: 500px;
+         height: 300px;
+         border:1px solid gray;
+         padding: 20px;
+         overflow: auto;
+       }
+       p {
+        text-align: justify;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Terms of Service</h3>
+        <div class="terms">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quae aperiam. Sapiente, rem corrupti dolor consectetur cumque nobis labore itaque quia repellendus iste doloremque deleniti obcaecati expedita provident, eveniet sit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, cum? Culpa, cum assumenda? At tenetur itaque maiores accusamus repellat soluta velit aliquid, necessitatibus laborum cum! Error aliquam sapiente labore nihil! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam rerum fuga, expedita praesentium non at dolorum ex. Quia fugiat error libero est voluptates mollitia, veniam maxime iure, sequi, repellendus eos?</p>    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quae aperiam. Sapiente, rem corrupti dolor consectetur cumque nobis labore itaque quia repellendus iste doloremque deleniti obcaecati expedita provident, eveniet sit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, cum? Culpa, cum assumenda? At tenetur itaque maiores accusamus repellat soluta velit aliquid, necessitatibus laborum cum! Error aliquam sapiente labore nihil! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam rerum fuga, expedita praesentium non at dolorum ex. Quia fugiat error libero est voluptates mollitia, veniam maxime iure, sequi, repellendus eos?</p>    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quae aperiam. Sapiente, rem corrupti dolor consectetur cumque nobis labore itaque quia repellendus iste doloremque deleniti obcaecati expedita provident, eveniet sit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, cum? Culpa, cum assumenda? At tenetur itaque maiores accusamus repellat soluta velit aliquid, necessitatibus laborum cum! Error aliquam sapiente labore nihil! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam rerum fuga, expedita praesentium non at dolorum ex. Quia fugiat error libero est voluptates mollitia, veniam maxime iure, sequi, repellendus eos?</p>    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere rem quae. Sed et sint, totam doloribus quis pariatur aut, eligendi nemo sapiente, deleniti reprehenderit! Tempore dignissimos ipsum itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sunt quibusdam ad aperiam repellendus dolore provident a repellat officia saepe voluptatum, cumque illo ducimus numquam. Officiis nulla modi maxime earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quae aperiam. Sapiente, rem corrupti dolor consectetur cumque nobis labore itaque quia repellendus iste doloremque deleniti obcaecati expedita provident, eveniet sit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, cum? Culpa, cum assumenda? At tenetur itaque maiores accusamus repellat soluta velit aliquid, necessitatibus laborum cum! Error aliquam sapiente labore nihil! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam rerum fuga, expedita praesentium non at dolorum ex. Quia fugiat error libero est voluptates mollitia, veniam maxime iure, sequi, repellendus eos?</p>    
+
+        </div>
+    </div>
+</body>
+</html>
+
+6.  How to create ellipsis and setup for more content in paragraph?
+A. By using following CSS attributes
+
+    a) You have to remove word-wrap by using CSS  "white-space" attribute
+   
+    b) You have to hide overflowing text in paragraph after defining width.
+                "overflow"
+
+    c) You have to setup ellipsis using  "text-overflow" attribute.
+
+Syntax:
+    p  {
+          width: 400px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       p {
+         width: 350px;
+         text-align: justify;
+         border: 1px solid gray;
+         padding: 10px;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+       }  
+    </style>
+</head>
+<body>
+    <div>
+        <span title="Hyper Text Markup Language">HTML</span>
+    </div>
+    <p title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos adipisci tenetur et perspiciatis! Quibusdam dicta minus assumenda repellat velit, maxime vitae, ut animi cum molestiae, quidem maiores soluta impedit est?">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos adipisci tenetur et perspiciatis! Quibusdam dicta minus assumenda repellat velit, maxime vitae, ut animi cum molestiae, quidem maiores soluta impedit est?</p>
+</body>
+</html>
+
+7. How to display paragraphs side by side?
+A. You can use CSS "display:grid", which splits the paragraphs into multiple columns.
+
+     You can use CSS "columns", which splits paragraph into multiple columns with continuous content that spans from left to right.
+
+Syntax:
+     section {
+          columns: 6;
+          column-gap: 30px;
+          column-width: 200px;
+          column-rule: 1px dotted gray;
+     }

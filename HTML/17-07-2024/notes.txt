@@ -1,0 +1,110 @@
+Summary
+- HTML Parsing 
+- Types of Elements
+	1. Normal
+	2. Void
+	3. RC Data
+	4. Raw Text
+	5. Foreign 
+- Semantic & Non Semantic
+- Block Level & Inline
+- DOM
+
+						HTML Page Structure
+
+1.  HTML static page must have extension 
+		.html
+		.htm
+
+FAQ: What is difference between "htm" & "html" ?
+Ans:  Both are same. 
+	 "htm" is a 3 char extension name defined by various tools as per OS standards.
+	
+2. HTML page starts with "Document Declaration"
+
+         <!DOCTYPE html>
+
+    - Document declaration specifies that the page is designed using HTML 5 version.
+    - It is not a token, it is just a declaration.
+
+3. Every HTML page have a document scope
+
+	<html>
+
+	</html>
+
+4. It is mandatory to define language type for <html> document scope.
+
+	<html   lang="en-in">
+
+	</html>
+
+     - Language attribute is used to configure content regional language type.
+     - It is used to understand the number, date and currency formats used in page.
+
+Syntax:
+	<!DOCTYPE html>
+	<html lang="en-in">
+	
+	</html>
+
+5. Every document comprises 2 sections at high level
+
+	a) <head>
+	b) <body>
+
+
+     - Head section comprises of content that is frequently requested in browser.
+       It loads the content in to memory and delivers to browser.
+       It saves "round trip".
+	
+     - Body section comprises of content that is rendered only once.
+     - It uses a "round trip" when ever requested.
+
+FAQ: What is "round trip"?
+Ans:  Round Trip is a communication mechanism used by server & client architecture. 
+	 Round trip specifies that the content will be delivered from server every time when
+	 requested by client. 
+
+6. Head Section keeps the content which is frequently requested, It includes 
+	
+		a) <title>
+		b) <link>
+		c) <meta>
+		d) <script>
+		e) <style>
+		f)  <base>
+
+Title: 
+ - It is used to display page title in the title bar of browser. 
+ - It is also used in bookmarking a page.
+ - It is also used in SEO. [Search Engine Optimization]
+
+Syntax:
+ <!DOCTYPE html>
+ <html  lang="en-in">
+  <head>
+     <title> Travel App </title>
+  </head>
+ </html>
+
+FAQ: What is SEO?
+Ans : Search Engine Optimization is a process that allows "Robots" [ Web Spider, Web Crawler] to search for your keywords and return the optimized results that match the keywords.
+
+Link: 
+- It can link external documents to your page.
+- External document includes  shortcut icons, style sheets etc.
+
+Syntax:
+	<link rel="shortcut icon"  href="public/images/favicon.ico">
+
+<!DOCTYPE html>
+<html  lang="en-in">
+   <head>
+    <title> Travel App </title>
+    <link rel="shortcut icon" href="public/images/favicon.ico">
+   </head>
+   <body>
+    
+   </body>
+</html>

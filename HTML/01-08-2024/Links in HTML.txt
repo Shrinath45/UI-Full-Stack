@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <style>
+        .card {
+            background-color: white;
+            box-shadow: 2px 2px 2px gray;
+            padding: 8px;
+            margin: 10px;
+            height: 400px;
+        }
+        section {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            margin-top: -300px;
+        }
+        .card-title {
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 23px;
+        }
+        .card-img {
+            width: 100%;
+            height: 280px;
+        }
+        .card-header {
+            height: 70px;
+        }
+        .card-body {
+            height: 300px;
+            font-family: Arial;
+            font-size: 14px;
+        }
+        .link {
+            color:blue;
+            font-family: Arial;
+            text-align: center;
+        }
+        .row {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            grid-gap: 10px;
+        }
+        .card-body-img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./images/amazon-background.png" width="100%">
+    </header>
+    <section>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Great Freedom Sale | Coming soon</div>
+            </div>
+            <div class="card-body">
+                <img src="./images/a1.jpg" class="card-img">
+            </div>
+            <div class="card-footer">
+                <div class="link">Join Prime</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Revamp your home in style</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div>
+                        <img src="./images/a2.jpg" class="card-body-img">
+                        <p>Cushion covers, bedsheets & more</p>
+                    </div>
+                    <div>
+                        <img src="./images/a3.jpg" class="card-body-img">
+                        <p>Figurines, vases & more</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <img src="./images/a4.jpg" class="card-body-img">
+                        <p>Home Storage</p>
+                    </div>
+                    <div>
+                        <img src="./images/a5.jpg" class="card-body-img">
+                        <p>Lightning Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                 <div class="link"> more </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Appliances for your home | Up to 55% off</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div>
+                        <img src="./images/a6.jpg" class="card-body-img">
+                        <p>Cushion covers, bedsheets & more</p>
+                    </div>
+                    <div>
+                        <img src="./images/a7.jpg" class="card-body-img">
+                        <p>Figurines, vases & more</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <img src="./images/a8.jpg" class="card-body-img">
+                        <p>Home Storage</p>
+                    </div>
+                    <div>
+                        <img src="./images/a9.jpg" class="card-body-img">
+                        <p>Lightning Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="link">Shop</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Starting ₹149 | Headphones</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div>
+                        <img src="./images/a10.jpg" class="card-body-img">
+                        <p>Cushion covers, bedsheets & more</p>
+                    </div>
+                    <div>
+                        <img src="./images/a11.jpg" class="card-body-img">
+                        <p>Figurines, vases & more</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <img src="./images/a12.jpg" class="card-body-img">
+                        <p>Home Storage</p>
+                    </div>
+                    <div>
+                        <img src="./images/a13.jpg" class="card-body-img">
+                        <p>Lightning Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="link">more</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+                          Hyperlinks in HTML
+
+- Link refers to clickable text, picture or graphic that navigates the user from one location to another.
+
+- Hyper refers to the term "beyond", an hyper link provides access to content beyond what user can see on UI.
+
+- Hyperlink is created by using anchor element <a>.
+
+- Hyperlinks are classified into 2 types
+
+        a) Intra Document Links
+        b) Inter Document Links
+
+Intra Document Links:
+- Intra document link will navigate user from one location to another within the same page.
+- The target location is defined with an "ID" reference.
+   
+        <header  id="top">  </header>
+
+- Anchor element can refer to the ID by using "#" and "href" attribute.
+
+        <a href="#top">  Text | Image | Graphic </a>
+
+FAQ: What is difference between "href" & "src" attributes?
+Ans:  "src" is a getter, which is used to get the specified path and use for element.
+     "href" is a setter, which sets the specified path for browser, so that it can access      
+      the location.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            background-color: black;
+            color:white;
+            padding: 5px;
+        }
+        section {
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+        }
+        main {
+            height: 470px;
+            overflow: auto;
+        }
+        ul {
+            list-style: none;
+            margin-left: -30px;
+        }
+        li {
+            font-size: 20px;
+            padding: 10px;
+            background-color: black;
+            color:white;
+            margin-top: 30px;
+            border-radius: 10px;
+            width: 100px;
+            font-family: Arial;
+        }
+        nav a {
+            color:white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 align="center">Shopper.</h1>
+    </header>    
+    <section>
+        <nav>
+          <ul>
+            <li> <a href="#home">Home</a> </li>
+            <li> <a href="#women">Women</a></li>
+            <li> <a href="#men">Men</a> </li>
+            <li> <a href="#kids">Kids</a> </li>
+          </ul>
+        </nav>
+        <main>
+            <h2 id="home">Home</h2>    
+            <p>Lorem ipsum <b><i>Special discount on </i> <span> <a href="#offer">iPhones</a> </span></b> dolor sit amet consectetur adipisicing elit. Temporibus, debitis sed. Exercitationem, ab quidem reiciendis accusantium voluptates tempore, a, praesentium quo laboriosam sequi aperiam dolores? Quas cupiditate quos molestiae fuga! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam neque et dolorum ipsam doloribus veritatis perferendis modi reprehenderit aut sequi explicabo, quos autem, minima rem mollitia architecto iste voluptas omnis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis animi repellat officia voluptatum et, ipsum libero vero impedit incidunt asperiores optio consequatur commodi. Perspiciatis a quasi officia iure libero et.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis sed. Exercitationem, ab quidem reiciendis accusantium voluptates tempore, a, praesentium quo laboriosam sequi aperiam dolores? Quas cupiditate quos molestiae fuga! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam neque et dolorum ipsam doloribus veritatis perferendis modi reprehenderit aut sequi explicabo, quos autem, minima rem mollitia architecto iste voluptas omnis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis animi repellat officia voluptatum et, ipsum libero vero impedit incidunt asperiores optio consequatur commodi. Perspiciatis a quasi officia iure libero et.</p>
+            <h2 id="women">Women Fashion</h2>
+            <img src="./images/women-fashion.jpg" width="200" height="200">
+            <div>
+                <a href="#home">Back to top</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis sed. Exercitationem, ab quidem reiciendis accusantium voluptates tempore, a, praesentium quo laboriosam sequi aperiam dolores? Quas cupiditate quos molestiae fuga! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam neque et dolorum ipsam doloribus veritatis perferendis modi reprehenderit aut sequi explicabo, quos autem, minima rem mollitia architecto iste voluptas omnis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis animi repellat officia voluptatum et, ipsum libero vero impedit incidunt asperiores optio consequatur commodi. Perspiciatis a quasi officia iure libero et.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis sed. Exercitationem, ab quidem reiciendis accusantium voluptates tempore, a, praesentium quo laboriosam sequi aperiam dolores? Quas cupiditate quos molestiae fuga! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam neque et dolorum ipsam doloribus veritatis perferendis modi reprehenderit aut sequi explicabo, quos autem, minima rem mollitia architecto iste voluptas omnis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis animi repellat officia voluptatum et, ipsum libero vero impedit incidunt asperiores optio consequatur commodi. Perspiciatis a quasi officia iure libero et.</p>
+            <h2 id="men">Men Fashion</h2>
+            <img src="./images/men-fashion.jpg" width="200" height="200">
+            <div>
+                <a href="#home">Back to top</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis sed. Exercitationem, ab quidem reiciendis accusantium voluptates tempore, a, praesentium quo laboriosam sequi aperiam dolores? Quas cupiditate quos molestiae fuga! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam neque et dolorum ipsam doloribus veritatis perferendis modi reprehenderit aut sequi explicabo, quos autem, minima rem mollitia architecto iste voluptas omnis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis animi repellat officia voluptatum et, ipsum libero vero impedit incidunt asperiores optio consequatur commodi. Perspiciatis a quasi officia iure libero et.</p>
+            <article id="offer">
+                <figure>
+                    <img src="./images/iphone-blue.jpg" width="200" height="200">
+                    <figcaption>20% OFF on iPhone 15</figcaption>
+                </figure>
+            </article>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis sed. Exercitationem, ab quidem reiciendis accusantium voluptates tempore, a, praesentium quo laboriosam sequi aperiam dolores? Quas cupiditate quos molestiae fuga! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam neque et dolorum ipsam doloribus veritatis perferendis modi reprehenderit aut sequi explicabo, quos autem, minima rem mollitia architecto iste voluptas omnis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis animi repellat officia voluptatum et, ipsum libero vero impedit incidunt asperiores optio consequatur commodi. Perspiciatis a quasi officia iure libero et.</p>
+            <h2 id="kids">Kids Fashion</h2>
+            <img src="./images/kids-fashion.jpg" width="200" height="200">
+            <div>
+                <a href="#home">Back to top</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis sed. Exercitationem, ab quidem reiciendis accusantium voluptates tempore, a, praesentium quo laboriosam sequi aperiam dolores? Quas cupiditate quos molestiae fuga! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam neque et dolorum ipsam doloribus veritatis perferendis modi reprehenderit aut sequi explicabo, quos autem, minima rem mollitia architecto iste voluptas omnis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis animi repellat officia voluptatum et, ipsum libero vero impedit incidunt asperiores optio consequatur commodi. Perspiciatis a quasi officia iure libero et.</p>
+           
+        </main>
+    </section>
+</body>
+</html>
+
+Note: If there is no much content to scroll and display in page, then you can use CSS
+      "target" class to identify the target location and highlight with styles.
+
+Syntax:
+       .card {                        
+
+       }
+
+       .card:target {
+     
+        }
+
+       <div class="card" id="topic"> </div>
+
+        <a href="#topic"> Topic </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            padding: 20px;
+            height: 100px;
+            box-shadow: 2px 2px 2px black;
+            border:1px solid gray;
+            width: 200px;
+            margin: 20px;
+        }
+        .card:target {
+            background-color: black;
+            color:white;
+            border-radius: 50%;
+            text-align: center;
+        }
+        section {
+            display: flex;
+        }
+        body {
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+        }
+        nav div {
+           background-color: black;
+           color:white;
+           padding: 10px;
+           margin-top: 50px;
+           width: 100px;
+           font-size: 20px;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div> <a href="#html">HTML</a> </div>
+        <div> <a href="#css">CSS</a> </div>
+        <div> <a href="#js">JavaScript</a> </div>
+    </nav>
+    <section>
+        <div class="card" id="html">
+            <h3>HTML</h3>
+            <p>It is a markup language</p>
+        </div>
+        <div class="card" id="css">
+            <h3>CSS</h3>
+            <p>It defines styles</p>
+        </div>
+        <div class="card" id="js">
+            <h3>JavaScript</h3>
+            <p>It manipulates DOM</p>
+        </div>
+    </section>
+</body>
+</html>

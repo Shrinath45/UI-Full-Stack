@@ -1,0 +1,134 @@
+What is HTML?
+What is Browser?
+Browser Architecture 
+
+1. User Interface
+ - It represent the browser UI.
+ - It include buttons, title bar, status, extensions and other settings
+
+2. UI Backend 
+- It comprises of logic related to UI.
+- If browser is open source then you can customize the UI backend. 
+
+
+3. Browser Engine 
+- It translates HTML and CSS.
+- Every browser have an engine
+
+		Chrome		V8
+		FireFox		SpiderMonkey
+		Safari		Webkit
+		Edge		Chakra
+
+4. Rendering Engine
+- It is responsible for rendering output into browser.
+- It paints the output.
+
+5. JavaScript Interpreter
+- It translates JavaScript in browser.
+- Interpreter is a line-by-line translator.
+
+6. Network
+- It manages the request and response.
+- It locates the resources and sends to client.
+- It monitors the resources.
+
+7. Data Persistence 
+- It is storage for browser.
+- Browser have various storge units to store the client data.
+- It have 
+	a) Local Storage
+	b) Session Storage
+	c) Cookie 
+
+Note: All browsers follow the standards of "Netscape". 
+
+					              HTML Parsing
+
+- Parsing is the process of converting one type into another.
+- HTML Parsing includes the following phases
+
+Markup=>Bytes=>Chars=>Tokens => Elements => DOM => Layout => Render => Paint
+
+FAQ's:
+1. What is Tokenization?
+A. It is the process of converting characters into Tokens.
+
+2. What is Tag?
+A. Tag is a pseudo representation for Token.
+
+3. What is Element?
+A. Element is a node created using Token. HTML is a collection of elements.
+    Elements are used to create a document. [Markup Document]
+
+4. What is DOM?
+A. Document Object Model
+     It is a hierarchy of elements in browser. [Parent - Child relation]
+
+5. Which browser event will load HTML page?
+A. "DOMContentLoaded"
+
+
+						   HTML Elements
+- HTML is a collection of elements arranged in DOM.
+- HTML elements are classified into 5 groups
+
+	1. Normal Elements
+	2. Void Elements
+	3. RC Data Elements
+	4. Raw Text Elements
+	5. Foreign Elements
+
+Normal Element:
+- It returns a presentation directly on call back.
+- It doesn't require additional attributes.
+- It starts presentation but can't stop.
+- You have to stop explicitly by using end token.
+
+	<b>		start token
+	</b>		end token
+
+Void Element:
+- The term void refers to "no-return".
+- Void element will not return any presentation directly on call back.
+- It requires additional attributes to return any presentation.
+- It is a self ending element. 
+- Hence it doesn't require end token.
+
+	<img>	start token  - no end token
+
+
+RC Data Type:
+- Rich content data elements.
+- It is used to present plain text content.
+- It will not allow any another element within the context.
+
+	<textarea>
+		… your content... 
+	</textarea>
+
+Raw Text Elements:
+- These are elements presented without a token.
+- Raw text is used for presentation. 
+
+Ex:
+	&#8377;
+	&copy;
+
+Foreign Elements:
+- These are set of HTML elements that require additional plugin's.
+- If plugin is not supports then the element can't present. 
+
+Ex:
+	SVG, Canvas, MATHML  etc.. 
+
+FAQ's:
+1. What are semantic and non-semantic elements?
+A. Semantic refers to elements for specific purpose.
+	 	<img> <table> <p> etc..
+     Non-semantic refers to element for any purpose. 
+		<div> <span>  etc..
+
+2. What are block-level and inline elements?
+A. Block level elements will not allow any content beside, you can defined below or above.
+    Inline elements will allows content beside. [prefix , suffix ] [prepend, append]

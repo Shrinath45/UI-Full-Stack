@@ -1,0 +1,156 @@
+Form Elements
+- Textbox
+- Number
+- Password
+- Range
+
+                             Email Input
+- It is similar to textbox but have default "Email" pattern validation.
+
+Syntax:
+    <input type="email" name="email">
+
+                            URL Input
+- It validates URL input.
+- URL requires protocol and valid format of domain.
+
+Syntax:
+    <input type="url"  name="url">
+
+                           Color Input
+- It uses a color picker which allows to pick a color dynamically.
+- Color value must be a 6 char hexadecimal code with "#".
+
+Syntax:
+    <input type="color"  name="color"  value="#ff0000">
+
+                        Date & Time Input
+- HTML provides various types for date and time values
+
+    a) date
+    b) time
+    c) datetime-local
+    d) week
+    e) month
+    f)  year
+
+Syntax:
+    <input type="date">
+    <input type="time">
+    <input type="month">
+
+- You can restrict date range but can't have a range selector.
+- Range can be defined for restriction using the attributes
+    a) min
+    b) max
+- Date input for developer is always "Year-Month-Day" format.
+
+Syntax:
+  <input type="date" min="2024-08-12"  max="2024-08-30" name="Departure">
+
+Note: Date pickers in HTML will not allow range of date to select, you have to design
+          using 3rd party libraries. [jQuery, React..]
+ 
+                                File Input
+- It is a file picker.
+- It allows to browse and select files from client device.
+- It is not a file uploading element. It is just a file browser.
+
+Syntax:
+    <input type="file" name="photo">
+
+- You can set filter for specific type of files by using "accept" attribute.
+
+Syntax:
+    <input type="file" accept=".jpg, .png" name="photo">
+
+- You can enable selection of multiple files in browser by using  "multiple" attribute.
+
+Syntax:
+    <input type="file"  accept=".jpg"  multiple  name="photos">
+
+                       
+                          Radio Button
+
+- Radio allow to select one or more options from a group of choices.
+- It will not allow to deselect the selected option.
+- Hence radios are always used with Mutex [Mutual Exclusion] mechanism.
+- Mutex can be configured for radios by defining same name for all radios in a category.
+
+Syntax:
+        <input type="radio"  name="gender"> Male
+        <input type="radio"  name="gender"> Female
+
+- Radio allows to check any one option by default by using "checked" attribute.
+
+Syntax:
+        <input type="radio" name="gender"  checked> Male
+
+- Radios by default submit "on" as value.
+- Hence every radio must have a value to submit.
+
+Syntax:
+     <input type="radio" name="gender"  value="male"> Male
+     <input type="radio" name="gender"  value="female"> Female
+
+                                Label
+- It is a form element used for titles and captions.
+- It provides binding attribute, which allow to bind title and caption with any HTML form element.
+
+Syntax:
+<input type="radio" name="gender" value="Male"> <label for="gender"> Male </label>
+
+                              Checkbox
+- Checkbox is similar to radio in attributes but allows to check and uncheck any option dynamically.
+- You can use to select on or multiple from a group of choices.
+- It will not use Mutex even defined with same name.
+
+Syntax:
+  <input type="checkbox" name="terms"> <label for="terms"> I Accept </label>
+
+- If value is not defined the it submit "on" as value.
+
+
+Syntax:
+  <input type="checkbox"  name="course" value="UI Fullstack"> <label> UI </label>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            height: 50px;
+            border: 1px solid gray;
+            width: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Select Gender</legend>
+            <ul>
+                <li><input type="checkbox" name="course" value="Java"> <label for="course">Java</label> </li>
+                <li><input type="checkbox" name="course" value="UI"> <label for="course">UI Full Stack</label> </li>
+                <li><input type="checkbox" checked name="course" value="Oracle"> <label for="course">Oracle</label> </li>
+                <li><input type="checkbox" name="course" value="Java"> <label for="course">Java</label> </li>
+                <li><input type="checkbox" name="course" value="UI"> <label for="course">UI Full Stack</label> </li>
+                <li><input type="checkbox" checked name="course" value="Oracle"> <label for="course">Oracle</label> </li>
+                <li><input type="checkbox" name="course" value="Java"> <label for="course">Java</label> </li>
+                <li><input type="checkbox" name="course" value="UI"> <label for="course">UI Full Stack</label> </li>
+                <li><input type="checkbox" checked name="course" value="Oracle"> <label for="course">Oracle</label> </li>
+
+            </ul>
+            <br><br>
+            <button>Submit</button>
+        </fieldset>
+       
+    </form>
+</body>
+</html>

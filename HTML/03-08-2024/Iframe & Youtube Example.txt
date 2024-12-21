@@ -1,0 +1,293 @@
+FAQ: How to open linked document in the same page along with existing content?
+Ans:  By using <iframe>, which allows to embed any content and change dynamically.
+
+Syntax:
+        <iframe  src=""  name=""  width=""  height="">  </iframe>
+
+     Anchor can use iframe name as target, so that the linked document will display
+     inside iframe.
+
+Syntax:
+    <a href="path" target="iframe_name">  Text | Image </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+            height: 500px;
+        }
+        nav {
+            border-right: 2px groove gray;
+        }
+        main {
+            padding-left: 20px;
+        }
+        main iframe {
+            width: 100%;
+            height: 500px;
+            border:none;
+        }
+        nav iframe {
+            width: 80%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <nav>
+            <div>
+                <a href="./docs/ishop.pdf" target="frameBody">Project Document</a>
+            </div>
+            <br><br>
+            <div>
+                <a target="frameBody" href="./images/iphone-blue.jpg"> <img src="./images/iphone-blue.jpg" width="150" height="150"> </a>
+            </div>
+            <br><br>
+            <div>
+                <iframe src="https://www.youtube.com/embed/_mhtfJQ5lxU"></iframe&gt;
+                <a target="frameBody" href="https://www.youtube.com/embed/_mhtfJQ5lxU"&gt; AI Workshop </a>
+            </div>
+            <br><br>
+            <div>
+                <a target="frameBody" href="https://www.youtube.com/embed/kPOExTEau7w"&gt; LINUX Tutorial </a>
+            </div>
+            <br><br>
+            <div>
+                <a target="frameBody" href="./shopper-template.html"> shopper-template </a>
+            </div>
+        </nav>
+        <main>
+            <iframe name="frameBody" src="./amazon-cards.html"></iframe>
+        </main>
+    </section>
+</body>
+</html>
+
+Ex: YouTube
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 16px;
+            font-family: Arial;
+        }
+        .bi-justify {
+            font-size: 24px;
+        }
+        .search-bar {
+            display: inline-flex;
+            width: 400px;
+            border:1px solid gray;
+            border-radius: 20px;
+            padding: 10px;
+            justify-content: space-between;
+        }
+        .bi-mic-fill {
+            margin-left: 30px;
+            background-color: rgb(236, 234, 234);
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .btn-signin {
+            border: 1px solid blue;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .bi-three-dots-vertical {
+            font-size: 20px;
+        }
+        section {
+            display: grid;
+            grid-template-columns: 1fr 11fr;
+            margin-top: 10px;
+        }
+        nav {
+            margin-left: -40px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .nav-title {
+            font-size: 12px;
+        }
+        .nav-item {
+            margin-top: 25px;
+            margin-bottom:25px;
+        }
+        article {
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+            font-family: Arial;
+        }
+        .btn-subscribe {
+            background-color: black;
+            color:white;
+            padding: 10px;
+            border-radius: 20px;
+            width:100px;
+        }
+        .menu {
+            list-style: none;
+            display: flex;
+            font-family: Arial;
+            font-size: 20px;
+            color:gray;
+            margin-left: -50px;
+            border-bottom: 0.5px solid gray;
+            padding-bottom: 20px;
+        }
+        .menu li {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .menu li:first-child {
+            font-weight: bold;
+            color:black;
+            text-decoration: underline;
+        }
+        main {
+            height: 500px;
+            overflow: auto;
+        }
+        .about-us {
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+            grid-gap: 20px;
+            width: 80%;
+            font-family: Arial;
+        }
+        iframe {
+            border:none;
+            width: 100%;
+            height: 250px;
+        }
+        .about-us div {
+            margin-bottom: 20px;
+        }
+        .playlist {
+            display: grid;
+            grid-template-columns: 2.4fr 2.4fr 2.4fr 2.4fr 2.4fr;
+            grid-gap: 2px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .playlist iframe {
+            border:1px solid gray;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span class="bi bi-justify"></span>
+            <img src="./images/youtube.jpg" width="50%">
+        </div>
+        <div>
+            <span class="search-bar">
+                <span>Search</span>
+                <span class="bi bi-search"></span>
+            </span>
+            <span class="bi bi-mic-fill"></span>
+        </div>
+        <div>
+            <span class="bi bi-three-dots-vertical"></span>
+            <span class="btn-signin"> <span class="bi bi-person-circle"> Sign in </span> </span>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <div class="nav-item">
+                <span class="bi bi-house-door"></span>
+                <div class="nav-title">Home</div>
+            </div>
+            <div class="nav-item">
+                <span class="bi bi-film"></span>
+                <div class="nav-title"> Shorts</div>
+            </div>
+            <div class="nav-item">
+                <span class="bi bi-camera-video"></span>
+                <div class="nav-title"> Live</div>
+            </div>
+            <div class="nav-item">
+                <span class="bi bi-gear"></span>
+                <div class="nav-title">Settings</div>
+            </div>
+        </nav>
+        <main>
+            <img src="./images/channel-banner.jpg" width="100%">
+            <article>
+                <div>
+                    <img src="./images/nit-logo.jpg" width="100%">
+                </div>
+                <div>
+                    <h3>Naresh i Technologies</h3>
+                    <p>@NareshIT</p>
+                    <p>1.27M subscribers 3.1K videos</p>
+                    <p>We are one of the software training organization With a library of 200+ courses,</p>
+                    <p><a href="http://www.instagram.com/nareshitech">instagram.com/nareshitech</a&gt;
+                        and 7 more links</p>
+                    <div class="btn-subscribe"> <span class="bi bi-bell-fill"></span> Subscribe</div>
+                </div>
+            </article>
+            <ul class="menu">
+                <li>Home</li>
+                <li>Videos</li>
+                <li>Shorts</li>
+                <li>Live</li>
+                <li>Playlists</li>
+                <li>Community</li>
+                <li class="bi bi-search"></li>
+            </ul>
+            <div class="about-us">
+                <div>
+                    <iframe src="https://youtube.com/embed/yBw-6rr5hbA"></iframe&gt;
+                </div>
+                <div>
+                    <div><b>Best Software Training Institute with Placements - Naresh i Technologies</b></div>
+                    <div>223,182 views 4 years ago</div>
+                    <div>Register For Free Demos On New Batches :-</div>
+                    <div>
+                    Placement Assistance Program On JAVA Developer & .Net | <br>
+                    @ 11.00 AM :- https://bit.ly/PAP11J <br>
+                    Free Workshop on Career Transformation from <br>
+                    Non-Tech to Data Science AI & Generative AI | <br>
+                    @ 9:30 AM :- <a href="https://bit.ly/3WB7z3z">https://bit.ly/3WB7z3z</a&gt;
+                    </div>
+                </div>
+            </div>
+            <div class="playlist">
+                <iframe></iframe>
+                <iframe></iframe>
+                <iframe></iframe>
+                <iframe></iframe>
+                <iframe></iframe>
+            </div>
+            <div class="playlist">
+                <iframe></iframe>
+                <iframe></iframe>
+                <iframe></iframe>
+                <iframe></iframe>
+                <iframe></iframe>
+            </div>
+        </main>
+    </section>
+</body>
+</html>

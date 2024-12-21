@@ -1,0 +1,362 @@
+Text Formatting
+Data List with Terms and Definitions
+Fieldset with Legend
+Details & Summary
+
+                            Ordered List
+- It is used to set auto numbering for a list of items in page.
+- Numbering updates automatically when you add or remove items from list.
+- List is defined using <ol>.
+- Items in list are defined using <li>.
+
+Syntax:
+    <ol>
+        <li> Item-1 </li>
+        <li> Item-2 </li>
+    </ol>
+
+Attributes:
+    a) type            : It sets number type as  "1, A, a, i, I"
+
+                      <ol type="a">
+                      <ol type="i">
+
+    b) start            : It specifies the level number to start with.
+
+                      <ol  type="1"  start="101">
+                      <ol  type="a"  start="5">
+
+    c) reversed         : It sets reversed numbering for items.
+
+                      <ol type="1" reversed>
+
+Note: "reversed" is a Boolean attribute, with default value "true".
+
+FAQ's:
+1. How to create a nested list?
+A. A child list must be defined within the <li> element.
+
+Syntax:
+        <li> Item-1 </li>            
+            <ol>
+            <li>Child-1</li>            => Bad Code
+           </ol>
+
+        <li> Item-1
+               <ol>
+             <li> Child-1 </li>            => Good Code
+              </ol>
+        </li>
+
+2. How many levels of nested list you can create?
+A. There is no limit, You have to just repeat the numbering type after five levels.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol type="1">
+        <li>Front End
+            <ol type="a">
+                <li>HTML
+                    <ol type="i">
+                        <li>Normal Elements</li>
+                        <li>Void Elements</li>
+                    </ol>
+                </li>
+                <li>CSS</li>
+            </ol>
+        </li>
+       
+        <li>Backend </li>
+    </ol>
+   
+</body>
+</html>
+
+3. How to create a scrollable list?
+A. By using height, border and overflow.
+
+Syntax:
+    ol {
+         width:200px;
+         height: 50px;
+         border:1px solid gray;
+         overflow:auto;
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          ol {
+            border:1px solid gray;
+            width: 200px;
+            height: 50px;
+            overflow: auto;
+          }
+    </style>
+</head>
+<body>
+    <ol type="1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Bootstrap</li>
+        <li>JavaScript</li>
+        <li>JQuery</li>
+        <li>Node JS</li>
+        <li>MongoDB</li>
+    </ol>
+   
+</body>
+</html>
+
+
+4. How to display list items side-by-side?
+A. You can use "display:inline" for <li> element, but it removes numbering.
+     You can use "display:flex" for <ol> element, which keeps numbering and display side-by-side.
+
+Syntax:
+    ol {
+       display:flex;
+       justify-content: space-between;
+    }
+
+5. How to display list items in multiple columns?
+A. You can use
+        a) display:grid        => horizontal orientation for numbering
+        b) columns        => vertical orientation
+
+Syntax:
+    ol {
+       display:grid;
+       grid-template-columns: 6fr 6fr;
+    }
+
+    a) Item-1                b) Item-2
+    c) Item-3                d) Item-4
+
+Syntax:
+    ol {
+       columns: 2;
+    }
+   
+    a) Item-1                c) Item-3
+    b) Item-2                d) Item-4
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .child-list {
+          columns: 2;
+          margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ol type="1">
+        <li> _______ elements will not have end token.
+            <ol type="a" class="child-list">
+                <li>Normal</li>
+                <li>RC DATA</li>
+                <li>Void</li>
+                <li>Raw Text</li>
+            </ol>    
+        </li>
+    </ol>
+   
+</body>
+</html>
+
+6. How to remove the numbering list ?
+A. By using CSS "list-style:none"
+
+Syntax:
+    ol {
+       list-style:none;
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       footer {
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr 3fr ;
+        padding: 20px;
+        background-color: black;
+        color:white;
+       }
+       ol {
+        list-style: none;
+       }
+       li {
+         padding-top: 10px;
+       }
+       .title {
+        font-weight: bold;
+       }
+    </style>
+</head>
+<body>
+    <footer>
+        <div>
+            <ol>
+                <li class="title">Get to Know Us</li>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Press Releases</li>
+                <li>Amazon Science</li>
+            </ol>
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+    </footer>
+   
+</body>
+</html>
+
+
+Note: You can use ordered list for a dynamic list in page.
+      Dynamic list is intended to change dynamically according to requirements.
+      It is usually updated using script.
+
+                       
+                        Unordered List
+- It sets a bulleted list for list of items.
+- Bulleted list contains a symbol instead of numbering.
+- <ul> is for list and <li> for list item.
+
+Syntax:
+    <ul>
+       <li> Item-1 </li>
+       <li> Item-2 </li>
+    </ul>
+
+- You can use "type" attribute to set numbering type as
+    a) circle
+    b) disc
+    c) square
+
+Syntax:
+    <ul type="square">
+
+Note: You can set a custom symbol using CSS attribute "list-style-image"  or you can
+      also use bootstrap icons.
+
+Syntax:
+    ul {
+       list-style: none;
+       list-style-image: url("image_path");
+    }
+
+    You can set custom symbol even for ordered list.
+
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            color:green;
+            padding-top: 10px;
+        }
+        li span {
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+    <li class="bi bi-tag-fill"> <span>Bank Offer5% instant discount on SBI Credit Card Transactions, up to ₹1,250 on orders of ₹7,000 and aboveT&C</span>  </li>
+
+    <li class="bi bi-tag-fill"> <span>Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</span> </li>
+   
+    <li class="bi bi-tag-fill"> <span>Bank Offer₹1000 off on Flipkart UPIT&C</span> </li>
+   
+    <li class="bi bi-tag-fill">  <span>Special PriceGet extra ₹12401 off (price inclusive of cashback/coupon)T&C</span> </li>
+   
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul {
+            list-style: none;
+            list-style-image: url("images/star.gif");
+        }
+        li {
+            color:green;
+            padding-top: 10px;
+            font-size: 30px;
+        }
+        li span {
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+    <li> <span>Bank Offer5% instant discount on SBI Credit Card Transactions, up to ₹1,250 on orders of ₹7,000 and aboveT&C</span>  </li>
+
+    <li> <span>Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</span> </li>
+   
+    <li> <span>Bank Offer₹1000 off on Flipkart UPIT&C</span> </li>
+   
+    <li>  <span>Special PriceGet extra ₹12401 off (price inclusive of cashback/coupon)T&C</span> </li>
+   
+    </ul>
+</body>
+</html>

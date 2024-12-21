@@ -1,0 +1,36 @@
+
+						Web Development
+
+1. Network
+ - A computer network comprises of group of computers connecting with each other for sharing of information and resources.
+- ARPANET is the first computer network introduced by US-DOD in early 1960's.
+  [Advanced Research Projects Agency Network]
+- Computer networks are classified into various types 
+	a) LAN
+	b) MAN
+	c) WAN
+
+2. Internet
+- Internet is a WAN that connects computers all over the globe. 
+- CERN [Council for European Research and Nuclear] labs introduced the concept of Internet. 
+
+3. Web
+- Web is a portion of internet with restricted access.
+- Tim Berners Lee introduced the concept of "Web". [Father of Web]
+- Web Standards are maintained by a community "W3C". 
+  [World Wide Web Consortium]
+- The latest version of Web is "Web 3".
+
+4. Web Components [Content on Web]
+- Web comprises of various types of content, which is classified into the following
+
+	* Website
+	* Web Application
+	* Blogs  [ Web Log = Blog]
+	* Micro Blog
+	* Vlog 
+	* Wiki [ Huwain - Quick]
+	* Podcasting
+	* Widgets
+
+						    Web Application

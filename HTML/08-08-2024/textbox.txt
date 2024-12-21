@@ -1,0 +1,147 @@
+Form Attributes
+1. id
+2. name
+3. class
+4. method
+5. action         : It defines the target path to submit data.
+
+Syntax:
+    <form method="get"  action="result.html">
+    <form method="post" action="page.jsp">
+
+6. novalidate    : It will by-pass the default HTML validations. You can set "novalidate"
+              when you are configuring custom validations with JS.
+
+Syntax:
+    <form method="get"  novalidate>
+
+                           Form Elements
+
+- Form comprises of various elements like button, textbox, checkbox, radio, listbox, textarea etc.
+- HTML provides various tokens for elements
+           
+        <input>
+        <select>
+        <option>
+        <optgroup>
+        <textarea>
+        <meter>
+        <progress>
+        <datalist>
+        etc..
+
+                                 TextBox
+
+- Text box allows user to view, edit and input a value.
+- HTML <input> element provides a textbox, but allows to input any type of value.
+- Textbox is specially designed for string input.
+- If you wan string input then the "type" must be "text".
+
+Syntax:
+        <input type="text">
+
+Attributes:
+1. id
+2. name
+3. class
+
+Note: Every form element must have "name" attribute. If name is not defined then
+      form can't submit its value.
+
+Syntax:
+    <input type="text"  name="age">
+    <input type="text"  name="email">
+
+4. value    : It defines the value to display in textbox.
+
+Syntax:
+    <input type="text"  name="age"  value="22">
+
+5. readonly  : It will not allow to modify the value in textbox but it can submit the value.
+
+Syntax:
+    <input type="text" name="age" value="22" readonly>
+
+ 6. disabled  : It will not allow to modify and submit.
+
+Syntax:
+    <input type="text" name="age" value="22" disabled>
+
+7. placeholder    :   It defines the watermark text to display inside textbox.
+               
+Syntax:
+    <input type="text" name="user"  placeholder="User Name min 4 chars">
+
+8. autofocus     :  It sets focus to the element automatically on page load.
+
+Syntax:
+    <input type="text" name="user"  autofocus>
+
+9. size        : It defines width for textbox. The default width is "20".
+
+Syntax:
+    <input type="text" name="OTP" size="4">
+
+10. maxlength    : It defines the restriction for maximum number of characters.
+
+Syntax:
+    <input type="text" name="OTP" size="4" maxlength="4">
+
+11. minlength    : It defines the validation for minimum number of characters.
+
+Syntax:
+    <input type="text"  name="OTP" size="4" minlength="4" maxlength="4">
+
+
+12. required     : It will not allow to submit empty. It is used for mandatory fields.
+
+Syntax:
+    <input type="text" name="OTP" size="4" required  minlength="4" maxlength="4">
+
+
+13. list        : It is used to configure a data list. Form data list is designed by using
+                <datalist>
+                <option>
+              It can display datalist as auto complete text.
+
+Syntax:
+    <input type="text" name="country" list="countries">
+    <datalist id="countries">
+    <option>India</option>
+    <option>US </option>
+    </datalist>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form method="get">
+     <dl>
+        <dt>Name</dt>
+        <dd><input type="text" required minlength="4" maxlength="10"  placeholder="Name min 4 chars" name="UserName"></dd>
+        <dt>Age</dt>
+        <dd><input type="text" required autofocus maxlength="2"  name="Age" size="2"></dd>
+        <dt>OTP</dt>
+        <dd><input type="text" required name="OTP" size="4" maxlength="4"></dd>
+        <dt>Country</dt>
+        <dd>
+            <input type="text" name="Country" list="countries" placeholder="Your country">
+            <datalist id="countries">
+                <option>India</option>
+                <option>Australia</option>
+                <option>UK</option>
+                <option>US</option>
+                <option>Indonesia</option>
+
+            </datalist>
+        </dd>
+     </dl>
+     <button>Submit</button>
+   </form>
+</body>
+</html>

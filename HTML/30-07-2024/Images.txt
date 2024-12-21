@@ -1,0 +1,231 @@
+Images in HTML
+
+- Images are of various types in computing technologies.
+- Web supports only few image types
+
+Type                                    MIME                Extension
+-------------------------------------------------------------------------------------------------------------------
+APNG [Animated Portable Network Graphics]    image/apng            .apng
+
+PNG   [Portable Network Graphics]            image/png            .png
+
+JPEG [Joint Photographic Expert Group]        image/jpeg            .jpg, .jpeg, .jfif
+
+GIF       [Graphic Interchange Format]            image/gif                .gif
+
+TIFF  [Tagged Image File Format]                image/tiff                .tiff
+
+Bitmap                                    image/bmp            .bmp
+
+Microsoft Icon                                image/icon            .ico
+
+SVG [Scalar Vector Graphics]                application/XML        .svg
+
+Webp [Web Picture]                        application/webp        .webp
+
+
+FAQ: What is MIME ?
+Ans:  Multi purpose Internet Mail Extension [MIME]
+         It defines the content type in a file.
+
+Ex:
+     image/jpeg            =>  flower.jpg,  photo.jpeg,  banner.jfif
+    application/msword        =>  resume.doc, file.docx, project.rtf, notes.txt
+
+APNG & PNG:
+- They have more pixel depth.
+- HD images.
+- More colors.
+- Use more memory.
+- It is good for downloadable images.
+- It is not good for on screen presentation.
+- APNG is animated image type.
+
+JPEG
+- They are compressed image formats.
+- Less pixel depth when compared to PNG
+- Compressed images occupy less memory.
+- They are HD but with less pixels.
+- It is good for on screen presentation.
+- More colors same as PNG.
+
+GIF
+- It is image format that supports only 256 colors.
+- Very less pixel depth when compared to JPG.
+- Memory almost same as JPG.
+- Load faster that JPG & PNG as they have low resolution of colors.
+- It is good for bullets, lines, background patterns, logos etc.
+- GIF can be animated.
+
+TIFF
+- It is sliced image format.
+- It is not recommended for modern web.
+- HD image.
+- More Colors.
+- Heavy, it uses more memory.
+- Renders slow.
+- It is mostly used for scanned documents.
+
+Bitmap
+- It is an image in binary format.
+- Image is stored in binary code.
+- It is very good for transporting image via network and storing in database.
+- Morden web will not recommend converting binary codes and storing in database.
+
+Note: The process converting Object  to Binary and vice versa is known as "COM Marshalling". [Common Object Model]. Firewall block COM level marshalling.
+
+
+SVG
+- Scalar vector graphics.
+- It is vector based image, it is not pixel based.
+- HD images
+- It keeps the quality of image at any zoom level.
+- SVG is designed using XML as language.
+- Mostly used for icons, architectural diagrams, maps etc.
+
+Webp
+- It is embedded image into page.
+- It will not allow to separate image from page.
+- It secures from downloading and copying.
+- Web Picture format.
+
+Embed Image:
+- If you want image to embed directly in page then you can use "<img>"  image element.
+- If you want image SEO friendly the enclose using <figure> & <figcaption>
+
+Syntax:
+    <figure>
+       
+        <img>
+
+        <figcaption>Title</figcaption>
+
+    </figure>
+
+Image Attributes:
+
+        src            : It refers to file name and path
+
+        align            : It aligns left or right and controls text wrapping.
+
+        border        : It sets border.
+
+        width/height    : It sets dimensions for image.
+
+        title            : It defines screen tip to display on mouse over.
+
+        alt            : It defines alternative text to display when image fails to load.
+
+        hspace        : It sets horizontal padding.
+
+        vspace        : It set vertical padding.
+
+Syntax:
+    <img  src="./image/name.jpg"  border="1"  width="200" height="300"  title="tool tip to display"  alt="enable images"  align="left" hspace="30">
+
+FAQ: How to define fluid images?
+Ans:  Fluid image can change its size according to the parent element.
+     It is possible by defining the size in "%".
+
+Syntax:
+    <img src="./images/pic.jpg"  width="50%"  height="100%">
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .product {
+            display: grid;
+            grid-template-columns: 3fr 6fr 3fr;
+            font-family: Arial;
+            padding: 5px;
+        }
+        .rating {
+            background-color: green;
+            color:white;
+            padding: 3px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 23px;
+            padding-bottom: 10px;
+        }
+        .reviews {
+            color:gray;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        ul {
+            color: gray;
+            margin-left: -30px;
+            margin-top: 50px;
+        }
+        li {
+            margin-top: 10px;
+        }
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="product">
+        <div>
+            <img src="./images/iphone-blue.jpg" width="100%">
+        </div>
+        <div>
+            <div class="title">Apple iPhone 15 (Blue, 128 GB)</div>
+            <div>
+                <span class="rating">4.6 <span class="bi bi-star-fill"> </span> </span> <span class="reviews">44,023 Ratings & 2,370 Reviews</span>
+            </div>
+            <div>
+                <ul>
+                    <li>128 GB ROM</li>
+                    <li>15.49 cm (6.1 inch) Super Retina XDR Display</li>
+                    <li>48MP + 12MP | 12MP Front Camera</li>
+                    <li>A16 Bionic Chip, 6 Core Processor Processor</li>
+                    <li>1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="price">&#8377; 68,999 </div>
+            <div><strike>79,999</strike> <font color="green"> <b>13% off</b> </font> </div>
+        </div>
+    </div>
+
+
+    <div class="product">
+        <div>
+            <img src="./images/iphone-black.jpg" width="100%">
+        </div>
+        <div>
+            <div class="title">Apple iPhone 15 (Black, 128 GB)</div>
+            <div>
+                <span class="rating">4.6 <span class="bi bi-star-fill"> </span> </span> <span class="reviews">44,023 Ratings & 2,370 Reviews</span>
+            </div>
+            <div>
+                <ul>
+                    <li>128 GB ROM</li>
+                    <li>15.49 cm (6.1 inch) Super Retina XDR Display</li>
+                    <li>48MP + 12MP | 12MP Front Camera</li>
+                    <li>A16 Bionic Chip, 6 Core Processor Processor</li>
+                    <li>1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="price">&#8377; 68,999 </div>
+            <div><strike>79,999</strike> <font color="green"> <b>13% off</b> </font> </div>
+        </div>
+    </div>
+</body>
+</html>

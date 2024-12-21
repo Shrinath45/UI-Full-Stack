@@ -1,0 +1,294 @@
+Table Elements
+Table Attributes
+- frame
+- rules
+- border
+- cellspacing
+- cellpadding
+- width
+- height
+- align
+- valign
+- bgcolor
+- background
+- colspan
+- rowspan
+
+5. BgColor & Background
+
+    bgcolor            : sets background color for table, group, row or cell.
+
+    background        : sets background image for table, group, row or cell.
+
+Syntax:
+    <table bgcolor="#f0f">
+    <table background="./images/pic.jpg">
+
+6. Row and Column span
+
+    rowspan            : It merges set of rows into one cell.
+
+    colspan            : It merges set of columns into one cell.
+
+   You can define row and colspan only in <th> or <td> elements.
+
+Syntax:
+        <th colspan="4">
+        <td rowspan="3">
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="100%" border="1">
+        <thead>
+            <tr>
+                <th colspan="2">Name</th>
+                <th colspan="3">Address</th>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Postal Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td rowspan="7" align="center" valign="center">D<br>E<br>L<br>H<br>I</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" align="center"> &copy; Copyright 2024</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+
+Ex: ICC Table
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICC</title>
+    <style>
+        .card {
+            border-radius: 10px;
+            width: 300px;
+            font-family: Arial;
+        }
+        .card-title {
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: bold;
+            border-bottom: 5px solid green;
+        }
+        .card-img {
+            width: 100px;
+           
+        }
+        .flag {
+            width: 22px;
+        }
+        .surname {
+            font-weight: bold;
+        }
+        .bg-logo {
+            background-size: cover;
+           
+        }
+        .bg-shade {
+            background-color: rgba(0,0,0);
+        }
+    </style>
+</head>
+<body>
+    <table width="80%" border="1" frame="void" cellspacing="20">
+        <tr height="400">
+            <td class="card" valign="top">
+                <table width="100%" cellpadding="10" rules="rows">
+                    <tr valign="top">
+                        <td colspan="3" align="center" class="card-title">test - allrounder Rankings</td>
+                    </tr>
+                    <tr>
+                        <td><font size="6"><b>01</b></font></td>
+                        <td background="./images/icc1.png" class="bg-logo">
+                          <div >
+                            <table>
+                                <tr>
+                                    <td><img src="./images/ind.png" class="flag"> <span class="name">Ravindra</span> <br> <span class="surname"> JADEJA </span>  </td>
+                                    <td><img align="right" class="card-img" src="./images/jadeja.png"></td>
+                                </tr>
+                              </table>    
+                          </div>
+                        </td>
+                        <td> 444 </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td> <img src="./images/ind.png" class="flag"> <span class="name">Ravichandran</span> <span class="surname"> ASHWIN </span> </td>
+                        <td> 322 </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td> <img src="./images/bang.png" class="flag"> <span class="name">Shakib </span> <span class="surname"> AL HASAN </span> </td>
+                        <td> 310 </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td> <img src="./images/eng.png" class="flag"> <span class="name">Joe </span> <span class="surname"> Root </span> </td>
+                        <td> 284 </td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td> <img src="./images/ind.png" class="flag"> <span class="name">Axsar </span> <span class="surname"> PATEL </span> </td>
+                        <td> 269 </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">Full RANKINGS > </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="card" valign="top">
+                <table width="100%" cellpadding="10" rules="rows">
+                    <tr valign="top">
+                        <td colspan="3" align="center" class="card-title">ODI - allrounder Rankings</td>
+                    </tr>
+                    <tr>
+                        <td><font size="6"><b>01</b></font></td>
+                        <td background="./images/icc1.png" class="bg-logo">
+                          <div >
+                            <table>
+                                <tr>
+                                    <td><img src="./images/afgan.png" class="flag"> <span class="name">Mohammad</span> <br> <span class="surname"> NABI </span>  </td>
+                                    <td><img align="right" class="card-img" src="./images/nabi.png"></td>
+                                </tr>
+                              </table>    
+                          </div>
+                        </td>
+                        <td> 444 </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td> <img src="./images/ind.png" class="flag"> <span class="name">Ravichandran</span> <span class="surname"> ASHWIN </span> </td>
+                        <td> 322 </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td> <img src="./images/bang.png" class="flag"> <span class="name">Shakib </span> <span class="surname"> AL HASAN </span> </td>
+                        <td> 310 </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td> <img src="./images/eng.png" class="flag"> <span class="name">Joe </span> <span class="surname"> Root </span> </td>
+                        <td> 284 </td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td> <img src="./images/ind.png" class="flag"> <span class="name">Axsar </span> <span class="surname"> PATEL </span> </td>
+                        <td> 269 </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">Full RANKINGS > </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="card" valign="top">
+                <table width="100%" cellpadding="10" rules="rows">
+                    <tr valign="top">
+                        <td colspan="3" align="center" class="card-title">T20 - allrounder Rankings</td>
+                    </tr>
+                    <tr>
+                        <td><font size="6"><b>01</b></font></td>
+                        <td background="./images/icc1.png" class="bg-logo">
+                          <div >
+                            <table>
+                                <tr>
+                                    <td><img src="./images/aus.png" class="flag"> <span class="name">Marcus</span> <br> <span class="surname"> STOINIS </span>  </td>
+                                    <td><img align="right" class="card-img" src="./images/stoinis.png"></td>
+                                </tr>
+                              </table>    
+                          </div>
+                        </td>
+                        <td> 444 </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td> <img src="./images/ind.png" class="flag"> <span class="name">Ravichandran</span> <span class="surname"> ASHWIN </span> </td>
+                        <td> 322 </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td> <img src="./images/bang.png" class="flag"> <span class="name">Shakib </span> <span class="surname"> AL HASAN </span> </td>
+                        <td> 310 </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td> <img src="./images/eng.png" class="flag"> <span class="name">Joe </span> <span class="surname"> Root </span> </td>
+                        <td> 284 </td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td> <img src="./images/ind.png" class="flag"> <span class="name">Axsar </span> <span class="surname"> PATEL </span> </td>
+                        <td> 269 </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">Full RANKINGS > </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

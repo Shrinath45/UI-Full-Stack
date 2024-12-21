@@ -1,0 +1,117 @@
+HTML Page Structure
+1. Document Declaration
+	<!DOCTYPE html>
+2. Document Scope
+	<html lang="en-in">
+3. Head Section
+	<head>
+	<title>
+	<link>
+
+Setup Favicon:
+1. Open MsPaint on your PC
+2. Go to File => Image Properties => Set size  32 x  32 pixels [width & height]
+3. Draw icon and save into your project images folder by name
+		   "favicon.png"
+4. Go to project in VS code and rename "favicon.png => favicon.ico"
+5. Link to your page
+
+<head>
+   <link rel="shortcut icon"  href="public/images/favicon.ico">
+</head>
+
+
+					           <meta>
+- Meta refers to "meta data".
+- Meta data container information about your page.
+- Meta is used to make the page responsive and SEO friendly.
+
+Meta Responsive Attributes & Values:
+
+   <meta  name="viewport"   content="width=device-width, initial-scale=1">
+
+ 		a) viewport		: It refers to the current screen [pc, laptop, tab, mobile..]
+		b) content		: It refers to your page content
+		c) device-width	: It gets the dimensions of screen
+		d) initial-scale		: It defines the zoom level of content [1=100%]
+
+Note: To test responsive pages you install  "Mobile Simulator" plugin for Google Chrome browser.
+
+    <meta  http-equiv="refresh" content="seconds">	
+    <meta  http-equiv="refresh" content="5">
+
+		a) http-equiv		: It a handler that handle the page request.
+		b) refresh			: It specifies that page will reload 
+		c) content		: It defines the time interval in seconds.
+
+Meta SEO attributes & Values:
+
+    <meta name="keywords"   content="some keywords that are used to find your page">
+    <meta name="description"  content="something about your website...">
+    <meta charset="utf-8">
+
+	a) UTF		: Unicode Tansformation Format used for translating page content
+	b)  8			: It refers to 8bit memory size required to translate the chars.
+				  It can be 16, 32, 64, .. for languages like Korean, Chinese, Arabic.
+
+						Script & Style
+- <script> element is used to embed client side script or server side script in page.
+- <style> element is used to embed styles in a webpage. 
+
+Ex:
+<!DOCTYPE html>
+<html  lang="en-in">
+   <head>
+    <title> Travel App </title>
+    <link rel="shortcut icon" href="public/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.8">
+    <meta http-equiv="refresh" content="5">
+    <meta name="keywords" content="online shopping, best offers, mobile with offers, best mobiles less that 20k">
+    <meta charset="utf-8">
+   </head>
+</html>
+	
+						  HTML Body Section
+- Body section contains information to render with round trip. 
+- Every time content is rendered from server. 
+- It can display the content in browser workspace. 
+
+Syntax:
+	<body>
+		.. your content ..
+	</body>
+
+Attributes:
+1. bgcolor		: It sets a background color for page.
+2. text			: It sets a color for text in page.
+
+Colors in HTML:
+	a) Color Name
+	b) Color shade name
+	c) Hexadecimal code
+
+Syntax: Color Name
+
+		<body bgcolor="green">
+
+Syntax: Color Shade
+
+		<body bgcolor="lightgreen">
+
+Syntax: Hexadecimal
+
+		a) 3 chars Hexadecimal 		=> #RGB
+		b) 6 chars Hexadecimal		=> #RRGGBB
+
+		R, G, B  values are 		=> 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+
+
+		#f00			red
+		#0f0			green
+		#000		black
+		#fff			white
+	
+		#ff0000		red
+		#fa0000
+	
+		<body bgcolor="#ff0000"   text="#fff">

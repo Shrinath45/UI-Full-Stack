@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input+div {
+            display: none;
+        }
+        input:focus+div {
+            display: block;
+            font-size: 14px;
+            color:red;
+        }
+        input:focus {
+            outline: none;
+            border-top:none;
+            border-right: none;
+            border-left: none;
+        }
+        button {
+            background-color: rgb(151, 211, 252);
+            border:none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: rgb(9, 118, 190);
+            cursor: grab;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <dl>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" placeholder="Name in Block Letters">
+                <div>Name in Block Letters</div>
+            </dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</body>
+</html>

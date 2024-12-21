@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       input+span {
+          display: none;
+       }
+       input:required+span {
+        display: inline;
+        color:red;
+       }
+       input:required {
+          border:1px solid red;
+       }
+       input:optional {
+          border:1px solid goldenrod;
+       }
+       input:valid+span {
+          display: none;
+       }
+       input:valid {
+          border:1px solid black;
+       }
+       .mobile~div {
+        display: none;
+       }
+       .mobile:invalid~div {
+        display:  block;
+        color:red;
+        font-size: 12px;
+       }
+       .UserName~div {
+        display: none;
+       }
+       .UserName:invalid~div {
+        display: block;
+        color:red;
+        font-size: 12px;
+       }
+       .Age:in-range+div {
+         display: none;
+       }
+       .Age:out-of-range+div {
+        display: block;
+        color:red;
+        font-size: 12px;
+       }
+    </style>
+</head>
+<body>
+    <form>
+        <dl>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" class="UserName" required><span>*</span>
+                    <div>Name Required</div>
+                </dd>
+                <dt>Password</dt>
+                <dd><input type="password"><span>*</span></dd>
+                <dt>Mobile</dt>
+                <dd>
+                    <input type="text" class="mobile" pattern="\+91\d{10}"><span>*</span>
+                    <div>Invalid Mobile +91 and 10 digits</div>
+                </dd>
+                <dt>Age</dt>
+                <dd><input type="number" min="15" max="30" class="Age">
+                    <div>Age 15 to 30 only</div>
+                </dd>
+            </dl>
+        </dl>
+        <button>Register</button>
+    </form>
+</body>
+</html>

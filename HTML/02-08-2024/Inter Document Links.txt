@@ -1,0 +1,262 @@
+Inter Document Links
+
+- You can configure a link that handles various interactions outside document.
+
+    a) Navigate to file
+    b) Navigate to URL
+    c) Open specific application
+    d) Trigger a JavaScript function
+
+Navigate to File:
+- You can create a link that navigates user to any specific file in project or remote location.
+- You can link to any type of file in page. [ html, pdf, doc, ppt, xls, jpg etc..]
+- Every file can't open in browser. It requires relative plugin's to install.
+- If plugin is not available then browser will download the file.
+
+Syntax:
+        <a href="./docs/tutorial.pdf"> Tutorial </a>
+
+FAQ: How to link a file that can always download?
+Ans:  By using "download" attribute for <a> element.
+
+     <a href="file_path"  download>  Text  </a>
+     <a href="file_path"  download="newname">  Text </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="./shopper-template.html"> Shopper Template </a> </li>
+        <li><a href="./images/women-fashion.jpg"> <img src="./images/women-fashion.jpg" width="50" height="50"> </a></li>
+        <li><a href="./images/men-fashion.jpg" download="DSC0001"> Download Men Fashion Image </a></li>
+        <li><a href="./docs/ishop.pdf"> Project PDF Document </a></li>
+        <li><a href="./docs/notes.docx"> Notes Word Document </a></li>
+    </ul>
+</body>
+</html>
+
+Navigate to URL:
+- You can configure a link that navigates the user to remote URL.
+- URL format requires exact match of protocol and domain name.
+
+Syntax:
+    <a href="http://www.domain.com"&gt;  Text | Image </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul {
+            list-style: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <ul>
+            <a href="https://www.facebook.com"><li class="bi bi-facebook"></li></a>
+            <a href="https://www.twitter.com"><li class="bi bi-twitter-x"></li></a>
+            <a href="https://www.instagram.com"><li class="bi bi-instagram"></li></a>
+         </ul>
+    </aside>
+</body>
+</html>
+
+Open any specific application:
+- You can configure a link that triggers specified app on click.
+- Applications that are supported by browser can be invoked from browser.
+- Browser applications include
+    a) phone            tel:number
+    b) email            mailto:email_address
+    c) skype            skype:profile_name?action
+    d) WhatsApp         https://wa.me/number
+
+Syntax:
+    <a href="info@nareshit.com">  Email </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul {
+            list-style: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <ul>
+             <a href="info@nareshit.com"> <li class="bi bi-envelope"> info@nareshit.com </li>   </a>
+             <a href="tel:+919876543210"> <li class="bi bi-phone-vibrate"> Call </li> </a>
+             <a href="skype:info_nareshit?call" > <li class="bi bi-skype"> Skype Call </li> </a>
+             <a href="https://wa.me/+919876543210"&gt; <li class="bi bi-chat"> WhatsApp </li> </a>
+         </ul>
+    </aside>
+</body>
+</html>
+
+JavaScript Function with Hyperlink:
+- Hyperlink can point towards a JavaScript function.
+- It can be user defined or built-in function
+
+
+Syntax:
+    <a href="javascript:function(){}">  Text | Image </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul {
+            list-style: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <ul>
+            <a href="javascript:window.print()"> <li class="bi bi-printer"> Print Page </li> </a>
+            <a href="javascript:alert('Mail Deleted..')"> <li class="bi bi-trash-fill"> Delete Mail </li> </a>
+         </ul>
+    </aside>
+</body>
+</html>
+
+FAQ's:
+1. How to remove underline for hyperlink?
+A. by using CSS "text-decoration" set to "none"
+
+Syntax:
+    a {
+       text-decoration:none;
+    }
+    a:hover {
+       text-decoration:underline;
+    }
+
+2. How to change hyperlink colors?
+A. by using HTML <body> attributes  "alink, vlink".
+    by using CSS classes  ":active, :visited"
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul {
+            list-style: none;
+            font-size: 24px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:active {
+            color:red;
+        }
+        a:visited {
+            color:gray;
+        }
+        a {
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <ul>
+            <a href="javascript:window.print()"> <li class="bi bi-printer"> Print Page </li> </a>
+            <a href="javascript:alert('Mail Deleted..')"> <li class="bi bi-trash-fill"> Delete Mail </li> </a>
+            <a href="https://amazon.in"&gt; <li class="bi bi-cart"> Amazon </li> </a>
+         </ul>
+    </aside>
+</body>
+</html>
+
+3. How to create an empty link?
+A. By using JavaScript "void" operator.
+
+Syntax:
+    <a href="javascript:void()">  Test </a>
+
+4. How to open link target in a new tab?
+A. by using "target" attribute set to "_blank".
+
+Syntax:
+    <a href="http://www.amazon.in&quot;  target="_blank">  Amazon </a>
+
+5. How to open link target in a new window?
+A. By using JavaScript "window.open()" method.
+
+    window.open('path', 'title', 'width=300 height=400')
+
+Syntax:
+    <a href="javascript:window.open('path', 'title', 'features')">  Text </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul {
+            list-style: none;
+            font-size: 24px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+       
+    </style>
+</head>
+<body>
+    <aside>
+        <ul>
+            <li>
+               <a href="javascript:window.open('./images/kids-fashion.jpg', 'Kids', 'width=300 height=400')"> <img src="./images/kids-fashion.jpg" width="100" height="100"> </a>
+            </li>
+            <a href="https://www.flipkart.com&quot; target="_blank"> <li class="bi bi-cart"> Flipkart </li> </a>
+            <a href="javascript:window.print()"> <li class="bi bi-printer"> Print Page </li> </a>
+            <a href="javascript:alert('Mail Deleted..')"> <li class="bi bi-trash-fill"> Delete Mail </li> </a>
+            <a href="https://amazon.in"&gt; <li class="bi bi-cart"> Amazon </li> </a>
+            <a href="javascript:void()"> <li class="bi bi-person-fill">Profile [Not Implemented] </li> </a>
+         </ul>
+    </aside>
+</body>
+</html>
