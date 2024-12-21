@@ -1,1 +1,1 @@
-# This is my UI FUll Stack Course Repo
+# This is my UI FUll Stack Course Repository
